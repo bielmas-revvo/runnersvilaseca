@@ -1,0 +1,2112 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Club de running de Vila-Seca (Tarragona). V Escardó Mitja Marató · diumenge 18 d'octubre de 2026 · 21K, 10K i 5K. Inscriu-te o fes-te soci del club." id="metaDesc">
+<title>Club Esportiu Runners Vila-Seca · V Mitja Marató 2026</title>
+
+<!-- ===== FAVICON · THEME ===== -->
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="theme-color" content="#0C2A4D">
+<link rel="preload" as="image" href="img/mitja-sortida-1280.webp" fetchpriority="high">
+
+<!-- ===== OPEN GRAPH / TWITTER ===== -->
+<meta property="og:title" content="Club Esportiu Runners Vila-Seca">
+<meta property="og:description" content="Una família, un estil de vida. Corre amb nosaltres i viu la V Escardó Mitja Marató de Vila-Seca el 18 d'octubre de 2026.">
+<!-- og:image ha de ser una URL absoluta i pública: pugeu og-mitja.jpg a l'arrel del domini -->
+<meta property="og:image" content="https://runnersvilaseca.com/og-mitja.jpg">
+<meta property="og:image:alt" content="Sortida de la Mitja Marató de Vila-Seca">
+<meta property="og:url" content="https://runnersvilaseca.com">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ca_ES">
+<meta property="og:site_name" content="Club Esportiu Runners Vila-Seca">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Club Esportiu Runners Vila-Seca">
+<meta name="twitter:description" content="Una família, un estil de vida. Corre amb nosaltres i viu la V Escardó Mitja Marató de Vila-Seca el 18 d'octubre de 2026.">
+<meta name="twitter:image" content="https://runnersvilaseca.com/og-mitja.jpg">
+<link rel="canonical" href="https://runnersvilaseca.com">
+<link rel="alternate" hreflang="ca" href="https://runnersvilaseca.com/">
+<link rel="alternate" hreflang="es" href="https://runnersvilaseca.com/?lang=es">
+<link rel="alternate" hreflang="x-default" href="https://runnersvilaseca.com/">
+
+<!-- ===== FONTS ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   PANTALLA DE CÀRREGA
+   ========================================================= */
+body.loading{overflow:hidden}
+.loader{position:fixed;inset:0;z-index:400;background:var(--navy-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:opacity .5s var(--ease),visibility .5s}
+.loader.done{opacity:0;visibility:hidden;pointer-events:none}
+.loader-escut{width:clamp(96px,17vw,132px);height:auto;opacity:0;transform:scale(.94);animation:loaderIn .7s var(--ease) .05s forwards}
+@keyframes loaderIn{to{opacity:1;transform:scale(1)}}
+.loader-word{font-family:"Archivo";font-weight:900;font-size:clamp(26px,4.4vw,38px);color:#fff;letter-spacing:.1em;text-transform:uppercase;margin-top:22px;opacity:0;animation:loaderIn .7s var(--ease) .18s forwards}
+.loader-sub{font-family:"Archivo";font-weight:700;font-size:clamp(10px,1.4vw,12px);color:var(--gold);letter-spacing:.3em;text-transform:uppercase;margin-top:8px;opacity:0;animation:loaderIn .7s var(--ease) .26s forwards}
+.loader-bar{position:relative;width:min(260px,58vw);height:4px;border-radius:99px;background:#16385f;margin-top:52px;opacity:0;animation:loaderIn .6s var(--ease) .34s forwards}
+.loader-fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:99px;background:var(--gold)}
+.loader-runner{position:absolute;bottom:5px;left:0;width:26px;height:30px;transform:translateX(-50%);color:var(--gold)}
+.loader-runner svg{width:100%;height:100%;display:block;animation:runbob .34s steps(1,end) infinite}
+@keyframes runbob{0%{transform:translateY(0)}50%{transform:translateY(-1.5px)}100%{transform:translateY(0)}}
+.loader-runner .pose{stroke:currentColor;stroke-width:4.4;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.loader-runner .p1{animation:pose1 .34s steps(1,end) infinite}
+.loader-runner .p2{animation:pose2 .34s steps(1,end) infinite}
+@keyframes pose1{0%,49.9%{opacity:1}50%,100%{opacity:0}}
+@keyframes pose2{0%,49.9%{opacity:0}50%,100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  .loader-escut,.loader-word,.loader-sub,.loader-bar{opacity:1!important;transform:none!important;animation:none!important}
+  .loader-runner svg,.loader-runner .p1,.loader-runner .p2{animation:none!important}
+  .loader-runner .p2{opacity:0}
+}
+
+/* =========================================================
+   SISTEMA VISUAL — CERV
+   ========================================================= */
+:root{
+  --navy:#0C2A4D;        /* primari: capçalera, titulars, fons foscos */
+  --navy-deep:#081C33;   /* fons de secció foscos */
+  --gold:#FFC42E;        /* accent: escut, botons secundaris, detalls */
+  --charcoal:#15181C;    /* text principal */
+  --white:#FFFFFF;
+  --off:#F5F7FA;         /* fons clars, molt aire */
+  --red:#E11D2A;         /* NOMÉS urgència Mitja: CTA inscripció + countdown */
+
+  --maxw:1180px;
+  --pad:clamp(20px,5vw,40px);
+  --r:14px;
+  /* easing refinat, sense rebots */
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --shadow-sm:0 2px 10px rgba(8,28,51,.06);
+  --shadow-md:0 14px 38px rgba(8,28,51,.12);
+  --shadow-lg:0 26px 60px rgba(8,28,51,.20);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Inter",system-ui,sans-serif;
+  color:var(--charcoal);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:"Archivo",sans-serif;margin:0;line-height:1.02;letter-spacing:-.02em}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.container{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+.eyebrow{font-family:"Archivo";font-weight:700;text-transform:uppercase;letter-spacing:.22em;font-size:12px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+/* ---------- BOTONS ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:"Archivo";font-weight:800;font-size:16px;letter-spacing:.01em;
+  padding:16px 28px;border-radius:12px;border:2px solid transparent;cursor:pointer;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .25s,color .25s,border-color .25s;
+  text-align:center;line-height:1;
+}
+.btn svg{width:18px;height:18px}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 10px 26px rgba(225,29,42,.34)}
+.btn-red:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(225,29,42,.42)}
+.btn-red:active{transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:var(--navy);box-shadow:0 10px 26px rgba(255,196,46,.34)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(255,196,46,.42)}
+.btn-ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.55)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.btn-outline-navy{background:transparent;color:var(--navy);border-color:var(--navy)}
+.btn-outline-navy:hover{background:var(--navy);color:#fff;transform:translateY(-3px)}
+
+/* =========================================================
+   HEADER STICKY + CONDENSA
+   ========================================================= */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(8,28,51,0);
+  transition:background .35s var(--ease),box-shadow .35s var(--ease),padding .35s var(--ease);
+  padding:16px 0;
+}
+.header.scrolled{background:rgba(8,28,51,.97);box-shadow:0 6px 24px rgba(0,0,0,.28);padding:7px 0;backdrop-filter:saturate(140%) blur(8px)}
+.header-inner{display:flex;align-items:center;gap:clamp(14px,1.8vw,24px)}
+.brand{display:flex;align-items:center;gap:12px;color:#fff}
+.brand img{width:48px;height:48px;object-fit:contain;flex:none;transition:width .35s var(--ease),height .35s var(--ease);filter:drop-shadow(0 3px 8px rgba(0,0,0,.35))}
+.header.scrolled .brand img{width:40px;height:40px}
+.brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand-text b{font-family:"Archivo";font-weight:800;font-size:15px;letter-spacing:.01em}
+.brand-text span{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.nav{display:none;align-items:center;gap:clamp(11px,1.3vw,18px);margin-right:auto}
+.nav a{color:rgba(255,255,255,.82);font-size:13.5px;font-weight:500;position:relative;padding:4px 0;white-space:nowrap;transition:color .2s}
+.nav a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--gold);transition:width .3s var(--ease)}
+.nav a:hover{color:#fff}
+.nav a:hover::after,.nav a.active::after{width:100%}
+.nav a.active{color:#fff}
+.header-actions{display:flex;align-items:center;gap:14px}
+.lang{display:flex;align-items:center;border:1.5px solid rgba(255,255,255,.28);border-radius:999px;overflow:hidden}
+.lang button{background:transparent;border:0;color:rgba(255,255,255,.78);font-family:"Archivo";font-weight:700;font-size:12.5px;padding:15px 13px;cursor:pointer;transition:all .2s}
+.lang button.active{background:var(--gold);color:var(--navy)}
+.header .btn-red{padding:11px 18px;font-size:14px}
+.burger{display:grid;gap:5px;background:none;border:0;cursor:pointer;padding:13px 11px}
+.burger span{display:block;width:24px;height:2.5px;background:#fff;border-radius:2px;transition:transform .3s var(--ease),opacity .3s}
+.burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* mòbil nav drawer */
+.mobile-nav{
+  position:fixed;inset:0 0 0 auto;width:min(82vw,340px);z-index:99;
+  background:var(--navy-deep);transform:translateX(100%);transition:transform .4s var(--ease);
+  padding:96px 30px 30px;display:flex;flex-direction:column;gap:4px;box-shadow:-20px 0 60px rgba(0,0,0,.5);
+}
+.mobile-nav.open{transform:translateX(0)}
+.mobile-nav a{color:#fff;font-family:"Archivo";font-weight:700;font-size:20px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-nav a.active{color:var(--gold)}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .3s;z-index:98}
+.scrim.open{opacity:1;pointer-events:auto}
+
+/* =========================================================
+   VISTES (SPA)
+   ========================================================= */
+.view{display:none}
+.view.active{display:block}
+.view.active{animation:viewIn .5s var(--ease)}
+@keyframes viewIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--navy-deep);color:#fff;padding:120px 0 70px}
+.hero-bg-wrap{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-bg{position:absolute;inset:-6%;z-index:0;
+  /* FOTO REAL: sortida massiva de la Mitja Marató sota l'arc de meta, centenars de corredors -->*/
+  background:
+    linear-gradient(180deg,rgba(8,28,51,.58) 0%,rgba(8,28,51,.66) 42%,rgba(8,28,51,.93) 100%),
+    url('img/mitja-sortida-1280.webp') center 26%/cover no-repeat,
+    #0c2a4d;
+  will-change:transform;
+}
+.hero-bg::after{content:"";position:absolute;inset:0;opacity:.05;
+  background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);
+  background-size:54px 54px;mask-image:radial-gradient(80% 70% at 65% 25%,#000,transparent 75%)}
+.hero.play .hero-bg{animation:kenburns 26s ease-in-out infinite alternate}
+@keyframes kenburns{0%{transform:scale(1.04) translate(0,0)}100%{transform:scale(1.12) translate(-1.5%,-1.5%)}}
+.hero-photo-tag{position:absolute;left:14px;bottom:12px;z-index:3;font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,.26);text-transform:uppercase;font-family:"Archivo";font-weight:600}
+
+.hero-inner{position:relative;z-index:4;width:100%;max-width:760px}
+
+.hero-club{color:var(--gold);font-family:"Archivo";font-weight:700;text-transform:uppercase;letter-spacing:.22em;font-size:clamp(11px,1.4vw,13px);margin-bottom:18px;opacity:0;transform:translateY(16px)}
+.hero.play .hero-club{animation:fadeUp .8s var(--ease) .15s forwards}
+
+.hero-title{font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1.04}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .word{display:inline-block;font-size:clamp(26px,5vw,50px);opacity:0;transform:translateY(24px);will-change:transform,opacity}
+.hero-title .word.accent{color:var(--gold)}
+.hero.play .hero-title .line:nth-child(1) .word{animation:wordUp .8s var(--ease) .3s forwards}
+.hero.play .hero-title .line:nth-child(2) .word{animation:wordUp .8s var(--ease) .42s forwards}
+@keyframes wordUp{to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+/* línia de sortida daurada */
+.startline{height:10px;width:min(280px,52%);margin:22px auto 30px;overflow:hidden}
+.startline span{display:block;height:100%;transform:scaleX(0);transform-origin:left;background:repeating-linear-gradient(90deg,var(--gold) 0 12px,transparent 12px 24px)}
+.hero.play .startline span{animation:drawline 1s var(--ease) .6s forwards}
+@keyframes drawline{to{transform:scaleX(1)}}
+
+/* ---------- COUNTDOWN (protagonista) ---------- */
+.cd-wrap{opacity:0;transform:translateY(16px);margin:0 auto}
+.hero.play .cd-wrap{animation:fadeUp .9s var(--ease) .7s forwards}
+.cd-label{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--red);font-family:"Archivo";font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:clamp(11px,1.5vw,13px);margin-bottom:18px}
+.cd-dot{width:9px;height:9px;border-radius:50%;background:var(--red)}
+.hero.play .cd-dot{animation:pulse 2s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(225,29,42,.55)}70%{box-shadow:0 0 0 11px rgba(225,29,42,0)}100%{box-shadow:0 0 0 0 rgba(225,29,42,0)}}
+.countdown{display:flex;gap:10px;justify-content:center}
+.cd-cell{background:rgba(225,29,42,.1);border:1.5px solid rgba(225,29,42,.38);border-radius:14px;padding:14px 6px;flex:1;max-width:96px;text-align:center;overflow:hidden}
+.cd-num{display:block;font-family:"Archivo";font-weight:900;font-size:clamp(30px,6vw,46px);color:#fff;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.cd-unit{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.13em;color:var(--red);font-weight:700;margin-top:8px;font-family:"Archivo"}
+
+/* countdown HERO — gran, protagonista */
+.countdown-hero{gap:clamp(6px,1.4vw,14px);max-width:600px;width:100%;margin:0 auto}
+.countdown-hero .cd-cell{flex:1 1 0;min-width:0;max-width:none;padding:clamp(14px,2.2vw,24px) clamp(3px,.8vw,9px);border-radius:18px;background:rgba(225,29,42,.14);border-color:rgba(225,29,42,.5)}
+.countdown-hero .cd-num{font-size:clamp(30px,7.4vw,64px);letter-spacing:-.04em}
+.countdown-hero .cd-unit{font-size:clamp(9px,1.3vw,13px);margin-top:10px;color:#fff;opacity:.82}
+
+.hero-ctas{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:38px;opacity:0;transform:translateY(16px)}
+.hero.play .hero-ctas{animation:fadeUp .9s var(--ease) .9s forwards}
+.btn-hero{padding:clamp(19px,2.4vw,25px) clamp(28px,5vw,54px);font-size:clamp(17px,2.2vw,21px);font-weight:900;letter-spacing:.015em;border-radius:16px;max-width:100%;
+  box-shadow:0 14px 34px rgba(225,29,42,.4),0 2px 6px rgba(8,28,51,.28)}
+.btn-hero:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(225,29,42,.5),0 0 0 1px rgba(255,255,255,.07)}
+.btn-hero:active{transform:translateY(-1px)}
+.hero-reminder{font-size:13.5px;color:rgba(255,255,255,.68);font-weight:500;margin-top:6px;text-align:center;text-wrap:balance}
+.hero-soci-link{display:inline-flex;align-items:center;gap:7px;margin-top:14px;color:rgba(255,255,255,.85);font-family:"Archivo";font-weight:700;font-size:14.5px;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:3px;transition:color .25s,border-color .25s}
+.hero-soci-link:hover{color:var(--gold);border-color:var(--gold)}
+
+/* =========================================================
+   TICKER
+   ========================================================= */
+.ticker{background:var(--gold);color:var(--navy);overflow:hidden;padding:15px 0;border-top:3px solid var(--navy);border-bottom:3px solid var(--navy)}
+.ticker-track{display:flex;width:max-content;animation:ticker 34s linear infinite}
+@keyframes ticker{to{transform:translateX(-50%)}}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker span{font-family:"Archivo";font-weight:900;font-size:clamp(16px,2.4vw,22px);text-transform:uppercase;letter-spacing:.02em;padding:0 26px;display:inline-flex;align-items:center;gap:26px;white-space:nowrap}
+.ticker .star{color:var(--red);font-size:13px}
+
+/* =========================================================
+   SECCIONS GENÈRIQUES + REVELAT SCROLL
+   ========================================================= */
+.sec{padding:clamp(64px,10vw,110px) 0}
+.sec-head{max-width:680px;margin-bottom:50px}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head .eyebrow{color:var(--red)}
+.sec-head h2{font-weight:900;font-size:clamp(32px,5.4vw,56px);margin:14px 0 16px;text-transform:uppercase;color:var(--navy)}
+.sec-head p{font-size:clamp(16px,2vw,18.5px);color:#4a5562}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.07s}.reveal.d2{transition-delay:.14s}.reveal.d3{transition-delay:.21s}.reveal.d4{transition-delay:.28s}
+
+/* page intro band (sub-pàgines) */
+.page-intro{background:var(--navy-deep);color:#fff;padding:calc(96px + 4vw) 0 clamp(48px,7vw,80px);position:relative;overflow:hidden}
+.page-intro::after{content:"";position:absolute;inset:0;opacity:.05;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:54px 54px;mask-image:radial-gradient(70% 80% at 80% 10%,#000,transparent 70%)}
+.page-intro .eyebrow{color:var(--gold)}
+.page-intro h1{font-weight:900;font-size:clamp(36px,6.4vw,68px);text-transform:uppercase;margin:14px 0 16px;position:relative;text-wrap:balance}
+.page-intro h1 .nb{white-space:nowrap}
+.page-intro p{font-size:clamp(16px,2.1vw,19px);color:rgba(255,255,255,.82);max-width:50ch;position:relative}
+
+/* =========================================================
+   ACCESSOS DESTACATS (Inici)
+   ========================================================= */
+.access{display:grid;grid-template-columns:1fr;gap:22px}
+.access-card{position:relative;border-radius:18px;overflow:hidden;padding:38px 32px;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.access-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.access-mitja{background:linear-gradient(155deg,#10355f,#081c33)}
+.access-soci{background:linear-gradient(155deg,#143b69,#0c2a4d)}
+.access-card .eyebrow{color:var(--gold);margin-bottom:10px}
+.access-card h3{font-family:"Archivo";font-weight:900;font-size:clamp(26px,3.6vw,34px);text-transform:uppercase;margin-bottom:8px}
+.access-card p{font-size:15px;color:rgba(255,255,255,.78);margin-bottom:20px;max-width:34ch}
+.access-link{display:inline-flex;align-items:center;gap:9px;font-family:"Archivo";font-weight:800;font-size:15px;color:var(--gold);transition:gap .25s var(--ease)}
+.access-card:hover .access-link{gap:15px}
+.access-link svg{width:17px;height:17px}
+
+/* =========================================================
+   COMUNITAT — comptadors
+   ========================================================= */
+.comunitat{background:var(--off)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:48px}
+.stat{background:#fff;border-radius:var(--r);padding:30px 22px;text-align:center;box-shadow:var(--shadow-sm);border-top:4px solid var(--gold)}
+.stat-num{font-family:"Archivo";font-weight:900;font-size:clamp(36px,7vw,58px);color:var(--navy);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.stat-num .suf{color:var(--gold)}
+.stat-label{margin-top:12px;font-size:13.5px;color:#54616f;font-weight:500}
+.comunitat-cta{text-align:center}
+.comunitat-cta h3{font-family:"Archivo";font-weight:800;font-size:clamp(22px,3.4vw,32px);color:var(--navy);max-width:20ch;margin:0 auto 22px;text-transform:uppercase}
+
+/* =========================================================
+   EL CLUB
+   ========================================================= */
+.club-grid{display:grid;grid-template-columns:1fr;gap:42px;align-items:center}
+.club-photo{position:relative;border-radius:var(--r);overflow:hidden;min-height:clamp(360px,46vw,560px);background:#0c2a4d;box-shadow:var(--shadow-md)}
+.club-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.club-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(150deg,rgba(8,28,51,.28),rgba(8,28,51,.04) 45%,rgba(8,28,51,.34))}
+.club-photo .tag{position:absolute;z-index:2;left:14px;bottom:12px;font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,.4);text-transform:uppercase;font-family:"Archivo";font-weight:600}
+.club-welcome{font-size:clamp(16px,2vw,18px);color:#3c4654;margin-bottom:30px;max-width:60ch}
+.club-welcome b{color:var(--navy)}
+.values{display:flex;flex-direction:column;gap:18px;margin-bottom:30px}
+.value{display:flex;gap:14px;align-items:flex-start}
+.value-ic{width:42px;height:42px;border-radius:11px;background:var(--off);display:grid;place-items:center;flex:none;color:var(--navy)}
+.value-ic svg{width:21px;height:21px}
+.value b{font-family:"Archivo";font-weight:800;font-size:16px;color:var(--navy);display:block;margin-bottom:2px}
+.value p{font-size:14.5px;color:#54616f}
+.club-extra{display:grid;grid-template-columns:1fr;gap:18px;margin-top:10px}
+.train-box{background:var(--navy);color:#fff;border-radius:var(--r);padding:22px 24px;display:flex;align-items:center;gap:16px}
+.train-box svg{width:30px;height:30px;color:var(--gold);flex:none}
+.train-box b{font-family:"Archivo";font-weight:700;display:block;font-size:15px}
+.train-box span{font-size:13.5px;color:rgba(255,255,255,.75)}
+.liga-box{background:rgba(255,196,46,.12);border:1px solid rgba(255,196,46,.45);border-radius:var(--r);padding:22px 24px;display:flex;align-items:center;gap:16px}
+.liga-box .b{background:var(--gold);color:var(--navy);font-family:"Archivo";font-weight:800;font-size:12px;padding:5px 11px;border-radius:999px;flex:none;text-transform:uppercase;letter-spacing:.04em}
+.liga-box span{font-size:14px;color:var(--navy)}
+
+/* =========================================================
+   LA MITJA
+   ========================================================= */
+.mitja-logo-row{display:flex;align-items:center;gap:18px;margin-bottom:26px}
+.mitja-logo-row img{height:clamp(76px,11vw,112px);width:auto;background:#fff;padding:clamp(14px,2vw,20px) clamp(20px,3vw,30px);border-radius:14px;box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.mitja{overflow:hidden}
+.mitja-meta{display:grid;grid-template-columns:1fr;gap:16px;margin:0 0 8px}
+.mm{display:flex;align-items:flex-start;gap:12px;font-size:15.5px;color:#3c4654}
+.mm svg{width:22px;height:22px;flex:none;color:var(--navy);margin-top:2px}
+.mm b{font-family:"Archivo";font-weight:700;display:block;font-size:11px;text-transform:uppercase;letter-spacing:.13em;margin-bottom:3px;color:var(--red)}
+
+/* countdown a la Mitja */
+.mitja-cd{margin:8px 0 4px;padding:24px;background:var(--navy-deep);border-radius:var(--r);color:#fff}
+.mitja-cd .cd-label{margin-bottom:14px}
+.mitja-cd .cd-cell{background:rgba(225,29,42,.14);max-width:none}
+
+/* modalitats */
+.mod-grid{display:grid;grid-template-columns:1fr;gap:18px}
+.mod-card{background:#fff;border:1px solid #e6eaf0;border-radius:var(--r);padding:28px 24px;position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s}
+.mod-card::after{content:"";position:absolute;left:24px;right:24px;bottom:22px;height:3px;width:0;background:var(--gold);transition:width .4s var(--ease)}
+.mod-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:rgba(12,42,77,.25)}
+.mod-card:hover::after{width:48px}
+.mod-km{font-family:"Archivo";font-weight:900;font-size:50px;color:var(--navy);line-height:1;letter-spacing:-.04em}
+.mod-card h3{font-size:18px;font-weight:800;margin:12px 0 4px;text-transform:uppercase;color:var(--navy)}
+.mod-card .meters{font-size:13.5px;color:#6b7682}
+.mod-card .price-row{margin-top:18px;padding-top:16px;border-top:1px solid #eef1f5}
+.mod-card .price{font-family:"Archivo";font-weight:900;font-size:26px;color:var(--charcoal)}
+.mod-card .price small{display:block;font-family:"Inter";font-weight:500;font-size:12.5px;color:#6b7682;margin-top:3px}
+.mod-card .start{margin-top:12px;font-size:13px;color:#54616f;display:flex;align-items:center;gap:7px}
+.mod-card .start svg{width:15px;height:15px;color:var(--navy)}
+
+/* specials */
+.specials{margin-top:18px;background:var(--navy);color:#fff;border-radius:var(--r);padding:26px 26px;display:grid;grid-template-columns:1fr;gap:14px}
+.specials .s-head{display:flex;align-items:center;gap:12px}
+.specials .s-badge{width:44px;height:44px;border-radius:12px;background:rgba(255,196,46,.16);display:grid;place-items:center;flex:none}
+.specials .s-badge svg{width:23px;height:23px;color:var(--gold)}
+.specials h3{font-family:"Archivo";font-weight:800;font-size:20px;text-transform:uppercase}
+.specials h3 small{display:block;font-family:"Inter";font-weight:500;font-size:12px;letter-spacing:.04em;color:var(--gold);text-transform:none;margin-top:2px}
+.specials p{font-size:14px;color:rgba(255,255,255,.8)}
+.specials .s-facts{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13.5px}
+.specials .s-facts b{color:#fff;font-family:"Archivo"}
+.specials .s-facts span{color:rgba(255,255,255,.65)}
+
+/* serveis */
+.serveis-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.servei{display:flex;align-items:center;gap:11px;font-size:14.5px;color:#3c4654}
+.servei svg{width:19px;height:19px;color:var(--navy);flex:none}
+
+/* recorregut amb selector */
+.rec{background:var(--off);border-radius:18px;padding:clamp(22px,4vw,34px)}
+.rec-tabs{display:inline-flex;background:#fff;border:1px solid #e6eaf0;border-radius:999px;padding:5px;margin-bottom:24px;gap:4px}
+.rec-tab{background:transparent;border:0;font-family:"Archivo";font-weight:800;font-size:15px;color:#5d6975;padding:14px 24px;border-radius:999px;cursor:pointer;transition:all .25s var(--ease);letter-spacing:.02em}
+.rec-tab:hover:not(.active){color:var(--navy)}
+.rec-tab.active{background:var(--navy);color:#fff}
+.rec-grid{display:grid;grid-template-columns:1fr;gap:26px;align-items:start}
+.rec-map{position:relative;border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid #e6eaf0;aspect-ratio:1134/1153}
+.rec-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0;transition:opacity .55s var(--ease)}
+.rec-img.active{opacity:1}
+.rec-info h3{font-family:"Archivo";font-weight:800;font-size:22px;color:var(--navy);text-transform:uppercase;margin-bottom:18px}
+.rec-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}
+.rec-stat{background:#fff;border:1px solid #e6eaf0;border-radius:12px;padding:16px 12px;text-align:center}
+.rec-stat .k{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:#8a96a4;font-family:"Archivo";font-weight:700;margin-bottom:8px}
+.rec-stat b{font-family:"Archivo";font-weight:900;font-size:clamp(18px,3.4vw,24px);color:var(--navy);letter-spacing:-.02em}
+.rec-note{font-size:14px;color:#54616f;display:flex;flex-direction:column;gap:12px}
+.rec-note div{display:flex;gap:10px;align-items:flex-start}
+.rec-note svg{width:18px;height:18px;color:var(--navy);flex:none;margin-top:2px}
+
+.mitja-foot{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.mitja-note{font-size:13.5px;color:#6b7682}
+.mitja-note b{color:var(--red);font-family:"Archivo";font-weight:700}
+.ig-mitja-top{position:relative;display:inline-flex;align-items:center;gap:10px;margin-top:20px;color:var(--gold);font-family:"Archivo";font-weight:700;font-size:14.5px;padding-bottom:4px;border-bottom:1.5px solid rgba(255,196,46,.45);transition:border-color .25s,color .25s}
+.ig-mitja-top:hover{color:#fff;border-color:var(--gold)}
+.ig-mitja-top svg{width:19px;height:19px;flex:none;transition:transform .3s var(--ease)}
+.ig-mitja-top:hover svg{transform:scale(1.12)}
+.ig-mitja-top .handle{color:rgba(255,255,255,.72);font-weight:600;font-family:"Inter";font-size:13.5px}
+
+/* =========================================================
+   ACTIVITATS
+   ========================================================= */
+.act-grid{display:grid;grid-template-columns:1fr;gap:26px}
+.act-card{background:#fff;border:1px solid #e9edf2;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.act-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-md)}
+.act-img{height:clamp(200px,30vw,300px);position:relative;overflow:hidden;background:#0c2a4d}
+.act-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.act-card:hover .act-img img{transform:scale(1.06)}
+.act-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,28,51,.12),rgba(8,28,51,.5))}
+.act-img .tag{position:absolute;z-index:2;left:12px;bottom:10px;font-size:9px;letter-spacing:.08em;color:rgba(255,255,255,.5);text-transform:uppercase;font-family:"Archivo";font-weight:600}
+.act-a1{background:linear-gradient(150deg,#0c2a4d,#081c33)}
+.act-a2{background:linear-gradient(150deg,#143b69,#0c2a4d)}
+.act-a3{background:linear-gradient(150deg,#0f335c,#0a2647)}
+.act-a4{background:linear-gradient(150deg,#0c2a4d,#10355f)}
+.act-body{padding:28px 28px 34px;position:relative}
+.act-body::after{content:"";position:absolute;left:28px;bottom:20px;height:3px;width:0;background:var(--gold);transition:width .35s var(--ease)}
+.act-card:hover .act-body::after{width:46px}
+.act-body h3{font-family:"Archivo";font-weight:800;font-size:clamp(21px,2.6vw,26px);color:var(--navy);margin-bottom:10px}
+.act-body p{font-size:15.5px;color:#54616f;max-width:42ch}
+
+/* =========================================================
+   FES-TE SOCI
+   ========================================================= */
+.soci{background:var(--navy);color:#fff;overflow:hidden}
+.soci-grid{display:grid;grid-template-columns:1fr;gap:42px;align-items:center}
+.soci h1{font-weight:900;font-size:clamp(34px,6vw,58px);text-transform:uppercase;margin-bottom:18px;color:#fff;line-height:1.02;letter-spacing:-.02em}
+.soci h1 em{color:var(--gold);font-style:normal}
+.soci-lead{font-size:18px;color:rgba(255,255,255,.85);margin-bottom:30px;max-width:42ch}
+.benefits{display:flex;flex-direction:column;gap:16px;margin-bottom:8px}
+.benefit{display:flex;align-items:center;gap:14px;font-size:16px}
+.benefit .chk{width:30px;height:30px;border-radius:50%;background:rgba(255,196,46,.16);display:grid;place-items:center;flex:none}
+.benefit .chk svg{width:16px;height:16px;color:var(--gold)}
+.soci-card{background:linear-gradient(165deg,#0f335c,#081c33);border:1px solid rgba(255,196,46,.25);border-radius:18px;padding:38px 34px;text-align:center;box-shadow:var(--shadow-lg)}
+.soci-card .k{font-family:"Archivo";font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:var(--gold);margin-bottom:16px}
+.soci-card .quota{font-family:"Archivo";font-weight:900;font-size:30px;color:#fff;line-height:1.1;margin-bottom:6px}
+.soci-card .quota span{color:var(--gold)}
+.soci-card .sep{height:1px;background:rgba(255,255,255,.12);margin:26px 0}
+.soci-card p{font-size:14px;color:rgba(255,255,255,.72);margin-bottom:24px}
+
+/* =========================================================
+   PATROCINADORS
+   ========================================================= */
+.patro-main{display:flex;justify-content:center;margin-bottom:34px}
+.patro-main .logo-main{width:min(500px,100%);min-height:266px;border-radius:var(--r);background:#fff;border:2px solid var(--navy);display:grid;place-items:center;text-align:center;position:relative;padding:38px}
+.patro-main .logo-main img{max-height:172px;max-width:100%;width:auto;object-fit:contain}
+.patro-main .logo-main b{font-family:"Archivo";font-weight:900;font-size:28px;color:var(--navy);letter-spacing:-.01em}
+.patro-main .logo-main .tag{position:absolute;top:13px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-family:"Archivo";font-weight:700}
+.patro-row{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:44px}
+.logo{min-height:100px;border-radius:12px;background:#fff;display:grid;place-items:center;color:#8a96a4;font-family:"Archivo";font-weight:700;font-size:14px;text-align:center;padding:18px;border:1px solid #e6eaf0;transition:all .25s var(--ease)}
+.logo:hover{border-color:var(--navy);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.logo img{max-height:62px;width:auto}
+.logo .collab{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:700}
+.patro-cta{background:var(--navy-deep);border-radius:18px;padding:42px 34px;text-align:center;color:#fff}
+.patro-cta h3{font-family:"Archivo";font-weight:900;font-size:clamp(24px,4vw,38px);text-transform:uppercase;margin-bottom:10px}
+.patro-cta h3 em{color:var(--gold);font-style:normal}
+.patro-cta p{color:rgba(255,255,255,.75);font-size:16px;margin-bottom:24px;max-width:46ch;margin-inline:auto}
+
+/* =========================================================
+   CONTACTE
+   ========================================================= */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:22px}
+.contact-card{background:#fff;border:1px solid #e9edf2;border-radius:var(--r);padding:32px 28px;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.contact-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+.contact-card .ic{width:48px;height:48px;border-radius:12px;background:var(--off);display:grid;place-items:center;color:var(--navy);margin-bottom:18px}
+.contact-card .ic svg{width:23px;height:23px}
+.contact-card .k{font-family:"Archivo";font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:#8a96a4;margin-bottom:8px}
+.contact-card a,.contact-card p{font-family:"Archivo";font-weight:800;font-size:18px;color:var(--navy);word-break:break-word}
+.contact-card a:hover{color:var(--red)}
+.contact-card.contact-card a.sub,.contact-card .sub{display:block;font-family:"Inter";font-weight:500;font-size:14px;color:#54616f;margin-top:6px}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer{background:#060f1c;color:rgba(255,255,255,.7);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:36px;margin-bottom:40px}
+.footer .brand{color:#fff;margin-bottom:16px}
+.footer .brand img{width:52px;height:52px}
+.footer-col h4{font-family:"Archivo";font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--gold);margin-bottom:18px}
+.footer-col a,.footer-col p{display:block;font-size:14.5px;color:rgba(255,255,255,.72);margin-bottom:11px;transition:color .2s;text-align:left}
+.footer-col a:hover{color:var(--gold)}
+.socials{display:flex;gap:12px;margin-top:6px}
+.socials a{width:44px;height:44px;border-radius:11px;background:rgba(255,255,255,.06);display:grid;place-items:center;color:#fff;transition:all .25s var(--ease)}
+.socials a:hover{background:var(--gold);color:var(--navy);transform:translateY(-3px)}
+.socials svg{width:20px;height:20px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;flex-direction:column;gap:10px;font-size:13px;color:rgba(255,255,255,.45)}
+
+/* =========================================================
+   WIDGET AGENT IA
+   ========================================================= */
+.chat-fab{position:fixed;right:22px;bottom:22px;z-index:200;width:62px;height:62px;border-radius:50%;border:0;cursor:pointer;background:var(--navy);color:var(--gold);display:grid;place-items:center;box-shadow:0 14px 34px rgba(8,28,51,.4);transition:transform .3s var(--ease)}
+.chat-fab svg{width:27px;height:27px}
+.chat-fab:hover{transform:scale(1.07)}
+.chat-fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--gold);animation:fabpulse 2.4s ease-out infinite}
+@keyframes fabpulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+.chat-panel{position:fixed;right:22px;bottom:96px;z-index:200;width:min(360px,calc(100vw - 36px));max-height:min(560px,calc(100vh - 130px));background:#fff;border-radius:18px;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;overflow:hidden;transform:translateY(20px) scale(.96);opacity:0;pointer-events:none;transform-origin:bottom right;transition:transform .3s var(--ease),opacity .3s var(--ease)}
+.chat-panel.open{transform:none;opacity:1;pointer-events:auto}
+.chat-head{background:var(--navy);color:#fff;padding:18px 20px;display:flex;align-items:center;gap:13px}
+.chat-head .ava{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 50% 35%,#143b69,var(--navy-deep));border:2px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-family:"Archivo";font-weight:900;flex:none}
+.chat-head b{font-family:"Archivo";font-weight:800;font-size:15px;display:block}
+.chat-head span{font-size:12px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:6px}
+.chat-head .on{width:7px;height:7px;border-radius:50%;background:#3ad07a;display:inline-block}
+.chat-head .x{margin-left:auto;background:none;border:0;color:rgba(255,255,255,.7);cursor:pointer;padding:4px}
+.chat-head .x svg{width:20px;height:20px}
+.chat-body{flex:1;overflow-y:auto;padding:20px;background:var(--off);display:flex;flex-direction:column;gap:12px}
+.bubble{max-width:84%;padding:12px 15px;border-radius:16px;font-size:14px;line-height:1.5;animation:bubbleIn .35s var(--ease)}
+@keyframes bubbleIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.bubble.bot{background:#fff;color:var(--charcoal);border-bottom-left-radius:5px;box-shadow:var(--shadow-sm);align-self:flex-start}
+.bubble.user{background:var(--navy);color:#fff;border-bottom-right-radius:5px;align-self:flex-end}
+.bubble b{color:var(--navy)}
+.bubble.user b{color:var(--gold)}
+.chat-faqs{padding:14px;background:#fff;border-top:1px solid #eceff3;display:flex;flex-wrap:wrap;gap:8px}
+.faq-btn{background:var(--off);border:1px solid #e2e7ee;color:var(--navy);font-family:"Inter";font-weight:600;font-size:13px;padding:14px 16px;border-radius:999px;cursor:pointer;transition:all .2s}
+.faq-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.chat-disc{font-size:10.5px;color:#9aa6b3;text-align:center;padding:8px;background:#fff}
+.typing{display:flex;gap:4px;padding:14px 16px;background:#fff;border-radius:16px;border-bottom-left-radius:5px;width:fit-content;box-shadow:var(--shadow-sm)}
+.typing span{width:7px;height:7px;border-radius:50%;background:#c2ccd8;animation:typing 1.2s infinite}
+.typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+@keyframes typing{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}
+
+/* =========================================================
+   BREAKPOINTS
+   ========================================================= */
+@media(min-width:640px){
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .serveis-grid{grid-template-columns:repeat(3,1fr)}
+  .mod-grid{grid-template-columns:repeat(3,1fr)}
+  .act-grid{grid-template-columns:repeat(2,1fr)}
+  .patro-row{grid-template-columns:repeat(4,1fr)}
+  .access{grid-template-columns:repeat(2,1fr)}
+  .mitja-meta{grid-template-columns:repeat(2,1fr)}
+  .specials{grid-template-columns:auto 1fr;align-items:center}
+  .specials .s-facts{grid-column:1/-1}
+  .contact-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:900px){
+  .nav{display:flex}
+  .burger{display:none}
+  .club-grid{grid-template-columns:.85fr 1.15fr}
+  .soci-grid{grid-template-columns:1.1fr .9fr}
+  .act-grid{grid-template-columns:repeat(2,1fr)}
+  .junta-grid{grid-template-columns:1.05fr .95fr}
+  .rec-grid{grid-template-columns:1.05fr .95fr}
+  .footer-grid{grid-template-columns:1.4fr 1fr 1fr 1.2fr}
+}
+@media(max-width:899px){
+  .header .btn-red{display:none}
+}
+/* nav en una sola línia: només a partir d'amplada suficient; per sota, hamburguesa */
+@media(max-width:1099px){
+  .nav{display:none!important}
+  .burger{display:grid!important}
+  .header .btn-red{display:none}
+}
+
+/* =========================================================
+   FEED · GALERIA · LIGHTBOX · PATROCINADORS NIVELLS
+   ========================================================= */
+/* feed comunitat */
+.feed{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:48px}
+.feed figure{position:relative;margin:0;border-radius:12px;overflow:hidden;aspect-ratio:1/1;cursor:pointer;background:#0c2a4d}
+.feed img{width:100%;height:100%;object-fit:cover;transition:transform .55s var(--ease)}
+.feed figure:hover img{transform:scale(1.07)}
+.feed figcaption{position:absolute;inset:auto 0 0 0;padding:16px 14px 12px;background:linear-gradient(0deg,rgba(8,28,51,.85),transparent);color:#fff;font-family:"Archivo";font-weight:700;font-size:12px;letter-spacing:.01em;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+.feed figure:hover figcaption{opacity:1;transform:none}
+
+/* fotos d'edicions a La Mitja */
+.mitja-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:8px 0 6px}
+.mitja-gallery figure{position:relative;margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3;cursor:pointer;background:#0c2a4d}
+.mitja-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .55s var(--ease)}
+.mitja-gallery figure:hover img{transform:scale(1.06)}
+
+/* galeria masonry */
+.gal-grid{column-count:1;column-gap:14px}
+.gal-item{break-inside:avoid;margin:0 0 14px;position:relative;border-radius:12px;overflow:hidden;cursor:pointer;background:#0c2a4d;display:block}
+.gal-item img{width:100%;height:auto;display:block;transition:transform .55s var(--ease)}
+.gal-item:hover img{transform:scale(1.05)}
+.gal-item figcaption{position:absolute;inset:auto 0 0 0;padding:18px 14px 13px;background:linear-gradient(0deg,rgba(8,28,51,.86),transparent);color:#fff;font-family:"Archivo";font-weight:700;font-size:12.5px;opacity:0;transition:opacity .3s}
+.gal-item:hover figcaption{opacity:1}
+@media(min-width:600px){.gal-grid{column-count:2}}
+@media(min-width:980px){.gal-grid{column-count:3}}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:300;background:rgba(8,28,51,.93);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s var(--ease);padding:20px}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox img#lbImg{max-width:92vw;max-height:82vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb-btn{position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;cursor:pointer;transition:background .2s,transform .2s}
+.lb-btn:hover{background:var(--gold);color:var(--navy)}
+.lb-btn svg{width:24px;height:24px}
+.lb-prev{left:18px;top:50%;transform:translateY(-50%)}
+.lb-next{right:18px;top:50%;transform:translateY(-50%)}
+.lb-close{top:18px;right:18px;width:46px;height:46px}
+.lb-count{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.8);font-family:"Archivo";font-weight:700;font-size:13px;letter-spacing:.1em}
+@media(max-width:600px){.lb-prev{left:8px}.lb-next{right:8px}.lb-btn{width:46px;height:46px}}
+
+/* patrocinadors · nivells */
+.patro-tier{margin-bottom:46px}
+.patro-tier-h{text-align:center;font-family:"Archivo";font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:#8a96a4;margin-bottom:22px}
+.patro-collab{display:grid;grid-template-columns:1fr;gap:18px}
+.logo-collab{min-height:120px;border-radius:var(--r);background:#fff;border:1px solid #e6eaf0;display:grid;place-items:center;padding:24px;text-align:center;transition:all .25s var(--ease)}
+.logo-collab:hover{border-color:var(--navy);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.logo-collab img{max-height:72px;max-width:100%;width:auto;object-fit:contain}
+.logo-collab b{font-family:"Archivo";font-weight:800;font-size:18px;color:var(--navy)}
+@media(min-width:700px){.patro-collab{grid-template-columns:repeat(2,1fr)}.feed{grid-template-columns:repeat(4,1fr)}}
+
+/* =========================================================
+   PORTADA AMB FOTO · JUNTA · VÍDEO PROMOCIONAL · CTA EMAIL
+   ========================================================= */
+/* page-intro amb fotografia de fons */
+.page-intro.with-photo{padding-top:calc(150px + 4vw);padding-bottom:clamp(70px,10vw,120px);text-align:center}
+.page-intro.with-photo h1{max-width:22ch;margin-inline:auto}
+.page-intro.with-photo .container > p{margin-inline:auto}
+.page-intro .intro-photo{position:absolute;inset:0;z-index:0;overflow:hidden}
+.page-intro .intro-photo img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.page-intro .intro-photo::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,28,51,.66) 0%,rgba(8,28,51,.5) 45%,rgba(8,28,51,.82) 100%)}
+.page-intro.with-photo .container{position:relative;z-index:2}
+.intro-credit{position:absolute;z-index:2;right:14px;bottom:10px;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);font-family:"Archivo";font-weight:600}
+
+/* junta directiva */
+.junta{background:var(--off)}
+.junta-grid{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
+.junta-photo{position:relative;border-radius:var(--r);overflow:hidden;background:#0c2a4d;box-shadow:var(--shadow-md);aspect-ratio:3/2}
+.junta-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.junta-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(8,28,51,.16),rgba(8,28,51,.02) 50%,rgba(8,28,51,.22))}
+.junta-body p{font-size:16.5px;color:#3c4654;max-width:46ch}
+.junta-body p + p{margin-top:14px}
+
+/* vídeo promocional 9:16 */
+.video-sec{background:var(--navy-deep);color:#fff;overflow:hidden}
+.video-wrap{max-width:400px;margin:0 auto}
+.video-frame{position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#081c33;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.1)}
+.video-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#081c33}
+.video-poster{position:absolute;inset:0;z-index:2;display:grid;place-items:center;cursor:pointer;border:0;padding:0;width:100%;background:transparent}
+.video-poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,28,51,.34),rgba(8,28,51,.62))}
+.video-poster.hidden{display:none}
+.play-btn{position:relative;z-index:3;width:82px;height:82px;border-radius:50%;background:rgba(255,255,255,.14);border:2px solid var(--gold);display:grid;place-items:center;color:var(--gold);transition:transform .3s var(--ease),background .3s}
+.video-poster:hover .play-btn{transform:scale(1.08);background:rgba(255,196,46,.22)}
+.play-btn svg{width:30px;height:30px;margin-left:4px}
+.video-soon{position:absolute;z-index:3;bottom:24px;left:0;right:0;text-align:center;font-family:"Archivo";font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.video-foot{text-align:center;margin-top:22px}
+.ig-link{display:inline-flex;align-items:center;gap:9px;color:rgba(255,255,255,.82);font-family:"Archivo";font-weight:700;font-size:14.5px;border-bottom:1px solid rgba(255,255,255,.24);padding-bottom:3px;transition:color .25s,border-color .25s}
+.ig-link:hover{color:var(--gold);border-color:var(--gold)}
+.ig-link svg{width:17px;height:17px}
+
+/* CTA amb correu visible */
+.cta-mail{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cta-mail.center{align-items:center}
+.mail-hint{font-size:13px;color:#6b7682}
+.mail-hint a{color:var(--navy);font-weight:600;border-bottom:1px solid rgba(12,42,77,.3)}
+.mail-hint a:hover{color:var(--red);border-color:var(--red)}
+.soci-card .mail-hint{color:rgba(255,255,255,.62)}
+.soci-card .mail-hint a{color:var(--gold);border-color:rgba(255,196,46,.4)}
+.soci-card .mail-hint a:hover{color:#fff;border-color:#fff}
+.train-cta{margin-top:16px}
+
+/* card d'activitat clicable + fitxa de detall */
+a.act-card{display:block;color:inherit}
+.act-more{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:"Archivo";font-weight:800;font-size:14px;color:var(--navy);transition:gap .25s var(--ease),color .25s}
+.act-more svg{width:16px;height:16px}
+a.act-card:hover .act-more{gap:14px;color:var(--red)}
+.back-link{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.82);font-family:"Archivo";font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:18px;transition:color .25s;position:relative;z-index:2}
+.back-link:hover{color:var(--gold)}
+.back-link svg{width:15px;height:15px}
+.detail-lead{font-size:clamp(17px,2.2vw,20px);color:#3c4654;max-width:62ch;margin:0 auto 14px;text-align:center}
+.info-grid{display:grid;grid-template-columns:1fr;gap:18px;margin:46px 0}
+.info-card{background:#fff;border:1px solid #e6eaf0;border-radius:var(--r);padding:26px 24px;box-shadow:var(--shadow-sm)}
+.info-card h3{font-family:"Archivo";font-weight:800;font-size:16.5px;text-transform:uppercase;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.info-card h3 svg{width:19px;height:19px;color:var(--gold);flex:none}
+.info-card p{font-size:15px;color:#54616f}
+.info-card ul{display:flex;flex-direction:column;gap:9px;margin-top:2px}
+.info-card li{display:flex;gap:9px;font-size:15px;color:#54616f}
+.info-card li::before{content:"•";color:var(--gold);font-weight:900;flex:none}
+.info-card b{color:var(--navy)}
+.act-gallery{display:grid;grid-template-columns:1fr;gap:18px;margin-top:12px}
+.act-gallery figure{position:relative;margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:3/2;cursor:pointer;background:#0c2a4d;box-shadow:var(--shadow-sm)}
+.act-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .55s var(--ease)}
+.act-gallery figure:hover img{transform:scale(1.05)}
+.detail-foot{text-align:center;margin-top:44px}
+@media(min-width:700px){
+  .info-grid{grid-template-columns:repeat(2,1fr)}
+  .act-gallery{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1000px){.act-gallery{grid-template-columns:repeat(3,1fr)}}
+
+/* =========================================================
+   PREFERS-REDUCED-MOTION
+   ========================================================= */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .hero-title .word,.hero-club,.hero-ctas,.cd-wrap,.hero-reminder,.hero-soci-link{opacity:1!important;transform:none!important}
+  .startline span{transform:scaleX(1)!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .ticker-track{animation:none!important}
+  .view.active{animation:none!important}
+}
+</style>
+</head>
+
+<body class="loading">
+
+<!-- ============================== PANTALLA DE CÀRREGA ============================== -->
+<div class="loader" id="loader" role="status" aria-label="Carregant">
+  <!-- Escut oficial del club -->
+  <img fetchpriority="high" decoding="async" width="320" height="353" class="loader-escut" src="img/escut-club.webp" alt="Escut del Club Esportiu Runners Vila-Seca">
+  <p class="loader-word">Vila-Seca</p>
+  <p class="loader-sub">Runners · CERV</p>
+  <div class="loader-bar">
+    <div class="loader-fill" id="loaderFill"></div>
+    <div class="loader-runner" id="loaderRunner" aria-hidden="true">
+      <svg viewBox="0 0 44 48" fill="none">
+        <circle cx="27" cy="8" r="5" fill="currentColor"/>
+        <path class="pose" d="M24 15 L18 28"/>
+        <g class="p1">
+          <path class="pose" d="M18 28 L28 33 L27 43"/>
+          <path class="pose" d="M18 28 L9 33 L11 42"/>
+          <path class="pose" d="M23 18 L32 21 L30 28"/>
+          <path class="pose" d="M23 18 L14 16 L10 21"/>
+        </g>
+        <g class="p2">
+          <path class="pose" d="M18 28 L24 37 L23 45"/>
+          <path class="pose" d="M18 28 L11 30 L5 37"/>
+          <path class="pose" d="M23 18 L30 14 L34 20"/>
+          <path class="pose" d="M23 18 L15 21 L12 28"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- splash / fallback per a la versió autocontinguda -->
+
+
+<!-- ============================== HEADER ============================== -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a class="brand" href="#/inici" aria-label="Inici — Club Esportiu Runners Vila-Seca">
+      <!-- Escut oficial del club -->
+      <img decoding="async" loading="lazy" width="320" height="353" src="img/escut-club.webp" alt="Escut del Club Esportiu Runners Vila-Seca">
+      <span class="brand-text">
+        <b>Runners Vila-Seca</b>
+        <span>Club Esportiu</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Navegació principal">
+      <a href="#/inici" data-route="inici" data-i18n="nav_inici">Inici</a>
+      <a href="#/club" data-route="club" data-i18n="nav_club">El Club</a>
+      <a href="#/la-mitja" data-route="la-mitja" data-i18n="nav_mitja">La Mitja</a>
+      <a href="#/activitats" data-route="activitats" data-i18n="nav_act">Activitats</a>
+      <a href="#/galeria" data-route="galeria" data-i18n="nav_galeria">Galeria</a>
+      <a href="#/soci" data-route="soci" data-i18n="nav_soci">Fes-te soci</a>
+      <a href="#/patrocinadors" data-route="patrocinadors" data-i18n="nav_patro">Patrocinadors</a>
+      <a href="#/contacte" data-route="contacte" data-i18n="nav_contacte">Contacte</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang" role="group" aria-label="Idioma / Idioma">
+        <button data-lang="ca" class="active" aria-pressed="true">CA</button>
+        <button data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <a class="btn btn-red" href="https://www.runatica.com/event/mitja-marato-vila-seca-2026" target="_blank" rel="noopener" data-i18n="cta_inscriu">Inscriu-te</a>
+      <button class="burger" id="burger" aria-label="Obrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- mòbil drawer -->
+<div class="scrim" id="scrim"></div>
+<nav class="mobile-nav" id="mobileNav" aria-label="Navegació mòbil">
+  <a href="#/inici" data-route="inici" data-i18n="nav_inici">Inici</a>
+  <a href="#/club" data-route="club" data-i18n="nav_club">El Club</a>
+  <a href="#/la-mitja" data-route="la-mitja" data-i18n="nav_mitja">La Mitja</a>
+  <a href="#/activitats" data-route="activitats" data-i18n="nav_act">Activitats</a>
+  <a href="#/galeria" data-route="galeria" data-i18n="nav_galeria">Galeria</a>
+  <a href="#/soci" data-route="soci" data-i18n="nav_soci">Fes-te soci</a>
+  <a href="#/patrocinadors" data-route="patrocinadors" data-i18n="nav_patro">Patrocinadors</a>
+  <a href="#/contacte" data-route="contacte" data-i18n="nav_contacte">Contacte</a>
+  <a class="btn btn-red" style="margin-top:18px" href="https://www.runatica.com/event/mitja-marato-vila-seca-2026" target="_blank" rel="noopener" data-i18n="cta_inscriu_mitja">Inscriu-te a la V Mitja</a>
+</nav>
+
+<main id="app">
+
+<!-- ============================== VISTA · INICI ============================== -->
+<section class="view active" id="view-inici" data-screen-label="Inici">
+
+  <!-- HERO -->
+  <div class="hero" id="hero">
+    <div class="hero-bg-wrap" aria-hidden="true"><div class="hero-bg" id="heroBg"></div></div>
+    <span class="hero-photo-tag" aria-hidden="true">[ Foto real · sortida de la Mitja Marató ]</span>
+    <div class="container hero-inner">
+      <p class="hero-club" data-i18n="hero_club">Club Esportiu Runners Vila-Seca</p>
+      <h1 class="hero-title">
+        <span class="line"><span class="word" data-i18n="hero_t1">V Escardó Mitja Marató</span></span>
+        <span class="line"><span class="word accent" data-i18n="hero_t2">18 d'octubre de 2026</span></span>
+      </h1>
+      <div class="startline" aria-hidden="true"><span></span></div>
+
+      <div class="cd-wrap">
+        <p class="cd-label"><span class="cd-dot" aria-hidden="true"></span><span data-i18n="cd_label">Compte enrere per a la sortida</span></p>
+        <div class="countdown countdown-hero" role="timer" aria-label="Compte enrere fins a la Mitja">
+          <div class="cd-cell"><span class="cd-num" data-cd="d">00</span><span class="cd-unit" data-i18n="u_dies">dies</span></div>
+          <div class="cd-cell"><span class="cd-num" data-cd="h">00</span><span class="cd-unit" data-i18n="u_hores">hores</span></div>
+          <div class="cd-cell"><span class="cd-num" data-cd="m">00</span><span class="cd-unit" data-i18n="u_min">minuts</span></div>
+          <div class="cd-cell"><span class="cd-num" data-cd="s">00</span><span class="cd-unit" data-i18n="u_seg">segons</span></div>
+        </div>
+      </div>
+
+      <div class="hero-ctas">
+        <a class="btn btn-red btn-hero" href="https://www.runatica.com/event/mitja-marato-vila-seca-2026" target="_blank" rel="noopener" data-i18n="cta_inscriu_mitja">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          Inscriu-te a la V Mitja
+        </a>
+        <p class="hero-reminder" data-i18n="hero_reminder">Places limitades a 2.500 participants · Tarifa 1 fins al 31 d'agost · des de 11,60€</p>
+        <a class="hero-soci-link cta-soci" href="mailto:somoscerv@gmail.com" data-i18n="hero_soci_link">Prova un entrenament →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
+  <!-- ACCESSOS DESTACATS -->
+  <section class="sec">
+    <div class="container">
+      <div class="access">
+        <a class="access-card access-mitja reveal" href="#/la-mitja">
+          <p class="eyebrow" data-i18n="acc_mitja_k">L'esdeveniment de l'any</p>
+          <h3 data-i18n="acc_mitja_t">V Escardó Mitja Marató</h3>
+          <p data-i18n="acc_mitja_p">18 d'octubre 2026. 21K, 10K i 5K pels carrers de Vila-Seca. Tota la informació i inscripcions.</p>
+          <span class="access-link" data-i18n="acc_mitja_cta">Veure la cursa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="access-card access-soci reveal d1" href="#/soci">
+          <p class="eyebrow" data-i18n="acc_soci_k">Uneix-te al club</p>
+          <h3 data-i18n="acc_soci_t">Fes-te soci</h3>
+          <p data-i18n="acc_soci_p">Entrenos dirigits, grups per nivell i una comunitat que t'espera cada setmana. No corris sol.</p>
+          <span class="access-link" data-i18n="acc_soci_cta">Coneix els avantatges <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VÍDEO PROMOCIONAL DE LA MITJA -->
+  <section class="sec video-sec">
+    <div class="container">
+      <div class="sec-head center reveal" style="margin-bottom:38px">
+        <p class="eyebrow" style="color:var(--gold)" data-i18n="v_eyebrow">El vídeo de la cursa</p>
+        <h2 style="color:#fff" data-i18n="v_h">Viu la Mitja</h2>
+        <p style="color:rgba(255,255,255,.78)" data-i18n="v_lead">Un minut i entendràs per què 2.500 persones volen ser aquí el 18 d'octubre.</p>
+      </div>
+      <div class="video-wrap reveal d1">
+        <div class="video-frame">
+          <!-- VÍDEO PROMOCIONAL: substituir data-src per l'arxiu del reel (video/mitja-promo.mp4) i es reproduirà aquí -->
+          <video id="promoVideo" controls playsinline preload="none" poster="img/mitja-sortida-800.webp" data-src=""></video>
+          <button class="video-poster" id="videoPoster" aria-label="Reproduir el vídeo promocional de la Mitja">
+            <span class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="video-soon" id="videoSoon" data-i18n="v_soon">Vídeo promocional</span>
+          </button>
+        </div>
+        <div class="video-foot">
+          <a class="ig-link" href="https://www.instagram.com/reel/DQHuXutDILa/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span data-i18n="v_ig">Veure a Instagram</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMUNITAT -->
+  <section class="sec comunitat">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <p class="eyebrow" data-i18n="com_eyebrow">La comunitat CERV</p>
+        <h2 data-i18n="com_h">Un estil de vida, una família</h2>
+      </div>
+      <div class="stats">
+        <div class="stat reveal"><div class="stat-num"><span class="count" data-target="5" data-suffix="a">0</span></div><div class="stat-label" data-i18n="st_edicio">edició de la Mitja</div></div>
+        <div class="stat reveal d1"><div class="stat-num"><span class="count" data-target="2500" data-prefix="fins a ">0</span></div><div class="stat-label" data-i18n="st_dorsals">dorsals disponibles</div></div>
+        <div class="stat reveal d2"><div class="stat-num"><span class="count" data-target="1850" data-prefix="+">0</span></div><div class="stat-label" data-i18n="st_seg">seguidors a Instagram</div></div>
+        <div class="stat reveal d3"><div class="stat-num"><span class="count" data-target="2">0</span><span class="suf">/setm.</span></div><div class="stat-label" data-i18n="st_entrenos">entrenos en grup</div></div>
+      </div>
+      <div class="feed reveal d1">
+        <figure class="lb" data-group="feed"><img decoding="async" width="1280" height="853" src="img/meta-tres-corredores-800.webp" srcset="img/meta-tres-corredores-800.webp 800w, img/meta-tres-corredores-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Tres corredores arribant a meta de la mà" loading="lazy"><figcaption data-i18n="cap_finish">Arribada a meta</figcaption></figure>
+        <figure class="lb" data-group="feed"><img decoding="async" width="1280" height="1920" src="img/meta-parella-800.webp" srcset="img/meta-parella-800.webp 800w, img/meta-parella-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Parella de corredors a meta" loading="lazy"><figcaption data-i18n="cap_finish">Arribada a meta</figcaption></figure>
+        <figure class="lb" data-group="feed"><img decoding="async" width="1280" height="1920" src="img/cursa-esprint-final-800.webp" srcset="img/cursa-esprint-final-800.webp 800w, img/cursa-esprint-final-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Esprint final cap a meta" loading="lazy"><figcaption data-i18n="cap_run">En cursa</figcaption></figure>
+        <figure class="lb" data-group="feed"><img decoding="async" width="1280" height="1920" src="img/meta-corredora-celebrant-800.webp" srcset="img/meta-corredora-celebrant-800.webp 800w, img/meta-corredora-celebrant-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Corredora celebrant l'arribada" loading="lazy"><figcaption data-i18n="cap_finish">Arribada a meta</figcaption></figure>
+        <figure class="lb" data-group="feed"><img decoding="async" width="1280" height="1920" src="img/meta-dues-corredores-800.webp" srcset="img/meta-dues-corredores-800.webp 800w, img/meta-dues-corredores-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Dues corredores creuant la meta" loading="lazy"><figcaption data-i18n="cap_finish">Arribada a meta</figcaption></figure>
+        <figure class="lb" data-group="feed"><img decoding="async" width="1280" height="1920" src="img/meta-celebracio-800.webp" srcset="img/meta-celebracio-800.webp 800w, img/meta-celebracio-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Celebració a l'arribada" loading="lazy"><figcaption data-i18n="cap_celebrate">Celebració</figcaption></figure>
+        <figure class="lb" data-group="feed"><img decoding="async" width="1280" height="1920" src="img/cursa-ultima-recta-800.webp" srcset="img/cursa-ultima-recta-800.webp 800w, img/cursa-ultima-recta-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Corredora en l'última recta" loading="lazy"><figcaption data-i18n="cap_run">En cursa</figcaption></figure>
+        <figure class="lb" data-group="feed"><img decoding="async" width="1280" height="1920" src="img/sortida-speaker-800.webp" srcset="img/sortida-speaker-800.webp 800w, img/sortida-speaker-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Speaker animant la sortida" loading="lazy"><figcaption data-i18n="cap_start">Sortida</figcaption></figure>
+      </div>
+      <div class="comunitat-cta reveal d2">
+        <a class="btn btn-outline-navy" href="#/club" data-i18n="com_cta">Coneix el club</a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================== VISTA · EL CLUB ============================== -->
+<section class="view" id="view-club" data-screen-label="El Club">
+  <div class="page-intro with-photo">
+    <!-- FOTO REAL B: 6è aniversari del club, globus i lletres CERV -->
+    <div class="intro-photo" aria-hidden="true"><img decoding="async" loading="lazy" width="1280" height="960" src="img/aniversari-cerv-800.webp" srcset="img/aniversari-cerv-800.webp 800w, img/aniversari-cerv-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt=""></div>
+    <span class="intro-credit" aria-hidden="true">6è aniversari del CERV</span>
+    <div class="container">
+      <p class="eyebrow" data-i18n="c_eyebrow">Qui som</p>
+      <h1 data-i18n="c_h">Més que córrer. Pertànyer.</h1>
+      <p data-i18n="c_intro">Un club de Vila-Seca obert a tothom, de la primera sortida a la marató.</p>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="container">
+      <div class="club-grid">
+        <div class="club-photo reveal">
+          <!-- FOTO REAL E: grup del club entrenant per un camí de terra -->
+          <img decoding="async" loading="lazy" width="1280" height="880" src="img/entreno-cami-800.webp" srcset="img/entreno-cami-800.webp 800w, img/entreno-cami-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Grup de corredors del club entrenant junts per un camí de terra">
+        </div>
+        <div class="reveal d1">
+          <p class="club-welcome" data-i18n="c_welcome">El <b>Club Esportiu Runners Vila-Seca</b> és un club esportiu sense ànim de lucre, compromès amb la promoció de l'esport i del running en particular, que vol comptar amb el suport d'una important massa social i fer-la partícip dels seus objectius. Les nostres premisses són clares: vocació i estima cap a un esport que ha ajudat en la formació personal i esportiva d'un gran col·lectiu de persones.</p>
+          <div class="values">
+            <div class="value">
+              <span class="value-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+              <div><b data-i18n="c_v1_t">Comunitat</b><p data-i18n="c_v1_p">Corredors de tots els nivells, units per la mateixa passió.</p></div>
+            </div>
+            <div class="value">
+              <span class="value-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4"/><circle cx="12" cy="12" r="3"/></svg></span>
+              <div><b data-i18n="c_v2_t">Constància</b><p data-i18n="c_v2_p">Entrenos dirigits i grups per nivell perquè no t'aturis mai.</p></div>
+            </div>
+            <div class="value">
+              <span class="value-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg></span>
+              <div><b data-i18n="c_v3_t">Compromís</b><p data-i18n="c_v3_p">Curses solidàries i projectes amb el poble de Vila-Seca.</p></div>
+            </div>
+          </div>
+          <div class="club-extra">
+            <div class="train-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <div>
+                <b data-i18n="c_train_t">Entrenos: dilluns i dimecres de 19 a 20h</b>
+                <span data-i18n="c_train_p">a Piscines Vila-Seca</span>
+                <div class="train-cta">
+                  <a class="btn btn-gold cta-soci" style="padding:12px 20px;font-size:14.5px" href="mailto:somoscerv@gmail.com" data-i18n="cta_prova">Prova un entrenament</a>
+                </div>
+              </div>
+            </div>
+            <div class="liga-box">
+              <span class="b" data-i18n="c_liga_b">Lliga CERV</span>
+              <span data-i18n="c_liga_p">Equips de 5 a 10 persones competint per quilòmetres i reptes durant la temporada.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JUNTA DIRECTIVA -->
+  <section class="sec junta">
+    <div class="container">
+      <div class="junta-grid">
+        <div class="junta-photo reveal">
+          <!-- FOTO REAL G: la junta directiva davant el photocall de l'Ajuntament -->
+          <img decoding="async" loading="lazy" width="1280" height="845" src="img/junta-directiva-800.webp" srcset="img/junta-directiva-800.webp 800w, img/junta-directiva-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Els cinc membres de la junta directiva del club davant el photocall de l'Ajuntament de Vila-Seca">
+        </div>
+        <div class="junta-body reveal d1">
+          <p class="eyebrow" style="color:var(--red)" data-i18n="j_eyebrow">L'equip que ho fa possible</p>
+          <h2 style="font-weight:900;font-size:clamp(28px,4.4vw,44px);text-transform:uppercase;color:var(--navy);margin:14px 0 18px" data-i18n="j_h">La Junta Directiva</h2>
+          <p data-i18n="j_p1">Darrere de cada entreno, cada cursa i cada dorsal hi ha un equip de voluntaris que hi dedica el seu temps lliure.</p>
+          <p data-i18n="j_p2">Són els que organitzen la Mitja, munten la Nit a la Vila i fan que el club sigui una família. Si tens una idea o vols donar un cop de mà, parla amb qualsevol d'ells.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================== VISTA · LA MITJA ============================== -->
+<section class="view" id="view-mitja" data-screen-label="La Mitja">
+  <div class="page-intro mitja">
+    <div class="container">
+      <div class="mitja-logo-row">
+        <!-- Logotip oficial de la cursa -->
+        <img decoding="async" loading="lazy" width="160" height="84" src="img/logo-mitja.avif" alt="Logotip de la Mitja Marató de Vila-Seca">
+      </div>
+      <p class="eyebrow" data-i18n="m_eyebrow">L'esdeveniment de l'any</p>
+      <h1 data-i18n="m_h">V Escardó Mitja Marató de <span class="nb">Vila-Seca</span></h1>
+      <p data-i18n="m_lead">Una cursa amb ànima de poble i nivell de gran ciutat. Accepta el repte pels carrers de Vila-Seca.</p>
+      <a class="ig-mitja-top" href="https://www.instagram.com/mitja_vilaseca/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-i18n="m_ig_t">Segueix la Mitja a Instagram</span>
+        <span class="handle">@mitja_vilaseca</span>
+      </a>
+    </div>
+  </div>
+
+  <section class="sec mitja">
+    <div class="container">
+
+      <!-- info clau -->
+      <div class="mitja-meta reveal">
+        <div class="mm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <div><b data-i18n="m_data_k">Data i hora</b><span data-i18n="m_data_v">Diumenge 18 d'octubre de 2026 · 09:30h</span></div>
+        </div>
+        <div class="mm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <!-- PENDIENTE confirmar nº: 26 o 28 -->
+          <div><b data-i18n="m_lloc_k">Sortida i meta · Zona 0</b><span data-i18n="m_lloc_v">Complex Esportiu de Vila-Seca · Av. de l'Alcalde Pere Molas</span></div>
+        </div>
+      </div>
+
+      <!-- fotos d'edicions anteriors -->
+      <div class="mitja-gallery reveal">
+        <figure class="lb" data-group="mitja"><img decoding="async" width="1280" height="853" src="img/mitja-sortida-public-800.webp" srcset="img/mitja-sortida-public-800.webp 800w, img/mitja-sortida-public-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Sortida de la cursa amb el públic animant" loading="lazy"></figure>
+        <figure class="lb" data-group="mitja"><img decoding="async" width="1280" height="853" src="img/meta-tres-corredores-800.webp" srcset="img/meta-tres-corredores-800.webp 800w, img/meta-tres-corredores-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Corredores arribant a meta" loading="lazy"></figure>
+        <figure class="lb" data-group="mitja"><img decoding="async" width="1280" height="1920" src="img/recollida-dorsals-21k-800.webp" srcset="img/recollida-dorsals-21k-800.webp 800w, img/recollida-dorsals-21k-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Recollida de dorsals 21K" loading="lazy"></figure>
+      </div>
+
+      <!-- countdown -->
+      <div class="mitja-cd reveal">
+        <p class="cd-label"><span class="cd-dot" aria-hidden="true"></span><span data-i18n="m_cd_label">Falta cada cop menys</span></p>
+        <div class="countdown" role="timer" aria-label="Compte enrere fins a la Mitja">
+          <div class="cd-cell"><span class="cd-num" data-cd="d">00</span><span class="cd-unit" data-i18n="u_dies">dies</span></div>
+          <div class="cd-cell"><span class="cd-num" data-cd="h">00</span><span class="cd-unit" data-i18n="u_hores">hores</span></div>
+          <div class="cd-cell"><span class="cd-num" data-cd="m">00</span><span class="cd-unit" data-i18n="u_min">minuts</span></div>
+          <div class="cd-cell"><span class="cd-num" data-cd="s">00</span><span class="cd-unit" data-i18n="u_seg">segons</span></div>
+        </div>
+      </div>
+
+      <!-- modalitats -->
+      <div class="sec-head reveal" style="margin:60px 0 28px">
+        <p class="eyebrow" data-i18n="m_mod_k">Tria la teva distància</p>
+        <h2 data-i18n="m_mod_h">Modalitats i preus</h2>
+      </div>
+      <div class="mod-grid">
+        <div class="mod-card reveal">
+          <div class="mod-km">21K</div>
+          <h3 data-i18n="d_21_t">Mitja Marató</h3>
+          <p class="meters">21,097 km · <span data-i18n="d_certif">recorregut certificat</span></p>
+          <div class="price-row">
+            <div class="price">21,60€</div>
+            <small data-i18n="d_21_note">21€ + 0,60€ de gestió · Tarifa 1 fins 31/08/2026</small>
+          </div>
+          <div class="start"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="d_start_0930">Sortida 09:30h</span></div>
+        </div>
+        <div class="mod-card reveal d1">
+          <div class="mod-km">10K</div>
+          <h3 data-i18n="d_10_t">Cursa 10K</h3>
+          <p class="meters">10 km</p>
+          <div class="price-row">
+            <div class="price">15,60€</div>
+            <small data-i18n="d_10_note">15€ + 0,60€ de gestió · Tarifa 1 fins 31/08/2026</small>
+          </div>
+          <div class="start"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="d_start_0930">Sortida 09:30h</span></div>
+        </div>
+        <div class="mod-card reveal d2">
+          <div class="mod-km">5K</div>
+          <h3 data-i18n="d_5_t">Cursa 5K</h3>
+          <p class="meters">5 km</p>
+          <div class="price-row">
+            <div class="price">11,60€</div>
+            <small data-i18n="d_5_note">11€ + 0,60€ de gestió · Tarifa 1 fins 31/08/2026</small>
+          </div>
+          <div class="start"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="d_start_0930">Sortida 09:30h</span></div>
+        </div>
+      </div>
+
+      <!-- specials -->
+      <div class="specials reveal">
+        <div class="s-head">
+          <span class="s-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg></span>
+          <h3 data-i18n="spec_t">Cursa Specials 600 m<small data-i18n="spec_sub">Una cursa per a tothom</small></h3>
+        </div>
+        <p data-i18n="spec_p">Cursa inclusiva i adaptada per a persones amb diversitat funcional, discapacitat intel·lectual, visual o mobilitat reduïda. Perquè córrer és de tots.</p>
+        <div class="s-facts">
+          <span><b>2,60€</b> · <span data-i18n="spec_price_note">2€ + 0,60€ gestió</span></span>
+          <span><b data-i18n="spec_start">Sortida 12:00h</b></span>
+          <span data-i18n="spec_insc">Inscripció fins al 8 d'octubre</span>
+        </div>
+      </div>
+
+      <!-- serveis -->
+      <div class="sec-head reveal" style="margin:60px 0 28px">
+        <p class="eyebrow" data-i18n="m_serv_k">Tot inclòs amb el teu dorsal</p>
+        <h2 data-i18n="m_serv_h">Serveis al corredor</h2>
+      </div>
+      <div class="serveis-grid reveal">
+        <div class="servei"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span data-i18n="srv_1">Avituallament</span></div>
+        <div class="servei"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span data-i18n="srv_2">Cronometratge per xip</span></div>
+        <div class="servei"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span data-i18n="srv_3">Dutxes i vestidors</span></div>
+        <div class="servei"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span data-i18n="srv_4">Guarda-roba</span></div>
+        <div class="servei"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span data-i18n="srv_5">Assegurança</span></div>
+        <div class="servei"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span data-i18n="srv_6">Ambulància</span></div>
+        <div class="servei"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span data-i18n="srv_7">Obsequi del corredor</span></div>
+      </div>
+
+      <!-- recorregut amb selector -->
+      <div class="sec-head reveal" style="margin:60px 0 28px">
+        <p class="eyebrow" data-i18n="rec_k">Coneix on corres</p>
+        <h2 data-i18n="rec_h">El recorregut</h2>
+        <p data-i18n="rec_p">Tres distàncies, un mateix escenari: el cor de Vila-Seca i el seu entorn fins a la costa. Tria la modalitat per veure el seu mapa i desnivell.</p>
+      </div>
+      <div class="rec reveal">
+        <div class="rec-tabs" role="tablist" aria-label="Modalitat del recorregut">
+          <button class="rec-tab active" data-mod="21k" role="tab" aria-selected="true">21K</button>
+          <button class="rec-tab" data-mod="10k" role="tab" aria-selected="false">10K</button>
+          <button class="rec-tab" data-mod="5k" role="tab" aria-selected="false">5K</button>
+        </div>
+        <div class="rec-grid">
+          <div class="rec-map">
+            <img decoding="async" loading="lazy" width="1124" height="1160" class="rec-img active" data-mod="21k" src="img/mapa-21k.webp" alt="Mapa del recorregut de la Mitja Marató 21K per Vila-Seca, La Pineda i la costa">
+            <img decoding="async" loading="lazy" width="1122" height="1164" class="rec-img" data-mod="10k" src="img/mapa-10k.webp" alt="Mapa del recorregut de la cursa 10K per Vila-Seca">
+            <img decoding="async" loading="lazy" width="1134" height="1153" class="rec-img" data-mod="5k" src="img/mapa-5k.webp" alt="Mapa del recorregut de la cursa 5K pel nucli de Vila-Seca">
+          </div>
+          <div class="rec-info">
+            <h3 data-rec="title" data-i18n="rec_title_21k">Mitja Marató · 21K</h3>
+            <div class="rec-stats">
+              <div class="rec-stat"><span class="k" data-i18n="rec_dist_k">Distància</span><b data-rec="dist">21,097 km</b></div>
+              <div class="rec-stat"><span class="k" data-i18n="rec_desn_k">Desnivell</span><b data-rec="desn">115 m</b></div>
+              <div class="rec-stat"><span class="k" data-i18n="rec_hora_k">Sortida</span><b data-rec="hora">09:30 h</b></div>
+            </div>
+            <div class="rec-note">
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="rec_note_1">Sortida i meta a la Zona 0, Complex Esportiu de Vila-Seca.</span></div>
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg><span data-i18n="rec_note_2">Avituallaments cada 5 km aproximadament.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA final -->
+      <div class="mitja-foot reveal" style="margin-top:50px">
+        <a class="btn btn-red btn-hero" href="https://www.runatica.com/event/mitja-marato-vila-seca-2026" target="_blank" rel="noopener" data-i18n="m_cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          Inscriu-te ara
+        </a>
+        <p class="mitja-note" data-i18n="m_note"><b>Inscripcions fins al 8 d'octubre</b> · límit 2.500 participants.</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================== VISTA · ACTIVITATS ============================== -->
+<section class="view" id="view-activitats" data-screen-label="Activitats">
+  <div class="page-intro">
+    <div class="container">
+      <p class="eyebrow" data-i18n="a_eyebrow">Tot l'any en moviment</p>
+      <h1 data-i18n="a_h">Activitats del club</h1>
+      <p data-i18n="a_lead">No tot són curses. El club viu durant tot l'any amb esport, solidaritat i molta gent.</p>
+    </div>
+  </div>
+  <section class="sec">
+    <div class="container">
+      <div class="act-grid">
+        <a class="act-card reveal" href="#/nit-a-la-vila">
+          <!-- FOTO REAL A: sortida nocturna sota l'arc amb llanternes i barretes lluminoses -->
+          <div class="act-img"><img decoding="async" width="1280" height="964" src="img/nit-a-la-vila-sortida-800.webp" srcset="img/nit-a-la-vila-sortida-800.webp 800w, img/nit-a-la-vila-sortida-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Participants de la Nit a la Vila sota l'arc de sortida amb llanternes i barretes lluminoses" loading="lazy"><span class="tag">[ Nit a la Vila ]</span></div>
+          <div class="act-body">
+            <h3 data-i18n="a1_t">Nit a la Vila</h3>
+            <p data-i18n="a1_p">Cursa solidària nocturna i familiar pels carrers il·luminats del nucli antic.</p>
+            <span class="act-more" data-i18n="act_more">Veure l'activitat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+        <a class="act-card reveal d1" href="#/social-run">
+          <div class="act-img"><img decoding="async" width="1280" height="1920" src="img/cursa-esprint-final-800.webp" srcset="img/cursa-esprint-final-800.webp 800w, img/cursa-esprint-final-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Grup del club corrent junts en una sortida social" loading="lazy"><span class="tag">[ Social Run ]</span></div>
+          <div class="act-body">
+            <h3 data-i18n="a4_t">Social Run</h3>
+            <p data-i18n="a4_p">Sortides relaxades de cap de setmana per gaudir, xerrar i fer pinya.</p>
+            <span class="act-more" data-i18n="act_more">Veure l'activitat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================== VISTA · NIT A LA VILA ============================== -->
+<section class="view" id="view-nit" data-screen-label="Nit a la Vila">
+  <div class="page-intro with-photo">
+    <div class="intro-photo" aria-hidden="true"><img decoding="async" loading="lazy" width="1280" height="964" src="img/nit-a-la-vila-sortida-800.webp" srcset="img/nit-a-la-vila-sortida-800.webp 800w, img/nit-a-la-vila-sortida-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt=""></div>
+    <div class="container">
+      <a class="back-link" href="#/activitats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg><span data-i18n="back_act">Activitats</span></a>
+      <p class="eyebrow" data-i18n="nv_eyebrow">18 de juliol de 2026 · 21:30h</p>
+      <h1 data-i18n="nv_h">IV Cursa Solidària Familiar Nit a la Vila</h1>
+      <p data-i18n="nv_sub">Una nit diferent amb els amics i la família, a benefici del banc d'aliments de Vila-Seca.</p>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="container">
+      <p class="detail-lead reveal" data-i18n="nv_p1">El proper <b>18 de juliol de 2026 a les 21:30h</b> vine amb nosaltres a la “IV Cursa Solidària Familiar Nit a la Vila”, organitzada pel Club Esportiu Runners Vila-Seca, a benefici del banc d'aliments de Vila-Seca.</p>
+      <p class="detail-lead reveal d1" data-i18n="nv_p2">Passa una nit diferent amb els teus amics i familiars: et divertiràs i descobriràs nous racons de la Torre d'en Dolça.</p>
+
+      <div class="info-grid">
+        <div class="info-card reveal">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg><span data-i18n="nv_how_k">Com?</span></h3>
+          <p data-i18n="nv_how_v">Forma un grup de <b>mínim 2 persones</b> (mínim 1 adult per equip), posa-li un nom a l'equip, prepara un frontal o una llanterna i vine amb ganes de córrer o caminar un recorregut d'uns <b>4 km</b>. No hi pensis més!</p>
+        </div>
+        <div class="info-card reveal d1">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="nv_when_k">Quan i on?</span></h3>
+          <p data-i18n="nv_when_v">Sortida el <b>18 de juliol de 2026</b> al <b>Parc dels Aragalls</b> de Vila-Seca, a les <b>21:30h</b>.</p>
+        </div>
+        <div class="info-card reveal d2">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg><span data-i18n="nv_dors_k">Recollida de dorsals</span></h3>
+          <p data-i18n="nv_dors_v">El <b>18 de juliol</b> (el mateix dia de la cursa) de <b>20:30 a 21:15h</b>, a la sortida de la cursa.</p>
+        </div>
+        <div class="info-card reveal d3">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span data-i18n="nv_insc_k">Inscripcions</span></h3>
+          <p style="margin-bottom:10px" data-i18n="nv_insc_v">Cal portar el dia de la cursa, per recollir el dorsal:</p>
+          <ul>
+            <li><span data-i18n="nv_insc_1"><b>2 kg d'aliments no peribles</b> per persona, a benefici del Banc d'Aliments de Vila-Seca.</span></li>
+            <li><span data-i18n="nv_insc_2"><b>2€ solidaris</b> per persona per a la Lliga contra el Càncer de les Comarques de Tarragona.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="act-gallery">
+        <figure class="lb reveal" data-group="nit"><img decoding="async" width="1280" height="964" src="img/nit-a-la-vila-sortida-800.webp" srcset="img/nit-a-la-vila-sortida-800.webp 800w, img/nit-a-la-vila-sortida-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Sortida nocturna de la Nit a la Vila sota l'arc, amb llanternes i barretes lluminoses" loading="lazy"></figure>
+        <figure class="lb reveal d1" data-group="nit"><img decoding="async" width="1280" height="960" src="img/nit-preparatius-parc-800.webp" srcset="img/nit-preparatius-parc-800.webp 800w, img/nit-preparatius-parc-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Participants i famílies preparant-se al parc abans de la sortida" loading="lazy"></figure>
+        <figure class="lb reveal d2" data-group="nit"><img decoding="async" width="1280" height="853" src="img/nit-familia-dorsals-800.webp" srcset="img/nit-familia-dorsals-800.webp 800w, img/nit-familia-dorsals-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Una família saltant d'alegria amb els dorsals de la cursa" loading="lazy"></figure>
+        <figure class="lb reveal" data-group="nit"><img decoding="async" width="1280" height="960" src="img/nit-equip-arc-800.webp" srcset="img/nit-equip-arc-800.webp 800w, img/nit-equip-arc-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Un equip participant posant sota l'arc de sortida de l'Ajuntament de Vila-Seca" loading="lazy"></figure>
+        <figure class="lb reveal d1" data-group="nit"><img decoding="async" width="1200" height="1600" src="img/nit-carpa-dorsals-800.webp" srcset="img/nit-carpa-dorsals-800.webp 800w, img/nit-carpa-dorsals-1280.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw" alt="Recollida de dorsals i barretes lluminoses a la carpa de la cursa" loading="lazy"></figure>
+        <figure class="lb reveal d2" data-group="nit"><img decoding="async" width="1280" height="1023" src="img/nit-voluntaris-tunel-800.webp" srcset="img/nit-voluntaris-tunel-800.webp 800w, img/nit-voluntaris-tunel-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Voluntaris del club amb els senyals dels circuits al túnel del recorregut" loading="lazy"></figure>
+        <figure class="lb reveal" data-group="nit"><img decoding="async" width="1280" height="964" src="img/nit-lliurament-premis-800.webp" srcset="img/nit-lliurament-premis-800.webp 800w, img/nit-lliurament-premis-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Lliurament de premis als més petits a la Nit a la Vila" loading="lazy"></figure>
+        <figure class="lb reveal d1" data-group="nit"><img decoding="async" width="1280" height="853" src="img/nit-lots-comercos-800.webp" srcset="img/nit-lots-comercos-800.webp 800w, img/nit-lots-comercos-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Lots i obsequis dels comerços locals per als equips guanyadors" loading="lazy"></figure>
+        <figure class="lb reveal d2" data-group="nit"><img decoding="async" width="1064" height="1600" src="img/voluntaries-diplomes-800.webp" srcset="img/voluntaries-diplomes-800.webp 800w, img/voluntaries-diplomes-1280.webp 1064w" sizes="(max-width: 768px) 100vw, 50vw" alt="Voluntàries del club preparant els diplomes de la Nit a la Vila" loading="lazy"></figure>
+        <figure class="lb reveal" data-group="nit"><img decoding="async" width="1200" height="1600" src="img/nit-banc-aliments-800.webp" srcset="img/nit-banc-aliments-800.webp 800w, img/nit-banc-aliments-1280.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw" alt="Lliurament dels aliments recollits al banc d'aliments de Vila-Seca" loading="lazy"></figure>
+        <figure class="lb reveal d1" data-group="nit"><img decoding="async" width="1236" height="1600" src="img/solidaritat-banderola-800.webp" srcset="img/solidaritat-banderola-800.webp 800w, img/solidaritat-banderola-1280.webp 1236w" sizes="(max-width: 768px) 100vw, 50vw" alt="Membres del club amb la banderola al lliurament solidari d'aliments" loading="lazy"></figure>
+      </div>
+
+      <div class="detail-foot reveal">
+        <div class="cta-mail center">
+          <!-- PENDIENTE: enllaç del formulari d'inscripció de la Nit a la Vila -->
+          <a class="btn btn-gold" href="mailto:somoscerv@gmail.com?subject=Inscripci%C3%B3%20Nit%20a%20la%20Vila%202026" data-i18n="nv_cta">Vull inscriure el meu equip</a>
+          <p class="mail-hint"><span data-i18n="nv_mail">Consultes a</span> <a href="mailto:somoscerv@gmail.com">somoscerv@gmail.com</a></p>
+          <p class="mail-hint" style="margin-top:6px" data-i18n="nv_aforament">Aforament màxim de 300 persones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================== VISTA · SOCIAL RUN ============================== -->
+<section class="view" id="view-social" data-screen-label="Social Run">
+  <div class="page-intro with-photo">
+    <div class="intro-photo" aria-hidden="true"><img decoding="async" loading="lazy" width="1280" height="880" src="img/entreno-cami-800.webp" srcset="img/entreno-cami-800.webp 800w, img/entreno-cami-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt=""></div>
+    <div class="container">
+      <a class="back-link" href="#/activitats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg><span data-i18n="back_act">Activitats</span></a>
+      <p class="eyebrow" data-i18n="sr_eyebrow">Cada cap de setmana</p>
+      <h1 data-i18n="sr_h">Social Run</h1>
+      <p data-i18n="sr_sub">Sortides relaxades per gaudir, xerrar i fer pinya. Sense cronòmetre.</p>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="container">
+      <p class="detail-lead reveal" data-i18n="sr_p1">El Social Run és la sortida més tranquil·la de la setmana: es corre a <b>ritme de conversa</b>, ningú es queda enrere i el més important passa després, quan ens quedem xerrant.</p>
+      <p class="detail-lead reveal d1" data-i18n="sr_p2">És el millor punt de partida si vols conèixer el club sense compromís: vine, corre amb nosaltres i decideix després.</p>
+
+      <div class="info-grid">
+        <div class="info-card reveal">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="sr_who_k">Per a qui?</span></h3>
+          <p data-i18n="sr_who_v">Per a <b>tots els nivells</b>, socis i no socis. Si fa poc que has començat, aquesta és la teva sortida.</p>
+        </div>
+        <div class="info-card reveal d1">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="sr_where_k">On i quan?</span></h3>
+          <!-- PENDIENTE confirmar dia i punt de trobada exacte del Social Run -->
+          <p data-i18n="sr_where_v">Sortides de cap de setmana per l'entorn de Vila-Seca i la Torre d'en Dolça. <b>Dia i punt de trobada</b>: els publiquem cada setmana a Instagram.</p>
+        </div>
+        <div class="info-card reveal d2">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span data-i18n="sr_bring_k">Què necessites?</span></h3>
+          <ul>
+            <li><span data-i18n="sr_bring_1">Roba còmoda i sabatilles de córrer.</span></li>
+            <li><span data-i18n="sr_bring_2">Aigua i ganes de conèixer gent.</span></li>
+            <li><span data-i18n="sr_bring_3">Res més: és gratuït i obert.</span></li>
+          </ul>
+        </div>
+        <div class="info-card reveal d3">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span data-i18n="sr_follow_k">On ho anunciem</span></h3>
+          <p data-i18n="sr_follow_v">Cada sortida es publica a l'Instagram del club: <a href="https://www.instagram.com/club_esportiu_runners_vilaseca/" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600">@club_esportiu_runners_vilaseca</a>.</p>
+        </div>
+      </div>
+
+      <div class="act-gallery">
+        <figure class="lb reveal" data-group="social"><img decoding="async" width="1280" height="880" src="img/entreno-cami-800.webp" srcset="img/entreno-cami-800.webp 800w, img/entreno-cami-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Grup del club corrent per un camí de terra a plena llum del dia" loading="lazy"></figure>
+        <figure class="lb reveal d1" data-group="social"><img decoding="async" width="1280" height="1920" src="img/cursa-esprint-final-800.webp" srcset="img/cursa-esprint-final-800.webp 800w, img/cursa-esprint-final-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Corredors del club en grup durant una sortida" loading="lazy"></figure>
+        <figure class="lb reveal d2" data-group="social"><img decoding="async" width="1280" height="482" src="img/cursa-panoramica-800.webp" srcset="img/cursa-panoramica-800.webp 800w, img/cursa-panoramica-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Equip de corredors del club posant junts" loading="lazy"></figure>
+        <figure class="lb reveal" data-group="social"><img decoding="async" width="1280" height="960" src="img/aniversari-cerv-800.webp" srcset="img/aniversari-cerv-800.webp 800w, img/aniversari-cerv-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Foto de grup del club amb globus del 6è aniversari" loading="lazy"></figure>
+      </div>
+
+      <div class="detail-foot reveal">
+        <div class="cta-mail center">
+          <a class="btn btn-gold cta-soci" href="mailto:somoscerv@gmail.com" data-i18n="cta_prova">Prova un entrenament</a>
+          <p class="mail-hint"><span data-i18n="mail_or">o escriu-nos a</span> <a href="mailto:somoscerv@gmail.com">somoscerv@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================== VISTA · GALERIA ============================== -->
+<section class="view" id="view-galeria" data-screen-label="Galeria">
+  <div class="page-intro">
+    <div class="container">
+      <p class="eyebrow" data-i18n="g_eyebrow">El club, en imatges</p>
+      <h1 data-i18n="g_h">Galeria</h1>
+      <p data-i18n="g_lead">Sortides, arribades, podis i molta gent. Així es viu la Mitja i el dia a dia del CERV.</p>
+    </div>
+  </div>
+  <section class="sec">
+    <div class="container">
+      <div class="gal-grid">
+        <figure class="gal-item lb reveal" data-group="galeria"><img decoding="async" width="1280" height="853" src="img/mitja-sortida-800.webp" srcset="img/mitja-sortida-800.webp 800w, img/mitja-sortida-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Sortida massiva de la Mitja Marató sota l'arc" loading="lazy"><figcaption data-i18n="cap_start">Sortida</figcaption></figure>
+        <figure class="gal-item lb reveal d1" data-group="galeria"><img decoding="async" width="1280" height="482" src="img/cursa-panoramica-800.webp" srcset="img/cursa-panoramica-800.webp 800w, img/cursa-panoramica-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Equip de corredors del club" loading="lazy"><figcaption data-i18n="cap_team">L'equip del club</figcaption></figure>
+        <figure class="gal-item lb reveal d2" data-group="galeria"><img decoding="async" width="1280" height="853" src="img/meta-tres-corredores-800.webp" srcset="img/meta-tres-corredores-800.webp 800w, img/meta-tres-corredores-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Tres corredores arribant a meta de la mà" loading="lazy"><figcaption data-i18n="cap_finish">Arribada a meta</figcaption></figure>
+        <figure class="gal-item lb reveal" data-group="galeria"><img decoding="async" width="1280" height="853" src="img/mitja-sortida-public-800.webp" srcset="img/mitja-sortida-public-800.webp 800w, img/mitja-sortida-public-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Sortida de la cursa amb el públic animant" loading="lazy"><figcaption data-i18n="cap_start">Sortida</figcaption></figure>
+        <figure class="gal-item lb reveal d1" data-group="galeria"><img decoding="async" width="1280" height="1920" src="img/cursa-esprint-final-800.webp" srcset="img/cursa-esprint-final-800.webp 800w, img/cursa-esprint-final-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Esprint final cap a meta" loading="lazy"><figcaption data-i18n="cap_run">En cursa</figcaption></figure>
+        <figure class="gal-item lb reveal d2" data-group="galeria"><img decoding="async" width="1280" height="1920" src="img/meta-parella-800.webp" srcset="img/meta-parella-800.webp 800w, img/meta-parella-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Parella de corredors a meta" loading="lazy"><figcaption data-i18n="cap_finish">Arribada a meta</figcaption></figure>
+        <figure class="gal-item lb reveal" data-group="galeria"><img decoding="async" width="1280" height="1920" src="img/meta-corredora-celebrant-800.webp" srcset="img/meta-corredora-celebrant-800.webp 800w, img/meta-corredora-celebrant-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Corredora celebrant l'arribada amb els braços enlaire" loading="lazy"><figcaption data-i18n="cap_finish">Arribada a meta</figcaption></figure>
+        <figure class="gal-item lb reveal d1" data-group="galeria"><img decoding="async" width="1280" height="1920" src="img/cursa-corredors-02-800.webp" srcset="img/cursa-corredors-02-800.webp 800w, img/cursa-corredors-02-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Podi de la Mitja Marató" loading="lazy"><figcaption data-i18n="cap_podium">Podi i premis</figcaption></figure>
+        <figure class="gal-item lb reveal d2" data-group="galeria"><img decoding="async" width="1280" height="1920" src="img/meta-dues-corredores-800.webp" srcset="img/meta-dues-corredores-800.webp 800w, img/meta-dues-corredores-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Dues corredores creuant la meta" loading="lazy"><figcaption data-i18n="cap_finish">Arribada a meta</figcaption></figure>
+        <figure class="gal-item lb reveal" data-group="galeria"><img decoding="async" width="1280" height="1920" src="img/meta-celebracio-800.webp" srcset="img/meta-celebracio-800.webp 800w, img/meta-celebracio-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Celebració a l'arribada" loading="lazy"><figcaption data-i18n="cap_celebrate">Celebració</figcaption></figure>
+        <figure class="gal-item lb reveal d1" data-group="galeria"><img decoding="async" width="1280" height="1920" src="img/cursa-ultima-recta-800.webp" srcset="img/cursa-ultima-recta-800.webp 800w, img/cursa-ultima-recta-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Corredora en l'última recta" loading="lazy"><figcaption data-i18n="cap_run">En cursa</figcaption></figure>
+        <figure class="gal-item lb reveal d2" data-group="galeria"><img decoding="async" width="1280" height="1920" src="img/cursa-meta-nocturna-800.webp" srcset="img/cursa-meta-nocturna-800.webp 800w, img/cursa-meta-nocturna-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Animació a la línia de meta" loading="lazy"><figcaption data-i18n="cap_celebrate">Celebració</figcaption></figure>
+        <figure class="gal-item lb reveal" data-group="galeria"><img decoding="async" width="1280" height="1920" src="img/sortida-speaker-800.webp" srcset="img/sortida-speaker-800.webp 800w, img/sortida-speaker-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Speaker animant la sortida" loading="lazy"><figcaption data-i18n="cap_start">Sortida</figcaption></figure>
+        <figure class="gal-item lb reveal d1" data-group="galeria"><img decoding="async" width="1280" height="1920" src="img/cursa-corredors-01-800.webp" srcset="img/cursa-corredors-01-800.webp 800w, img/cursa-corredors-01-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Lliurament de premis de la Mitja Marató" loading="lazy"><figcaption data-i18n="cap_podium">Podi i premis</figcaption></figure>
+        <figure class="gal-item lb reveal d2" data-group="galeria"><img decoding="async" width="1280" height="1920" src="img/recollida-dorsals-21k-800.webp" srcset="img/recollida-dorsals-21k-800.webp 800w, img/recollida-dorsals-21k-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Recollida de dorsals 21K" loading="lazy"><figcaption data-i18n="cap_dorsals">Recollida de dorsals</figcaption></figure>
+        <figure class="gal-item lb reveal" data-group="galeria"><img decoding="async" width="1280" height="1920" src="img/cursa-corredors-03-800.webp" srcset="img/cursa-corredors-03-800.webp 800w, img/cursa-corredors-03-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Voluntàries lliurant les bosses del corredor" loading="lazy"><figcaption data-i18n="cap_dorsals">Recollida de dorsals</figcaption></figure>
+        <figure class="gal-item lb reveal d1" data-group="galeria"><img decoding="async" width="1280" height="1920" src="img/cursa-corredors-04-800.webp" srcset="img/cursa-corredors-04-800.webp 800w, img/cursa-corredors-04-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Punt de recollida de dorsals 21K" loading="lazy"><figcaption data-i18n="cap_dorsals">Recollida de dorsals</figcaption></figure>
+        <figure class="gal-item lb reveal d2" data-group="galeria"><img decoding="async" width="1280" height="853" src="img/taula-inscripcions-800.webp" srcset="img/taula-inscripcions-800.webp 800w, img/taula-inscripcions-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Taula d'inscripcions i recollida de dorsals" loading="lazy"><figcaption data-i18n="cap_dorsals">Recollida de dorsals</figcaption></figure>
+        <figure class="gal-item lb reveal" data-group="galeria"><img decoding="async" width="1280" height="964" src="img/nit-lliurament-premis-800.webp" srcset="img/nit-lliurament-premis-800.webp 800w, img/nit-lliurament-premis-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Lliurament de premis als més petits amb una corredora del club" loading="lazy"><figcaption data-i18n="cap_podium">Podi i premis</figcaption></figure>
+        <figure class="gal-item lb reveal d1" data-group="galeria"><img decoding="async" width="1064" height="1600" src="img/voluntaries-diplomes-800.webp" srcset="img/voluntaries-diplomes-800.webp 800w, img/voluntaries-diplomes-1280.webp 1064w" sizes="(max-width: 768px) 100vw, 50vw" alt="Voluntàries del club preparant els diplomes de la Nit a la Vila" loading="lazy"><figcaption data-i18n="cap_volunteers">Voluntàries del club</figcaption></figure>
+        <figure class="gal-item lb reveal d2" data-group="galeria"><img decoding="async" width="1280" height="880" src="img/entreno-cami-800.webp" srcset="img/entreno-cami-800.webp 800w, img/entreno-cami-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Grup del club entrenant per un camí de terra" loading="lazy"><figcaption data-i18n="cap_training">Entreno del club</figcaption></figure>
+        <figure class="gal-item lb reveal" data-group="galeria"><img decoding="async" width="1236" height="1600" src="img/solidaritat-banderola-800.webp" srcset="img/solidaritat-banderola-800.webp 800w, img/solidaritat-banderola-1280.webp 1236w" sizes="(max-width: 768px) 100vw, 50vw" alt="Lliurament d'aliments recollits pel club amb la banderola del CERV" loading="lazy"><figcaption data-i18n="cap_solidarity">Acció solidària</figcaption></figure>
+        <figure class="gal-item lb reveal d1" data-group="galeria"><img decoding="async" width="1280" height="964" src="img/nit-a-la-vila-sortida-800.webp" srcset="img/nit-a-la-vila-sortida-800.webp 800w, img/nit-a-la-vila-sortida-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Sortida nocturna de la Nit a la Vila sota l'arc" loading="lazy"><figcaption data-i18n="cap_night">Nit a la Vila</figcaption></figure>
+        <figure class="gal-item lb reveal d2" data-group="galeria"><img decoding="async" width="1280" height="960" src="img/aniversari-cerv-800.webp" srcset="img/aniversari-cerv-800.webp 800w, img/aniversari-cerv-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="Foto de grup del 6è aniversari del club amb globus i lletres CERV" loading="lazy"><figcaption data-i18n="cap_anniv">6è aniversari</figcaption></figure>
+        <figure class="gal-item lb reveal" data-group="galeria"><img decoding="async" width="1280" height="845" src="img/junta-directiva-800.webp" srcset="img/junta-directiva-800.webp 800w, img/junta-directiva-1280.webp 1280w" sizes="(max-width: 768px) 100vw, 50vw" alt="La junta directiva del club davant el photocall de l'Ajuntament" loading="lazy"><figcaption data-i18n="cap_junta">La junta directiva</figcaption></figure>
+      </div>
+      <p style="text-align:center;color:#5d6975;font-size:12.5px;margin-top:28px" data-i18n="g_credit">Fotografies · MGabás Imatge · Mitja Marató Vila-Seca</p>
+    </div>
+  </section>
+</section>
+
+<!-- ============================== VISTA · FES-TE SOCI ============================== -->
+<section class="view" id="view-soci" data-screen-label="Fes-te soci">
+  <section class="sec soci">
+    <div class="container">
+      <div class="soci-grid">
+        <div class="reveal">
+          <h1 data-i18n="s_h">Cansat de córrer <em>sol?</em></h1>
+          <p class="soci-lead" data-i18n="s_lead">Al CERV no corres sol mai més. Troba el teu grup, el teu ritme i la teva gent.</p>
+          <div class="benefits">
+            <div class="benefit"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg></span><span data-i18n="s_b1">Entrenos dirigits per entrenadors del club</span></div>
+            <div class="benefit"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg></span><span data-i18n="s_b2">Grups per nivell: del primer dia a la marató</span></div>
+            <div class="benefit"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg></span><span data-i18n="s_b3">Una comunitat que t'espera cada setmana</span></div>
+          </div>
+          <div class="cta-mail">
+            <a class="btn btn-gold cta-soci" href="mailto:somoscerv@gmail.com" data-i18n="cta_prova">Prova un entrenament</a>
+            <p class="mail-hint" style="color:rgba(255,255,255,.62)"><span data-i18n="mail_or">o escriu-nos a</span> <a href="mailto:somoscerv@gmail.com" style="color:var(--gold);border-color:rgba(255,196,46,.4)">somoscerv@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="soci-card reveal d1">
+          <p class="k" data-i18n="s_card_k">Fes-te soci del CERV</p>
+          <!-- PENDIENTE cuota socio -->
+          <div class="quota" data-i18n="s_quota">Quota: <span>a confirmar</span></div>
+          <div class="sep" aria-hidden="true"></div>
+          <p data-i18n="s_card_p">El primer entrenament és gratis. Vine, prova'l i decideix després. Sense compromís.</p>
+          <div class="cta-mail center">
+            <a class="btn btn-gold cta-soci" style="width:100%" href="mailto:somoscerv@gmail.com" data-i18n="cta_prova">Prova un entrenament</a>
+            <p class="mail-hint"><span data-i18n="mail_or">o escriu-nos a</span> <a href="mailto:somoscerv@gmail.com">somoscerv@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================== VISTA · PATROCINADORS ============================== -->
+<section class="view" id="view-patro" data-screen-label="Patrocinadors">
+  <div class="page-intro">
+    <div class="container">
+      <p class="eyebrow" data-i18n="p_eyebrow">Amb el suport de</p>
+      <h1 data-i18n="p_h">Patrocinadors i col·laboradors</h1>
+      <p data-i18n="p_lead">Gràcies a qui fa possible la Mitja i el dia a dia del club.</p>
+    </div>
+  </div>
+  <section class="sec">
+    <div class="container">
+      <!-- NIVELL 1 · Patrocinador principal -->
+      <div class="patro-tier reveal">
+        <p class="patro-tier-h" data-i18n="p_tier_main">Patrocinador principal</p>
+        <div class="patro-main">
+          <div class="logo-main">
+            <img decoding="async" loading="lazy" width="560" height="731" src="img/logo-escardo.png" alt="Escardó Serveis">
+          </div>
+        </div>
+      </div>
+
+      <!-- NIVELL 2 · Col·laboradors institucionals -->
+      <div class="patro-tier reveal d1">
+        <p class="patro-tier-h" data-i18n="p_tier_collab">Col·laboradors institucionals</p>
+        <div class="patro-collab">
+          <div class="logo-collab"><img decoding="async" loading="lazy" width="240" height="160" src="img/logo-ajuntament.png" alt="Ajuntament de Vila-Seca"></div>
+          <div class="logo-collab"><img decoding="async" loading="lazy" width="1280" height="293" src="img/logo-diputacio.webp" alt="Diputació de Tarragona"></div>
+        </div>
+      </div>
+
+      <!-- NIVELL 3 · Patrocinadors i proveïdors -->
+      <div class="patro-tier reveal d2">
+        <p class="patro-tier-h" data-i18n="p_tier_sponsors">Patrocinadors i proveïdors</p>
+        <div class="patro-row">
+          <div class="logo" data-i18n="p_logo"><!-- LOGO patrocinador -->El teu logo aquí</div>
+          <div class="logo" data-i18n="p_logo"><!-- LOGO patrocinador -->El teu logo aquí</div>
+          <div class="logo" data-i18n="p_logo"><!-- LOGO patrocinador -->El teu logo aquí</div>
+          <div class="logo" data-i18n="p_logo"><!-- LOGO patrocinador -->El teu logo aquí</div>
+          <div class="logo" data-i18n="p_logo"><!-- LOGO patrocinador -->El teu logo aquí</div>
+          <div class="logo" data-i18n="p_logo"><!-- LOGO patrocinador -->El teu logo aquí</div>
+          <div class="logo" data-i18n="p_logo"><!-- LOGO patrocinador -->El teu logo aquí</div>
+          <div class="logo" data-i18n="p_logo"><!-- LOGO patrocinador -->El teu logo aquí</div>
+        </div>
+      </div>
+
+      <div class="patro-cta reveal d3">
+        <h3 data-i18n="p_cta_h">La teva marca davant <em>+2.000 corredors</em></h3>
+        <p data-i18n="p_cta_p">Vincula la teva empresa a l'esdeveniment esportiu de l'any a Vila-Seca.</p>
+        <a class="btn btn-gold" href="mailto:somoscerv@gmail.com?subject=Patrocini%20V%20Mitja%20Marat%C3%B3%20Vila-Seca" data-i18n="p_cta_btn">Vull ser patrocinador</a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============================== VISTA · CONTACTE ============================== -->
+<section class="view" id="view-contacte" data-screen-label="Contacte">
+  <div class="page-intro">
+    <div class="container">
+      <p class="eyebrow" data-i18n="ct_eyebrow">Parlem</p>
+      <h1 data-i18n="ct_h">Contacte</h1>
+      <p data-i18n="ct_lead">Tens dubtes sobre la Mitja o vols fer-te soci? Escriu-nos, som a prop.</p>
+    </div>
+  </div>
+  <section class="sec">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
+          <p class="k" data-i18n="ct_email_k">Correu</p>
+          <a href="mailto:somoscerv@gmail.com">somoscerv@gmail.com</a>
+          <span class="sub" data-i18n="ct_email_sub">Inscripcions, socis i patrocinis</span>
+        </div>
+        <div class="contact-card reveal d1">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+          <p class="k" data-i18n="ct_social_k">Xarxes socials</p>
+          <a href="https://www.instagram.com/club_esportiu_runners_vilaseca/" target="_blank" rel="noopener">@club_esportiu_runners_vilaseca</a>
+          <a class="sub" href="https://www.facebook.com/runnersekipvilaseca" target="_blank" rel="noopener">Facebook · Runners Vila-Seca</a>
+          <a class="sub" href="https://www.instagram.com/mitja_vilaseca/" target="_blank" rel="noopener" data-i18n="ct_ig_mitja">@mitja_vilaseca · perfil oficial de la Mitja</a>
+        </div>
+        <div class="contact-card reveal d2">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <p class="k" data-i18n="ct_loc_k">On som</p>
+          <p data-i18n="ct_loc_v">Vila-Seca</p>
+          <span class="sub" data-i18n="ct_loc_sub">Tarragona · Costa Daurada</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#/inici">
+          <img decoding="async" loading="lazy" width="320" height="353" src="img/escut-club.webp" alt="Escut del Club Esportiu Runners Vila-Seca">
+          <span class="brand-text"><b>Runners Vila-Seca</b><span>Club Esportiu</span></span>
+        </a>
+        <p style="margin-top:16px;max-width:32ch" data-i18n="f_tag">Passió pel running des de Vila-Seca. Una família, un estil de vida.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/club_esportiu_runners_vilaseca/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/runnersekipvilaseca" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9V7c0-1 .5-1.5 1.5-1.5H17V2h-2.5C12 2 10.5 3.7 10.5 6.5V9H8v3.5h2.5V22H14v-9.5h2.6l.4-3.5H14Z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_nav">Navega</h4>
+        <a href="#/la-mitja" data-i18n="nav_mitja">La Mitja</a>
+        <a href="#/club" data-i18n="nav_club">El Club</a>
+        <a href="#/activitats" data-i18n="nav_act">Activitats</a>
+        <a href="#/soci" data-i18n="nav_soci">Fes-te soci</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_mitja">La Mitja</h4>
+        <p data-i18n="f_m1">18 d'octubre 2026 · 09:30h</p>
+        <p data-i18n="f_m2">Vila-Seca, Tarragona</p>
+        <a href="https://www.runatica.com/event/mitja-marato-vila-seca-2026" target="_blank" rel="noopener" data-i18n="f_m3">Inscripcions a Runatica →</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_contacte">Contacte</h4>
+        <a href="mailto:somoscerv@gmail.com">somoscerv@gmail.com</a>
+        <a class="cta-soci" href="mailto:somoscerv@gmail.com" data-i18n="cta_prova">Prova un entrenament</a>
+        <a href="https://www.instagram.com/club_esportiu_runners_vilaseca/" target="_blank" rel="noopener">@club_esportiu_runners_vilaseca</a>
+        <p data-i18n="f_loc">Vila-Seca · Tarragona</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Club Esportiu Runners Vila-Seca</span>
+      <span data-i18n="f_legal">Tots els drets reservats</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================== LIGHTBOX ============================== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Galeria de fotos" aria-modal="true">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Tancar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <img id="lbImg" alt="">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Següent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+  <span class="lb-count" id="lbCount"></span>
+</div>
+
+<!-- ============================== WIDGET AGENT IA ============================== -->
+<button class="chat-fab" id="chatFab" aria-label="Obrir assistent del club" aria-expanded="false">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.9 8.4 8.5 8.5 0 0 1-3.6-.8L3 21l1.9-5.5a8.38 8.38 0 0 1-.8-3.6A8.38 8.38 0 0 1 12.5 3a8.38 8.38 0 0 1 8.5 8.5Z"/></svg>
+</button>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Assistent del club CERV">
+  <div class="chat-head">
+    <div class="ava" aria-hidden="true">C</div>
+    <div>
+      <b>Assistent CERV</b>
+      <span><i class="on" aria-hidden="true"></i> <span data-i18n="chat_online">En línia · respon a l'instant</span></span>
+    </div>
+    <button class="x" id="chatClose" aria-label="Tancar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="chat-body" id="chatBody" aria-live="polite"></div>
+  <div class="chat-faqs" id="chatFaqs"></div>
+  <p class="chat-disc" data-i18n="chat_disc">Assistent virtual del club · respostes freqüents</p>
+</div>
+
+<script>
+/* =========================================================
+   0 · UTIL
+   ========================================================= */
+
+const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = (s,c=document)=>c.querySelector(s);
+const $$ = (s,c=document)=>[...c.querySelectorAll(s)];
+
+/* =========================================================
+   1 · I18N
+   ========================================================= */
+const I18N = {
+  nav_inici:["Inici","Inicio"], nav_club:["El Club","El Club"], nav_mitja:["La Mitja","La Media"],
+  nav_act:["Activitats","Actividades"], nav_soci:["Fes-te soci","Hazte socio"],
+  nav_patro:["Patrocinadors","Patrocinadores"], nav_contacte:["Contacte","Contacto"],
+  cta_inscriu:["Inscriu-te","Inscríbete"], cta_inscriu_mitja:["Inscriu-te a la V Mitja","Inscríbete a la V Media"],
+  cta_soci:["Fes-te soci","Hazte socio"],
+
+  hero_eyebrow:["Vila-Seca · Tarragona · des de 2020","Vila-Seca · Tarragona · desde 2020"],
+  hero_sub:["Passió pel running. Una família.","Pasión por el running. Una familia."],
+  cd_label:["Compte enrere per a la sortida","Cuenta atrás para la salida"],
+  u_dies:["dies","días"], u_hores:["hores","horas"], u_min:["minuts","minutos"], u_seg:["segons","segundos"],
+
+  acc_mitja_k:["L'esdeveniment de l'any","El evento del año"],
+  acc_mitja_t:["V Escardó Mitja Marató","V Escardó Media Maratón"],
+  acc_mitja_p:["18 d'octubre 2026. 21K, 10K i 5K pels carrers de Vila-Seca. Tota la informació i inscripcions.","18 de octubre 2026. 21K, 10K y 5K por las calles de Vila-Seca. Toda la información e inscripciones."],
+  acc_mitja_cta:['Veure la cursa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>','Ver la carrera <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'],
+  acc_soci_k:["Uneix-te al club","Únete al club"],
+  acc_soci_t:["Fes-te soci","Hazte socio"],
+  acc_soci_p:["Entrenos dirigits, grups per nivell i una comunitat que t'espera cada setmana. No corris sol.","Entrenos dirigidos, grupos por nivel y una comunidad que te espera cada semana. No corras solo."],
+  acc_soci_cta:['Coneix els avantatges <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>','Descubre las ventajas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'],
+
+  com_eyebrow:["La comunitat CERV","La comunidad CERV"],
+  com_h:["Un estil de vida, una família","Un estilo de vida, una familia"],
+  st_edicio:["edició de la Mitja","edición de la Media"], st_dorsals:["dorsals disponibles","dorsales disponibles"],
+  st_seg:["seguidors a Instagram","seguidores en Instagram"], st_entrenos:["entrenos en grup","entrenos en grupo"],
+  com_cta:["Coneix el club","Conoce el club"],
+
+  c_eyebrow:["Qui som","Quiénes somos"], c_h:["Més que córrer. Pertànyer.","Más que correr. Pertenecer."],
+  c_intro:["Un club de Vila-Seca obert a tothom, de la primera sortida a la marató.","Un club de Vila-Seca abierto a todos, de la primera salida a la maratón."],
+  c_welcome:["El <b>Club Esportiu Runners Vila-Seca</b> és un club esportiu sense ànim de lucre, compromès amb la promoció de l'esport i del running en particular, que vol comptar amb el suport d'una important massa social i fer-la partícip dels seus objectius. Les nostres premisses són clares: vocació i estima cap a un esport que ha ajudat en la formació personal i esportiva d'un gran col·lectiu de persones.","El <b>Club Esportiu Runners Vila-Seca</b> es un club deportivo sin ánimo de lucro, comprometido con la promoción del deporte y del running en particular, que quiere contar con el apoyo de una importante masa social y hacerla partícipe de sus objetivos. Nuestras premisas son claras: vocación y aprecio hacia un deporte que ha ayudado en la formación personal y deportiva de un gran colectivo de personas."],
+  c_v1_t:["Comunitat","Comunidad"], c_v1_p:["Corredors de tots els nivells, units per la mateixa passió.","Corredores de todos los niveles, unidos por la misma pasión."],
+  c_v2_t:["Constància","Constancia"], c_v2_p:["Entrenos dirigits i grups per nivell perquè no t'aturis mai.","Entrenos dirigidos y grupos por nivel para que no pares nunca."],
+  c_v3_t:["Compromís","Compromiso"], c_v3_p:["Curses solidàries i projectes amb el poble de Vila-Seca.","Carreras solidarias y proyectos con el pueblo de Vila-Seca."],
+  c_train_t:["Entrenos: dilluns i dimecres de 19 a 20h","Entrenos: lunes y miércoles de 19 a 20h"],
+  c_train_p:["a Piscines Vila-Seca","en Piscines Vila-Seca"],
+  c_liga_b:["Lliga CERV","Liga CERV"],
+  c_liga_p:["Equips de 5 a 10 persones competint per quilòmetres i reptes durant la temporada.","Equipos de 5 a 10 personas compitiendo por kilómetros y retos durante la temporada."],
+
+  m_eyebrow:["L'esdeveniment de l'any","El evento del año"],
+  m_h:['V Escardó Mitja Marató de\u00a0<span class="nb">Vila-Seca</span>','V Escardó Media Maratón de\u00a0<span class="nb">Vila-Seca</span>'],
+  m_lead:["Una cursa amb ànima de poble i nivell de gran ciutat. Accepta el repte pels carrers de Vila-Seca.","Una carrera con alma de pueblo y nivel de gran ciudad. Acepta el reto por las calles de Vila-Seca."],
+  m_data_k:["Data i hora","Fecha y hora"],
+  m_data_v:["Diumenge 18 d'octubre de 2026 · 09:30h","Domingo 18 de octubre de 2026 · 09:30h"],
+  m_lloc_k:["Sortida i meta · Zona 0","Salida y meta · Zona 0"],
+  m_lloc_v:["Complex Esportiu de Vila-Seca · Av. de l'Alcalde Pere Molas","Complejo Deportivo de Vila-Seca · Av. de l'Alcalde Pere Molas"],
+  m_cd_label:["Falta cada cop menys","Falta cada vez menos"],
+  m_mod_k:["Tria la teva distància","Elige tu distancia"], m_mod_h:["Modalitats i preus","Modalidades y precios"],
+  d_21_t:["Mitja Marató","Media Maratón"], d_10_t:["Cursa 10K","Carrera 10K"], d_5_t:["Cursa 5K","Carrera 5K"],
+  d_certif:["recorregut certificat","recorrido certificado"],
+  d_21_note:["21€ + 0,60€ de gestió · Tarifa 1 fins 31/08/2026","21€ + 0,60€ de gestión · Tarifa 1 hasta 31/08/2026"],
+  d_10_note:["15€ + 0,60€ de gestió · Tarifa 1 fins 31/08/2026","15€ + 0,60€ de gestión · Tarifa 1 hasta 31/08/2026"],
+  d_5_note:["11€ + 0,60€ de gestió · Tarifa 1 fins 31/08/2026","11€ + 0,60€ de gestión · Tarifa 1 hasta 31/08/2026"],
+  d_start_0930:["Sortida 09:30h","Salida 09:30h"],
+  spec_t:['Cursa Specials 600 m<small data-i18n="spec_sub">Una cursa per a tothom</small>','Carrera Specials 600 m<small data-i18n="spec_sub">Una carrera para todos</small>'],
+  spec_sub:["Una cursa per a tothom","Una carrera para todos"],
+  spec_p:["Cursa inclusiva i adaptada per a persones amb diversitat funcional, discapacitat intel·lectual, visual o mobilitat reduïda. Perquè córrer és de tots.","Carrera inclusiva y adaptada para personas con diversidad funcional, discapacidad intelectual, visual o movilidad reducida. Porque correr es de todos."],
+  spec_price_note:["2€ + 0,60€ gestió","2€ + 0,60€ gestión"],
+  spec_start:["Sortida 12:00h","Salida 12:00h"],
+  spec_insc:["Inscripció fins al 8 d'octubre","Inscripción hasta el 8 de octubre"],
+  m_serv_k:["Tot inclòs amb el teu dorsal","Todo incluido con tu dorsal"], m_serv_h:["Serveis al corredor","Servicios al corredor"],
+  srv_1:["Avituallament","Avituallamiento"], srv_2:["Cronometratge per xip","Cronometraje por chip"],
+  srv_3:["Dutxes i vestidors","Duchas y vestuarios"], srv_4:["Guarda-roba","Guardarropa"],
+  srv_5:["Assegurança","Seguro"], srv_6:["Ambulància","Ambulancia"], srv_7:["Obsequi del corredor","Obsequio del corredor"],
+  rec_k:["Coneix on corres","Conoce dónde corres"], rec_h:["El recorregut","El recorrido"],
+  rec_p:["Tres distàncies, un mateix escenari: el cor de Vila-Seca i el seu entorn fins a la costa. Tria la modalitat per veure el seu mapa i desnivell.","Tres distancias, un mismo escenario: el corazón de Vila-Seca y su entorno hasta la costa. Elige la modalidad para ver su mapa y desnivel."],
+  rec_dist_k:["Distància","Distancia"], rec_desn_k:["Desnivell","Desnivel"], rec_hora_k:["Sortida","Salida"],
+  rec_title_21k:["Mitja Marató · 21K","Media Maratón · 21K"],
+  rec_title_10k:["Cursa · 10K","Carrera · 10K"],
+  rec_title_5k:["Cursa · 5K","Carrera · 5K"],
+  rec_note_1:["Sortida i meta a la Zona 0, Complex Esportiu de Vila-Seca.","Salida y meta en la Zona 0, Complejo Deportivo de Vila-Seca."],
+  rec_note_2:["Avituallaments cada 5 km aproximadament.","Avituallamientos cada 5 km aproximadamente."],
+  m_cta:["Inscriu-te ara","Inscríbete ahora"],
+  m_note:["<b>Inscripcions fins al 8 d'octubre</b> · límit 2.500 participants.","<b>Inscripciones hasta el 8 de octubre</b> · límite 2.500 participantes."],
+
+  a_eyebrow:["Tot l'any en moviment","Todo el año en movimiento"], a_h:["Activitats del club","Actividades del club"],
+  a_lead:["No tot són curses. El club viu durant tot l'any amb esport, solidaritat i molta gent.","No todo son carreras. El club vive todo el año con deporte, solidaridad y mucha gente."],
+  a1_t:["Nit a la Vila","Nit a la Vila"], a1_p:["Cursa solidària nocturna i familiar pels carrers il·luminats del nucli antic.","Carrera solidaria nocturna y familiar por las calles iluminadas del casco antiguo."],
+  a4_t:["Social Run","Social Run"], a4_p:["Sortides relaxades de cap de setmana per gaudir, xerrar i fer pinya.","Salidas relajadas de fin de semana para disfrutar, charlar y hacer piña."],
+
+  s_h:['Cansat de córrer <em>sol?</em>','¿Cansado de correr <em>solo?</em>'],
+  s_lead:["Al CERV no corres sol mai més. Troba el teu grup, el teu ritme i la teva gent.","En el CERV no corres solo nunca más. Encuentra tu grupo, tu ritmo y tu gente."],
+  s_b1:["Entrenos dirigits per entrenadors del club","Entrenos dirigidos por entrenadores del club"],
+  s_b2:["Grups per nivell: del primer dia a la marató","Grupos por nivel: del primer día a la maratón"],
+  s_b3:["Una comunitat que t'espera cada setmana","Una comunidad que te espera cada semana"],
+  s_card_k:["Fes-te soci del CERV","Hazte socio del CERV"],
+  s_quota:["Quota: <span>a confirmar</span>","Cuota: <span>a confirmar</span>"],
+  s_card_p:["El primer entrenament és gratis. Vine, prova'l i decideix després. Sense compromís.","El primer entrenamiento es gratis. Ven, pruébalo y decide después. Sin compromiso."],
+  cta_prova:["Prova un entrenament","Prueba un entrenamiento"],
+  mail_or:["o escriu-nos a","o escríbenos a"],
+  act_more:['Veure l\'activitat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>','Ver la actividad <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'],
+  back_act:["Activitats","Actividades"],
+  m_ig_t:["Segueix la Mitja a Instagram","Sigue la Mitja en Instagram"],
+  m_ig_s:["@mitja_vilaseca · perfil oficial de la cursa","@mitja_vilaseca · perfil oficial de la carrera"],
+  ct_ig_mitja:["@mitja_vilaseca · perfil oficial de la Mitja","@mitja_vilaseca · perfil oficial de la Mitja"],
+
+  nv_eyebrow:["18 de juliol de 2026 · 21:30h","18 de julio de 2026 · 21:30h"],
+  nv_h:["IV Cursa Solidària Familiar Nit a la Vila","IV Cursa Solidaria Familiar Nit a la Vila"],
+  nv_sub:["Una nit diferent amb els amics i la família, a benefici del banc d'aliments de Vila-Seca.","Una noche diferente con los amigos y la familia, en beneficio del banco de alimentos de Vila-Seca."],
+  nv_p1:["El proper <b>18 de juliol de 2026 a les 21:30h</b> vine amb nosaltres a la “IV Cursa Solidària Familiar Nit a la Vila”, organitzada pel Club Esportiu Runners Vila-Seca, a benefici del banc d'aliments de Vila-Seca.","El próximo <b>18 de julio de 2026 a las 21:30h</b> ven con nosotros a la “IV Cursa Solidaria Familiar Nit a la Vila”, organizada por el Club Esportiu Runners Vila-Seca, en beneficio del banco de alimentos de Vila-Seca."],
+  nv_p2:["Passa una nit diferent amb els teus amics i familiars: et divertiràs i descobriràs nous racons de la Torre d'en Dolça.","Pasa una noche diferente con tus amigos y familiares: te divertirás y descubrirás nuevos rincones de la Torre d'en Dolça."],
+  nv_how_k:["Com?","¿Cómo?"],
+  nv_how_v:["Forma un grup de <b>mínim 2 persones</b> (mínim 1 adult per equip), posa-li un nom a l'equip, prepara un frontal o una llanterna i vine amb ganes de córrer o caminar un recorregut d'uns <b>4 km</b>. No hi pensis més!","Forma un grupo de <b>mínimo 2 personas</b> (mínimo 1 adulto por equipo), ponle un nombre a tu equipo, prepara un frontal o una linterna y ven con ganas de correr o andar un recorrido de unos <b>4 km</b>. ¡No lo pienses más!"],
+  nv_when_k:["Quan i on?","¿Cuándo y dónde?"],
+  nv_when_v:["Sortida el <b>18 de juliol de 2026</b> al <b>Parc dels Aragalls</b> de Vila-Seca, a les <b>21:30h</b>.","Salida el <b>18 de julio de 2026</b> en el <b>Parc dels Aragalls</b> de Vila-Seca, a las <b>21:30h</b>."],
+  nv_dors_k:["Recollida de dorsals","Recogida de dorsales"],
+  nv_dors_v:["El <b>18 de juliol</b> (el mateix dia de la cursa) de <b>20:30 a 21:15h</b>, a la sortida de la cursa.","El <b>18 de julio</b> (el mismo día de la carrera) de <b>20:30 a 21:15h</b>, en la salida de la carrera."],
+  nv_insc_k:["Inscripcions","Inscripciones"],
+  nv_insc_v:["Cal portar el dia de la cursa, per recollir el dorsal:","Será necesario traer el día de la carrera para recoger el dorsal:"],
+  nv_insc_1:["<b>2 kg d'aliments no peribles</b> per persona, a benefici del Banc d'Aliments de Vila-Seca.","<b>2 kg de alimento no perecedero</b> por persona, en beneficio del Banco de Alimentos de Vila-Seca."],
+  nv_insc_2:["<b>2€ solidaris</b> per persona per a la Lliga contra el Càncer de les Comarques de Tarragona.","<b>2€ solidarios</b> por persona para la Lliga contra el Càncer de les Comarques de Tarragona."],
+  nv_cta:["Vull inscriure el meu equip","Quiero inscribir mi equipo"],
+  nv_mail:["Consultes a","Consultas a"],
+  nv_aforament:["Aforament màxim de 300 persones.","Aforo máximo de 300 personas."],
+
+  sr_eyebrow:["Cada cap de setmana","Cada fin de semana"],
+  sr_h:["Social Run","Social Run"],
+  sr_sub:["Sortides relaxades per gaudir, xerrar i fer pinya. Sense cronòmetre.","Salidas relajadas para disfrutar, charlar y hacer piña. Sin cronómetro."],
+  sr_p1:["El Social Run és la sortida més tranquil·la de la setmana: es corre a <b>ritme de conversa</b>, ningú es queda enrere i el més important passa després, quan ens quedem xerrant.","El Social Run es la salida más tranquila de la semana: se corre a <b>ritmo de conversación</b>, nadie se queda atrás y lo más importante pasa después, cuando nos quedamos charlando."],
+  sr_p2:["És el millor punt de partida si vols conèixer el club sense compromís: vine, corre amb nosaltres i decideix després.","Es el mejor punto de partida si quieres conocer el club sin compromiso: ven, corre con nosotros y decide después."],
+  sr_who_k:["Per a qui?","¿Para quién?"],
+  sr_who_v:["Per a <b>tots els nivells</b>, socis i no socis. Si fa poc que has començat, aquesta és la teva sortida.","Para <b>todos los niveles</b>, socios y no socios. Si hace poco que has empezado, esta es tu salida."],
+  sr_where_k:["On i quan?","¿Dónde y cuándo?"],
+  sr_where_v:["Sortides de cap de setmana per l'entorn de Vila-Seca i la Torre d'en Dolça. <b>Dia i punt de trobada</b>: els publiquem cada setmana a Instagram.","Salidas de fin de semana por el entorno de Vila-Seca y la Torre d'en Dolça. <b>Día y punto de encuentro</b>: los publicamos cada semana en Instagram."],
+  sr_bring_k:["Què necessites?","¿Qué necesitas?"],
+  sr_bring_1:["Roba còmoda i sabatilles de córrer.","Ropa cómoda y zapatillas de correr."],
+  sr_bring_2:["Aigua i ganes de conèixer gent.","Agua y ganas de conocer gente."],
+  sr_bring_3:["Res més: és gratuït i obert.","Nada más: es gratuito y abierto."],
+  sr_follow_k:["On ho anunciem","Dónde lo anunciamos"],
+  sr_follow_v:['Cada sortida es publica a l\'Instagram del club: <a href="https://www.instagram.com/club_esportiu_runners_vilaseca/" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600">@club_esportiu_runners_vilaseca</a>.','Cada salida se publica en el Instagram del club: <a href="https://www.instagram.com/club_esportiu_runners_vilaseca/" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600">@club_esportiu_runners_vilaseca</a>.'],
+
+  p_eyebrow:["Amb el suport de","Con el apoyo de"], p_h:["Patrocinadors i col·laboradors","Patrocinadores y colaboradores"],
+  p_lead:["Gràcies a qui fa possible la Mitja i el dia a dia del club.","Gracias a quienes hacen posible la Media y el día a día del club."],
+  p_logo:["El teu logo aquí","Tu logo aquí"],
+  p_cta_h:['La teva marca davant <em>+2.000 corredors</em>','Tu marca ante <em>+2.000 corredores</em>'],
+  p_cta_p:["Vincula la teva empresa a l'esdeveniment esportiu de l'any a Vila-Seca.","Vincula tu empresa al evento deportivo del año en Vila-Seca."],
+  p_cta_btn:["Vull ser patrocinador","Quiero ser patrocinador"],
+
+  ct_eyebrow:["Parlem","Hablemos"], ct_h:["Contacte","Contacto"],
+  ct_lead:["Tens dubtes sobre la Mitja o vols fer-te soci? Escriu-nos, som a prop.","¿Tienes dudas sobre la Media o quieres hacerte socio? Escríbenos, estamos cerca."],
+  ct_email_k:["Correu","Correo"], ct_email_sub:["Inscripcions, socis i patrocinis","Inscripciones, socios y patrocinios"],
+  ct_social_k:["Xarxes socials","Redes sociales"],
+  ct_loc_k:["On som","Dónde estamos"], ct_loc_v:["Vila-Seca","Vila-Seca"], ct_loc_sub:["Tarragona · Costa Daurada","Tarragona · Costa Dorada"],
+
+  f_tag:["Passió pel running des de Vila-Seca. Una família, un estil de vida.","Pasión por el running desde Vila-Seca. Una familia, un estilo de vida."],
+  f_nav:["Navega","Navega"], f_mitja:["La Mitja","La Media"],
+  f_m1:["18 d'octubre 2026 · 09:30h","18 de octubre 2026 · 09:30h"], f_m2:["Vila-Seca, Tarragona","Vila-Seca, Tarragona"],
+  f_m3:["Inscripcions a Runatica →","Inscripciones en Runatica →"],
+  f_contacte:["Contacte","Contacto"], f_loc:["Vila-Seca · Tarragona","Vila-Seca · Tarragona"],
+  f_legal:["Tots els drets reservats","Todos los derechos reservados"],
+
+  chat_online:["En línia · respon a l'instant","En línea · responde al instante"],
+  chat_disc:["Assistent virtual del club · respostes freqüents","Asistente virtual del club · respuestas frecuentes"],
+
+  nav_galeria:["Galeria","Galería"],
+  hero_club:["Club Esportiu Runners Vila-Seca","Club Esportiu Runners Vila-Seca"],
+  hero_t1:["V Escardó Mitja Marató","V Escardó Media Maratón"],
+  hero_t2:["18 d'octubre de 2026","18 de octubre de 2026"],
+  hero_reminder:["Places limitades a 2.500 participants · Tarifa 1 fins al 31 d'agost · des de 11,60€","Plazas limitadas a 2.500 participantes · Tarifa 1 hasta el 31 de agosto · desde 11,60€"],
+  hero_soci_link:["Prova un entrenament →","Prueba un entrenamiento →"],
+  g_eyebrow:["El club, en imatges","El club, en imágenes"],
+  g_h:["Galeria","Galería"],
+  g_lead:["Sortides, arribades, podis i molta gent. Així es viu la Mitja i el dia a dia del CERV.","Salidas, llegadas, podios y mucha gente. Así se vive la Media y el día a día del CERV."],
+  g_credit:["Fotografies · MGabás Imatge · Mitja Marató Vila-Seca","Fotografías · MGabás Imatge · Media Maratón Vila-Seca"],
+  cap_start:["Sortida","Salida"],
+  cap_finish:["Arribada a meta","Llegada a meta"],
+  cap_team:["L'equip del club","El equipo del club"],
+  cap_podium:["Podi i premis","Podio y premios"],
+  cap_dorsals:["Recollida de dorsals","Recogida de dorsales"],
+  cap_run:["En cursa","En carrera"],
+  cap_celebrate:["Celebració","Celebración"],
+  cap_volunteers:["Voluntàries del club","Voluntarias del club"],
+  cap_training:["Entreno del club","Entreno del club"],
+  cap_solidarity:["Acció solidària","Acción solidaria"],
+  cap_night:["Nit a la Vila","Nit a la Vila"],
+  cap_anniv:["6è aniversari","6º aniversario"],
+  cap_junta:["La junta directiva","La junta directiva"],
+  j_eyebrow:["L'equip que ho fa possible","El equipo que lo hace posible"],
+  j_h:["La Junta Directiva","La Junta Directiva"],
+  j_p1:["Darrere de cada entreno, cada cursa i cada dorsal hi ha un equip de voluntaris que hi dedica el seu temps lliure.","Detrás de cada entreno, cada carrera y cada dorsal hay un equipo de voluntarios que le dedica su tiempo libre."],
+  j_p2:["Són els que organitzen la Mitja, munten la Nit a la Vila i fan que el club sigui una família. Si tens una idea o vols donar un cop de mà, parla amb qualsevol d'ells.","Son quienes organizan la Media, montan la Nit a la Vila y hacen que el club sea una familia. Si tienes una idea o quieres echar una mano, habla con cualquiera de ellos."],
+  v_eyebrow:["El vídeo de la cursa","El vídeo de la carrera"],
+  v_h:["Viu la Mitja","Vive la Mitja"],
+  v_lead:["Un minut i entendràs per què 2.500 persones volen ser aquí el 18 d'octubre.","Un minuto y entenderás por qué 2.500 personas quieren estar aquí el 18 de octubre."],
+  v_soon:["Vídeo promocional","Vídeo promocional"],
+  v_soon_missing:["Vídeo disponible ben aviat","Vídeo disponible muy pronto"],
+  v_ig:["Veure a Instagram","Ver en Instagram"],
+  p_tier_main:["Patrocinador principal","Patrocinador principal"],
+  p_tier_collab:["Col·laboradors institucionals","Colaboradores institucionales"],
+  p_tier_sponsors:["Patrocinadors i proveïdors","Patrocinadores y proveedores"]
+};
+
+const MAILTO_SOCI = {
+  ca:"mailto:somoscerv@gmail.com?subject=Vull%20provar%20un%20entrenament%20amb%20el%20CERV&body=Hola!%20M'agradaria%20provar%20un%20entrenament%20amb%20el%20club.%20El%20meu%20nom%20%C3%A9s%3A%20%0A%0AGr%C3%A0cies!",
+  es:"mailto:somoscerv@gmail.com?subject=Quiero%20probar%20un%20entrenamiento%20con%20el%20CERV&body=%C2%A1Hola!%20Me%20gustar%C3%ADa%20probar%20un%20entrenamiento%20con%20el%20club.%20Mi%20nombre%20es%3A%20%0A%0A%C2%A1Gracias!"
+};
+
+let LANG = 'ca';
+function applyOneI18n(el){
+  const v = I18N[el.dataset.i18n];
+  if(v && v[LANG==='es'?1:0] !== undefined) el.innerHTML = v[LANG==='es'?1:0];
+}
+function applyLang(lang){
+  LANG = lang;
+  const idx = lang === 'es' ? 1 : 0;
+  document.documentElement.lang = lang;
+  $$('[data-i18n]').forEach(el=>{
+    const v = I18N[el.dataset.i18n];
+    if(v && v[idx] !== undefined) el.innerHTML = v[idx];
+  });
+  $$('.lang button').forEach(b=>{
+    const on = b.dataset.lang === lang;
+    b.classList.toggle('active', on);
+    b.setAttribute('aria-pressed', on);
+  });
+  $$('.cta-soci').forEach(a=> a.href = MAILTO_SOCI[lang==='es'?'es':'ca']);
+  // meta description segons idioma
+  const md=document.querySelector('#metaDesc');
+  if(md) md.content = lang==='es'
+    ? 'Club de running de Vila-Seca (Tarragona). V Escardó Mitja Marató · domingo 18 de octubre de 2026 · 21K, 10K y 5K. Inscríbete o hazte socio del club.'
+    : "Club de running de Vila-Seca (Tarragona). V Escardó Mitja Marató · diumenge 18 d'octubre de 2026 · 21K, 10K i 5K. Inscriu-te o fes-te soci del club.";
+  buildTicker();
+  updateRecTitle();
+  if(window.__chatRefresh) window.__chatRefresh();
+}
+$$('.lang button').forEach(b=> b.addEventListener('click', ()=> applyLang(b.dataset.lang)));
+
+/* =========================================================
+   1 · LOADER (màxim 2s, barra + corredor)
+   ========================================================= */
+let HERO_READY = false;
+function playHero(){
+  const h=document.querySelector('#hero'); if(!h) return;
+  h.classList.remove('play'); void h.offsetWidth; h.classList.add('play');
+}
+(function(){
+  const loader=document.querySelector('#loader'),
+        fill=document.querySelector('#loaderFill'),
+        runner=document.querySelector('#loaderRunner');
+  function finish(){
+    HERO_READY=true;
+    document.body.classList.remove('loading');
+    if(loader){ loader.classList.add('done'); setTimeout(()=>loader.remove(), 600); }
+    const inici=document.querySelector('#view-inici');
+    if(inici && inici.classList.contains('active')) playHero();
+  }
+  if(!loader){ HERO_READY=true; return; }
+  if(RM){ finish(); return; }
+
+  const MAX=2000;
+  let p=0, done=false;
+  let loaded=(document.readyState==='complete');
+  window.addEventListener('load', ()=>{ loaded=true; });
+  const t0=performance.now();
+  function set(v){
+    const pct=(v*100).toFixed(2)+'%';
+    fill.style.width=pct;
+    runner.style.left=pct;
+  }
+  function done_(){ if(done) return; done=true; clearTimeout(kill); set(1); finish(); }
+  // failsafe: setTimeout no el congela el navegador com fa amb rAF en pestanyes de fons
+  const kill=setTimeout(done_, MAX);
+  function tick(now){
+    if(done) return;
+    const e=now-t0;
+    // sostre del 90% fins que la pàgina està llesta; després corre fins al 100%
+    const target = loaded ? 1 : Math.min(.9, e/1500);
+    p += (target-p)*0.14;
+    if(e>=MAX) p=1;
+    set(Math.min(p,1));
+    if(p>=.995){ setTimeout(done_,140); return; }
+    requestAnimationFrame(tick);
+  }
+  set(0);
+  requestAnimationFrame(tick);
+})();
+
+/* =========================================================
+   2 · HASH ROUTER (vistes)
+   ========================================================= */
+const ROUTES = {
+  'inici':'view-inici','club':'view-club','la-mitja':'view-mitja',
+  'activitats':'view-activitats','nit-a-la-vila':'view-nit','social-run':'view-social',
+  'galeria':'view-galeria','soci':'view-soci','patrocinadors':'view-patro','contacte':'view-contacte'
+};
+/* les fitxes d'activitat mantenen "Activitats" com a menú actiu */
+const NAV_PARENT = {'nit-a-la-vila':'activitats','social-run':'activitats'};
+const views = $$('.view');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      if(e.target.classList.contains('count')) animateCount(e.target);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:0.16, rootMargin:'0px 0px -6% 0px'});
+
+function currentRoute(){
+  const h = location.hash.replace(/^#\/?/, '').split('/')[0];
+  return ROUTES[h] ? h : 'inici';
+}
+function showView(route){
+  const id = ROUTES[route];
+  views.forEach(v=> v.classList.toggle('active', v.id===id));
+  // nav actiu
+  const navRoute = NAV_PARENT[route] || route;
+  $$('[data-route]').forEach(a=> a.classList.toggle('active', a.dataset.route===navRoute));
+  // scroll amunt (suau)
+  window.scrollTo({top:0, behavior: RM ? 'auto':'smooth'});
+  // hero: re-disparar animació cinètica
+  const view = $('#'+id);
+  if(id==='view-inici' && HERO_READY) playHero();
+  // reveals: reinicia i reobserva
+  $$('.reveal', view).forEach(el=>{ el.classList.remove('in'); io.observe(el); });
+  $$('.count', view).forEach(el=>{ el.textContent='0'; el.dataset.done=''; io.observe(el); });
+  // condensar header segons scroll (reset)
+  onScroll();
+}
+function route(){ showView(currentRoute()); closeMenu(); }
+window.addEventListener('hashchange', route);
+
+/* =========================================================
+   3 · HEADER condensa + parallax hero
+   ========================================================= */
+const header = $('#header');
+const heroBg = $('#heroBg');
+let ticking = false;
+function onScroll(){
+  const y = window.scrollY;
+  header.classList.toggle('scrolled', y > 24);
+  if(!RM && heroBg && $('#view-inici').classList.contains('active') && y < window.innerHeight){
+    heroBg.style.transform = 'translateY('+(y*0.16).toFixed(1)+'px)';
+  }
+  ticking = false;
+}
+window.addEventListener('scroll', ()=>{ if(!ticking){ requestAnimationFrame(onScroll); ticking = true; } }, {passive:true});
+
+/* =========================================================
+   4 · MENÚ MÒBIL
+   ========================================================= */
+const burger = $('#burger'), mobileNav = $('#mobileNav'), scrim = $('#scrim');
+function openMenu(o){ burger.classList.toggle('open',o); mobileNav.classList.toggle('open',o); scrim.classList.toggle('open',o); burger.setAttribute('aria-expanded',o); }
+function closeMenu(){ openMenu(false); }
+burger.addEventListener('click', ()=> openMenu(!mobileNav.classList.contains('open')));
+scrim.addEventListener('click', closeMenu);
+
+/* =========================================================
+   5 · TICKER (lang-aware, duplicat per bucle)
+   ========================================================= */
+function buildTicker(){
+  const t = $('#ticker'); if(!t) return;
+  const items = LANG==='es'
+    ? ['V MEDIA MARATÓN','18 OCTUBRE 2026','ACEPTA EL RETO','21K / 10K / 5K']
+    : ['V MITJA MARATÓ','18 OCTUBRE 2026','ACCEPTA EL REPTE','21K / 10K / 5K'];
+  let html='';
+  for(let r=0;r<2;r++){ items.forEach(it=> html += '<span>'+it+'<i class="star">●</i></span>'); }
+  t.innerHTML = html;
+}
+
+/* =========================================================
+   6 · COMPTE ENRERE — 18 oct 2026, 09:30h (Madrid, CEST UTC+2)
+   ========================================================= */
+(function(){
+  const target = new Date('2026-10-18T09:30:00+02:00').getTime();
+  const allCd = ()=> $$('.countdown');
+  const pad = n=> String(n).padStart(2,'0');
+  let overShown=false;
+  function showOver(){
+    if(overShown) return; overShown=true;
+    const msg = LANG==='es' ? '¡La V Mitja ya se ha celebrado. Gracias a todos!' : "La V Mitja ja s'ha celebrat. Gràcies a tothom!";
+    allCd().forEach(cd=>{
+      cd.innerHTML='<div class="cd-cell" style="max-width:none;flex:1 1 100%;padding:22px 18px"><span class="cd-num" style="font-size:clamp(18px,2.6vw,25px);letter-spacing:0;line-height:1.3">'+msg+'</span></div>';
+    });
+  }
+  function tick(){
+    const diff = target - Date.now();
+    if(diff<=0){ showOver(); return; }
+    const d=Math.floor(diff/864e5), h=Math.floor(diff%864e5/36e5), m=Math.floor(diff%36e5/6e4), s=Math.floor(diff%6e4/1e3);
+    const vals = {d:pad(d),h:pad(h),m:pad(m),s:pad(s)};
+    allCd().forEach(cd=>{
+      $$('[data-cd]',cd).forEach(el=>{
+        const k = el.dataset.cd, nv = vals[k];
+        if(el.textContent !== nv){
+          el.textContent = nv;
+          // transició suau de dígit (sense reflow): Web Animations
+          if(!RM && el.animate){
+            el.animate([{transform:'translateY(45%)',opacity:.25},{transform:'translateY(0)',opacity:1}],
+              {duration:420,easing:'cubic-bezier(0.16,1,0.3,1)'});
+          }
+        }
+      });
+    });
+  }
+  tick(); setInterval(tick,1000);
+})();
+
+/* =========================================================
+   7 · COMPTADORS NUMÈRICS
+   ========================================================= */
+function fmt(n){ return Math.round(n).toLocaleString('ca-ES'); }
+function animateCount(el){
+  if(el.dataset.done) return; el.dataset.done='1';
+  const target = parseFloat(el.dataset.target);
+  const prefix = el.dataset.prefix||'', suffix = el.dataset.suffix||'';
+  if(RM){ el.textContent = prefix+fmt(target)+suffix; return; }
+  const dur=1500, start=performance.now();
+  (function step(now){
+    const p=Math.min((now-start)/dur,1), e=1-Math.pow(1-p,3);
+    el.textContent = prefix+fmt(target*e)+suffix;
+    if(p<1) requestAnimationFrame(step); else el.textContent = prefix+fmt(target)+suffix;
+  })(start);
+}
+
+/* =========================================================
+   8 · RECORREGUT — selector de modalitat
+   ========================================================= */
+const MOD = {
+  '21k':{dist:'21,097 km', desn:'115 m', hora:'09:30 h', titleKey:'rec_title_21k'},
+  '10k':{dist:'10 km',     desn:'58 m',  hora:'09:30 h', titleKey:'rec_title_10k'},
+  '5k' :{dist:'5 km',      desn:'16 m',  hora:'09:30 h', titleKey:'rec_title_5k'}
+};
+let CURMOD = '21k';
+function updateRecTitle(){
+  const t = $('[data-rec="title"]'); if(!t) return;
+  const v = I18N[MOD[CURMOD].titleKey]; if(v) t.textContent = v[LANG==='es'?1:0];
+}
+function setMod(mod){
+  CURMOD = mod;
+  $$('.rec-tab').forEach(b=> { const on=b.dataset.mod===mod; b.classList.toggle('active',on); b.setAttribute('aria-selected',on); });
+  $$('.rec-img').forEach(img=> img.classList.toggle('active', img.dataset.mod===mod));
+  const d = MOD[mod];
+  const set=(k,val)=>{ const el=$('[data-rec="'+k+'"]'); if(el) el.textContent=val; };
+  set('dist',d.dist); set('desn',d.desn); set('hora',d.hora);
+  updateRecTitle();
+}
+$$('.rec-tab').forEach(b=> b.addEventListener('click', ()=> setMod(b.dataset.mod)));
+
+/* =========================================================
+   9 · WIDGET AGENT IA
+   ========================================================= */
+(function(){
+  const fab=$('#chatFab'), panel=$('#chatPanel'), closeBtn=$('#chatClose'),
+        body=$('#chatBody'), faqs=$('#chatFaqs');
+  let opened=false;
+  const QA = {
+    ca:{ greet:"Hola! 👋 Sóc l'assistent del CERV. En què et puc ajudar?",
+      faqs:[
+        {q:"Quan és la Mitja?", a:"La <b>V Escardó Mitja Marató</b> és el <b>diumenge 18 d'octubre de 2026 a les 09:30h</b>, amb sortida i meta a la Zona 0 del Complex Esportiu de Vila-Seca."},
+        {q:"Quant costa?", a:"Tarifa 1 (fins 31/08/2026): <b>21K · 21,60€</b>, <b>10K · 15,60€</b>, <b>5K · 11,60€</b> i <b>Specials 600m · 2,60€</b>. Inscripcions a Runatica."},
+        {q:"On recullo el dorsal?", a:"La recollida es fa al <b>Complex Esportiu de Vila-Seca (Zona 0)</b>. Et confirmarem dies i horaris properament — segueix-nos a Instagram! 📸"},
+        {q:"Com em faig soci?", a:"El <b>primer entrenament és gratis</b>. Vine un <b>dilluns o dimecres de 19 a 20h</b> a Piscines Vila-Seca, o escriu-nos a <a href=\""+MAILTO_SOCI.ca+"\"><b>somoscerv@gmail.com</b></a>. \ud83c\udfc3"}
+      ]},
+    es:{ greet:"¡Hola! 👋 Soy el asistente del CERV. ¿En qué te puedo ayudar?",
+      faqs:[
+        {q:"¿Cuándo es la Media?", a:"La <b>V Escardó Media Maratón</b> es el <b>domingo 18 de octubre de 2026 a las 09:30h</b>, con salida y meta en la Zona 0 del Complejo Deportivo de Vila-Seca."},
+        {q:"¿Cuánto cuesta?", a:"Tarifa 1 (hasta 31/08/2026): <b>21K · 21,60€</b>, <b>10K · 15,60€</b>, <b>5K · 11,60€</b> y <b>Specials 600m · 2,60€</b>. Inscripciones en Runatica."},
+        {q:"¿Dónde recojo el dorsal?", a:"La recogida se hace en el <b>Complejo Deportivo de Vila-Seca (Zona 0)</b>. Confirmaremos días y horarios pronto — ¡síguenos en Instagram! 📸"},
+        {q:"¿Cómo me hago socio?", a:"El <b>primer entrenamiento es gratis</b>. Ven un <b>lunes o miércoles de 19 a 20h</b> a Piscines Vila-Seca, o escríbenos a <a href=\""+MAILTO_SOCI.es+"\"><b>somoscerv@gmail.com</b></a>. \ud83c\udfc3"}
+      ]}
+  };
+  const L = ()=> QA[LANG==='es'?'es':'ca'];
+  function bubble(text,who){ const b=document.createElement('div'); b.className='bubble '+who; b.innerHTML=text; body.appendChild(b); body.scrollTop=body.scrollHeight; return b; }
+  function typing(){ const t=document.createElement('div'); t.className='typing'; t.innerHTML='<span></span><span></span><span></span>'; body.appendChild(t); body.scrollTop=body.scrollHeight; return t; }
+  function renderFaqs(){ faqs.innerHTML=''; L().faqs.forEach(it=>{ const b=document.createElement('button'); b.className='faq-btn'; b.textContent=it.q; b.addEventListener('click',()=>ask(it)); faqs.appendChild(b); }); }
+  function ask(it){ bubble(it.q,'user'); const t=typing(); setTimeout(()=>{ t.remove(); bubble(it.a,'bot'); }, RM?150:750); }
+  function init(){ body.innerHTML=''; bubble(L().greet,'bot'); renderFaqs(); }
+  function open(){ opened=true; panel.classList.add('open'); fab.setAttribute('aria-expanded','true'); if(!body.children.length) init(); }
+  function close(){ panel.classList.remove('open'); fab.setAttribute('aria-expanded','false'); }
+  fab.addEventListener('click',()=> panel.classList.contains('open')?close():open());
+  closeBtn.addEventListener('click',close);
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&panel.classList.contains('open')) close(); });
+  window.__chatRefresh = ()=>{ if(opened) init(); };
+})();
+
+/* =========================================================
+   9.5 · LIGHTBOX (galeria + feed)
+   ========================================================= */
+(function(){
+  const box=$('#lightbox'), img=$('#lbImg'), count=$('#lbCount');
+  let list=[], idx=0, lastFocus=null;
+  // les figures de galeria són accessibles per teclat
+  $$('.lb').forEach(f=>{
+    f.tabIndex=0; f.setAttribute('role','button');
+    const alt=f.querySelector('img')?.alt;
+    if(alt) f.setAttribute('aria-label','Ampliar: '+alt);
+    f.addEventListener('keydown', e=>{
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(f.dataset.group,f); }
+    });
+  });
+  function render(){
+    const im=list[idx].querySelector('img');
+    const ss=im.getAttribute('srcset');
+    let big=im.currentSrc||im.src;
+    if(ss){ const parts=ss.split(',').map(s=>s.trim().split(/\s+/)); parts.sort((a,b)=>parseInt(b[1])-parseInt(a[1])); big=parts[0][0]; }
+    img.src=big; img.alt=im.alt;
+    count.textContent=(idx+1)+' / '+list.length;
+    if(!RM && img.animate){ img.animate([{opacity:0,transform:'scale(.97)'},{opacity:1,transform:'none'}],{duration:320,easing:'cubic-bezier(0.16,1,0.3,1)'}); }
+  }
+  function open(group, el){
+    list=$$('.lb[data-group="'+group+'"]');
+    idx=Math.max(0,list.indexOf(el));
+    lastFocus=document.activeElement;
+    render(); box.classList.add('open');
+    $('#lbClose').focus();
+  }
+  function close(){
+    box.classList.remove('open');
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function nav(d){ if(!list.length) return; idx=(idx+d+list.length)%list.length; render(); }
+  document.addEventListener('click', e=>{
+    const t=e.target.closest('.lb'); if(t){ open(t.dataset.group,t); }
+  });
+  $('#lbClose').addEventListener('click', close);
+  $('#lbPrev').addEventListener('click', ()=>nav(-1));
+  $('#lbNext').addEventListener('click', ()=>nav(1));
+  box.addEventListener('click', e=>{ if(e.target===box) close(); });
+  document.addEventListener('keydown', e=>{
+    if(!box.classList.contains('open')) return;
+    if(e.key==='Escape') close();
+    else if(e.key==='ArrowLeft') nav(-1);
+    else if(e.key==='ArrowRight') nav(1);
+  });
+})();
+
+/* =========================================================
+   9.7 · VÍDEO PROMOCIONAL (placeholder elegant si no hi ha arxiu)
+   ========================================================= */
+(function(){
+  const v=$('#promoVideo'), poster=$('#videoPoster'), soon=$('#videoSoon');
+  if(!v||!poster) return;
+  const file=(v.dataset.src||'').trim();
+  let missing=!file;
+  if(file){ v.src=file; v.addEventListener('error',()=>{ missing=true; poster.classList.remove('hidden'); soon.dataset.i18n='v_soon_missing'; applyOneI18n(soon); }); }
+  else { soon.dataset.i18n='v_soon_missing'; applyOneI18n(soon); v.removeAttribute('controls'); }
+  poster.addEventListener('click', ()=>{
+    if(missing){ window.open('https://www.instagram.com/reel/DQHuXutDILa/','_blank','noopener'); return; }
+    poster.classList.add('hidden');
+    const p=v.play();
+    if(p&&p.catch) p.catch(()=>{ poster.classList.remove('hidden'); });
+  });
+  v.addEventListener('pause', ()=>{ if(v.currentTime===0) poster.classList.remove('hidden'); });
+})();
+
+/* =========================================================
+   10 · INIT
+   ========================================================= */
+buildTicker();
+applyLang('ca');
+setMod('21k');
+route();
+onScroll();
+</script>
+</body>
+</html>
