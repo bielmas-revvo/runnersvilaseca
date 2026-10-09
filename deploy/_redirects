@@ -1,1 +1,2 @@
-/*    /index.html   200
+# La web fa servir rutes amb hash (#/la-mitja), així que no cal cap reescriptura.
+# Sense regla comodí: si falta un fitxer, el servidor dona 404 en lloc de tornar a carregar la web.

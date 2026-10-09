@@ -333,6 +333,7 @@ ul{margin:0;padding:0;list-style:none}
 .mitja-logo-row{display:flex;align-items:center;gap:18px;margin-bottom:26px}
 .mitja-logo-row img{height:clamp(76px,11vw,112px);width:auto;background:#fff;padding:clamp(14px,2vw,20px) clamp(20px,3vw,30px);border-radius:14px;box-shadow:0 10px 26px rgba(0,0,0,.28)}
 .mitja{overflow:hidden}
+.regl + .mitja-meta{margin-top:48px}
 .mitja-meta{display:grid;grid-template-columns:1fr;gap:16px;margin:0 0 8px}
 .mm{display:flex;align-items:flex-start;gap:12px;font-size:15.5px;color:#3c4654}
 .mm svg{width:22px;height:22px;flex:none;color:var(--navy);margin-top:2px}
@@ -368,6 +369,13 @@ ul{margin:0;padding:0;list-style:none}
 .regl{margin:56px 0 0;display:grid;grid-template-columns:1fr;gap:30px;align-items:center;background:var(--navy-deep);color:#fff;border-radius:18px;padding:clamp(24px,4vw,44px)}
 .regl-cover{display:block;justify-self:center;width:min(300px,78%);border-radius:6px;overflow:hidden;background:#fff;border:1px solid rgba(255,255,255,.25);box-shadow:0 22px 50px rgba(0,0,0,.45);transform:rotate(-1.5deg);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
 .regl-cover img{display:block;width:100%;height:auto}
+.regl-cover.noimg{aspect-ratio:900/1271;display:grid;place-items:center;align-content:center;gap:14px;background:#fff;color:var(--navy);text-align:center;padding:24px}
+.regl-cover.noimg img{display:none}
+.regl-cover .fallback{display:none}
+.regl-cover.noimg .fallback{display:grid;gap:12px;justify-items:center}
+.regl-cover .fallback svg{width:54px;height:54px}
+.regl-cover .fallback b{font-family:"Archivo";font-weight:900;font-size:20px;text-transform:uppercase;line-height:1.1}
+.regl-cover .fallback span{font-family:"Archivo";font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#54616f}
 .regl-cover:hover{transform:rotate(0) translateY(-6px);box-shadow:0 30px 64px rgba(0,0,0,.5)}
 .regl-body .eyebrow{color:var(--gold)}
 .regl-body h2{font-weight:900;font-size:clamp(30px,4.6vw,48px);text-transform:uppercase;margin:12px 0 14px;color:#fff;text-wrap:balance}
@@ -786,7 +794,7 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
         <button data-lang="ca" class="active" aria-pressed="true">CA</button>
         <button data-lang="es" aria-pressed="false">ES</button>
       </div>
-      <a class="btn btn-red" href="docs/reglament-2026.pdf" target="_blank" rel="noopener" data-i18n="cta_reg">Reglament</a>
+      <a class="btn btn-red" href="/docs/reglament-2026.pdf" target="_blank" rel="noopener" data-i18n="cta_inscriu">Reglament</a>
       <button class="burger" id="burger" aria-label="Obrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -803,7 +811,7 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
   <a href="#/soci" data-route="soci" data-i18n="nav_soci">Fes-te soci</a>
   <a href="#/patrocinadors" data-route="patrocinadors" data-i18n="nav_patro">Patrocinadors</a>
   <a href="#/contacte" data-route="contacte" data-i18n="nav_contacte">Contacte</a>
-  <a class="btn btn-red" style="margin-top:18px" href="docs/reglament-2026.pdf" target="_blank" rel="noopener" data-i18n="cta_reg_long">Llegeix el reglament</a>
+  <a class="btn btn-red" style="margin-top:18px" href="/docs/reglament-2026.pdf" target="_blank" rel="noopener" data-i18n="cta_inscriu_mitja">Llegeix el reglament</a>
 </nav>
 
 <main id="app">
@@ -834,9 +842,9 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
       </div>
 
       <div class="hero-ctas">
-        <a class="btn btn-red btn-hero" href="docs/reglament-2026.pdf" target="_blank" rel="noopener" download>
+        <a class="btn btn-red btn-hero" href="/docs/reglament-2026.pdf" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
-          <span data-i18n="cta_reg_hero">LLEGEIX EL REGLAMENT</span>
+          <span data-i18n="cta_inscriu_mitja">Llegeix el reglament</span>
         </a>
         <p class="hero-reminder" data-i18n="hero_reminder">Inscripcions tancades · Ens veiem el 18 d'octubre</p>
         <a class="hero-soci-link cta-soci" href="mailto:somoscerv@gmail.com" data-i18n="hero_soci_link">Prova un entrenament →</a>
@@ -1018,6 +1026,29 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
   <section class="sec mitja">
     <div class="container">
 
+      <!-- reglament oficial -->
+      <div class="regl reveal" style="margin-top:0">
+        <a class="regl-cover" href="/docs/reglament-2026.pdf" target="_blank" rel="noopener" aria-label="Obrir el reglament oficial (PDF)">
+          <img src="/img/reglament-portada.jpg" width="900" height="1271" loading="lazy" decoding="async" alt="Primera pàgina del reglament oficial de la V Escardó Mitja Marató" onerror="this.parentNode.classList.add('noimg')">
+          <span class="fallback" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+            <b>Reglament<br>2026</b>
+            <span>V Escardó Mitja Marató</span>
+          </span>
+        </a>
+        <div class="regl-body">
+          <p class="eyebrow" data-i18n="rg_k">Document oficial</p>
+          <h2 data-i18n="rg_h">Reglament oficial</h2>
+          <p data-i18n="rg_p">Modalitats, recorreguts, horaris, recollida de dorsals, temps de tall i premis: tot el que has de saber, en un sol document.</p>
+          <div class="regl-btns">
+            <a class="btn btn-red" href="/docs/reglament-2026.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg><span data-i18n="rg_view">Veure el reglament</span></a>
+            <a class="btn btn-ghost" href="/docs/reglament-2026.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-i18n="rg_dl">Descarregar PDF</span></a>
+          </div>
+          <p class="regl-meta" data-i18n="rg_meta">PDF · 8 pàgines</p>
+        </div>
+      </div>
+
+
       <!-- info clau -->
       <div class="mitja-meta reveal">
         <div class="mm">
@@ -1046,8 +1077,8 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
           <div class="race-card reveal d1">
             <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h6M7 14h10"/></svg><span data-i18n="lg_dors_k">Recollida de dorsals</span></h3>
             <ul>
-              <li data-i18n="lg_dors_1"><b>Dissabte 17 d'octubre</b> · de 17:00 a 20:30h<br>Pista exterior del Pavelló Municipal</li>
-              <li data-i18n="lg_dors_2"><b>Diumenge 18 d'octubre</b> · de 8:00 a 9:00h<br>Zona 0</li>
+              <li data-i18n="lg_dors_1"><b>Dissabte 17 d'octubre</b> · de 17:00 a 20:30h<br>Hall del Pavelló Municipal</li>
+              <li data-i18n="lg_dors_2"><b>Diumenge 18 d'octubre</b> · de 7:45 a 9:00h<br>Zona 0</li>
             </ul>
             <p class="note" data-i18n="lg_dors_n">Cal presentar DNI, NIE o passaport.</p>
           </div>
@@ -1066,22 +1097,6 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
         </div>
       </div>
 
-      <!-- reglament oficial -->
-      <div class="regl reveal">
-        <a class="regl-cover" href="docs/reglament-2026.pdf" target="_blank" rel="noopener" aria-label="Obrir el reglament oficial (PDF)">
-          <img src="img/reglament-portada.webp" width="900" height="1271" loading="lazy" decoding="async" alt="Primera pàgina del reglament oficial de la V Escardó Mitja Marató">
-        </a>
-        <div class="regl-body">
-          <p class="eyebrow" data-i18n="rg_k">Document oficial</p>
-          <h2 data-i18n="rg_h">Reglament oficial</h2>
-          <p data-i18n="rg_p">Modalitats, recorreguts, horaris, recollida de dorsals, temps de tall i premis: tot el que has de saber, en un sol document.</p>
-          <div class="regl-btns">
-            <a class="btn btn-red" href="docs/reglament-2026.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg><span data-i18n="rg_view">Veure el reglament</span></a>
-            <a class="btn btn-ghost" href="docs/reglament-2026.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-i18n="rg_dl">Descarregar PDF</span></a>
-          </div>
-          <p class="regl-meta" data-i18n="rg_meta">PDF · 8 pàgines</p>
-        </div>
-      </div>
 
       <!-- fotos d'edicions anteriors -->
       <div class="mitja-gallery reveal">
@@ -1104,7 +1119,7 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
       <!-- modalitats -->
       <div class="sec-head reveal" style="margin:60px 0 28px">
         <p class="eyebrow" data-i18n="m_mod_k">Tria la teva distància</p>
-        <h2 data-i18n="m_mod_h">Modalitats i horaris</h2>
+        <h2 data-i18n="m_mod_h">Modalitats</h2>
       </div>
       <div class="mod-grid">
         <div class="mod-card reveal">
@@ -1137,6 +1152,7 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
         <div class="s-facts">
           <span><b data-i18n="spec_start">Sortida 12:30h</b></span>
           <span data-i18n="spec_dorsal">Recollida de dorsals d'11:00 a 12:00h</span>
+          <span data-i18n="spec_insc">Inscripcions tancades</span>
         </div>
       </div>
 
@@ -1190,11 +1206,11 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
 
       <!-- CTA final -->
       <div class="mitja-foot reveal" style="margin-top:50px">
-        <a class="btn btn-red btn-hero" href="docs/reglament-2026.pdf" target="_blank" rel="noopener">
+        <a class="btn btn-red btn-hero" href="/docs/reglament-2026.pdf" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
-          <span data-i18n="m_cta">Llegeix el reglament</span>
+          <span data-i18n="m_cta">Veure el reglament</span>
         </a>
-        <p class="mitja-note" data-i18n="m_note"><b>Inscripcions tancades</b> · No s'accepten inscripcions el dia de la cursa.</p>
+        <p class="mitja-note" data-i18n="m_note"><b>Inscripcions tancades el 8 d'octubre</b> · 2.500 participants</p>
       </div>
     </div>
   </section>
@@ -1553,7 +1569,7 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
         <h4 data-i18n="f_mitja">La Mitja</h4>
         <p data-i18n="f_m1">18 d'octubre 2026 · 09:30h</p>
         <p data-i18n="f_m2">Vila-Seca, Tarragona</p>
-        <a href="docs/reglament-2026.pdf" target="_blank" rel="noopener" data-i18n="f_m3">Reglament oficial (PDF) →</a>
+        <a href="/docs/reglament-2026.pdf" target="_blank" rel="noopener" data-i18n="f_m3">Reglament oficial →</a>
       </div>
       <div class="footer-col">
         <h4 data-i18n="f_contacte">Contacte</h4>
@@ -1613,7 +1629,7 @@ const I18N = {
   nav_inici:["Inici","Inicio"], nav_club:["El Club","El Club"], nav_mitja:["La Mitja","La Media"],
   nav_act:["Activitats","Actividades"], nav_soci:["Fes-te soci","Hazte socio"],
   nav_patro:["Patrocinadors","Patrocinadores"], nav_contacte:["Contacte","Contacto"],
-  cta_reg:["Reglament","Reglamento"], cta_reg_long:["Llegeix el reglament","Lee el reglamento"], cta_reg_hero:["LLEGEIX EL REGLAMENT","LEE EL REGLAMENTO"],
+  cta_inscriu:["Reglament","Reglamento"], cta_inscriu_mitja:["Llegeix el reglament","Lee el reglamento"],
   cta_soci:["Fes-te soci","Hazte socio"],
 
   hero_eyebrow:["Vila-Seca · Tarragona · des de 2020","Vila-Seca · Tarragona · desde 2020"],
@@ -1653,7 +1669,7 @@ const I18N = {
   m_lloc_k:["Sortida i meta · Zona 0","Salida y meta · Zona 0"],
   m_lloc_v:["Complex Esportiu de Vila-Seca · Av. de l'Alcalde Pere Molas","Complejo Deportivo de Vila-Seca · Av. de l'Alcalde Pere Molas"],
   m_cd_label:["Falta cada cop menys","Falta cada vez menos"],
-  m_mod_k:["Les distàncies","Las distancias"], m_mod_h:["Modalitats i horaris","Modalidades y horarios"],
+  m_mod_k:["Les distàncies","Las distancias"], m_mod_h:["Modalitats","Modalidades"],
   d_21_t:["Mitja Marató","Media Maratón"], d_10_t:["Cursa 10K","Carrera 10K"], d_5_t:["Cursa 5K","Carrera 5K"],
   d_certif:["recorregut certificat","recorrido certificado"],
   d_start_0930:["Sortida 09:30h","Salida 09:30h"],
@@ -1673,16 +1689,16 @@ const I18N = {
   rec_title_5k:["Cursa · 5K","Carrera · 5K"],
   rec_note_1:["Sortida i meta a la Zona 0, Complex Esportiu de Vila-Seca.","Salida y meta en la Zona 0, Complejo Deportivo de Vila-Seca."],
   rec_note_2:["Avituallaments cada 5 km aproximadament.","Avituallamientos cada 5 km aproximadamente."],
-  m_cta:["Llegeix el reglament","Lee el reglamento"],
-  m_note:["<b>Inscripcions tancades</b> · No s'accepten inscripcions el dia de la cursa.","<b>Inscripciones cerradas</b> · No se aceptan inscripciones el día de la carrera."],
+  m_cta:["Veure el reglament","Ver el reglamento"],
+  m_note:["<b>Inscripcions tancades el 8 d'octubre</b> · 2.500 participants","<b>Inscripciones cerradas el 8 de octubre</b> · 2.500 participantes"],
   lg_k:["Informació pràctica","Información práctica"],
   lg_h:["Tot el que necessites per al dia 18","Todo lo que necesitas para el día 18"],
   lg_start_k:["Sortida","Salida"],
   lg_start_v:["<b>Diumenge 18 d'octubre · 09:30h</b><br>Parking del Complex Esportiu de Vila-Seca (Zona 0)","<b>Domingo 18 de octubre · 09:30h</b><br>Parking del Complejo Deportivo de Vila-Seca (Zona 0)"],
   lg_start_n:["Sortida per calaixos segons ritme.","Salida por cajones según ritmo."],
   lg_dors_k:["Recollida de dorsals","Recogida de dorsales"],
-  lg_dors_1:["<b>Dissabte 17 d'octubre</b> · de 17:00 a 20:30h<br>Pista exterior del Pavelló Municipal","<b>Sábado 17 de octubre</b> · de 17:00 a 20:30h<br>Pista exterior del Pabellón Municipal"],
-  lg_dors_2:["<b>Diumenge 18 d'octubre</b> · de 8:00 a 9:00h<br>Zona 0","<b>Domingo 18 de octubre</b> · de 8:00 a 9:00h<br>Zona 0"],
+  lg_dors_1:["<b>Dissabte 17 d'octubre</b> · de 17:00 a 20:30h<br>Hall del Pavelló Municipal","<b>Sábado 17 de octubre</b> · de 17:00 a 20:30h<br>Hall del Pabellón Municipal"],
+  lg_dors_2:["<b>Diumenge 18 d'octubre</b> · de 7:45 a 9:00h<br>Zona 0","<b>Domingo 18 de octubre</b> · de 7:45 a 9:00h<br>Zona 0"],
   lg_dors_n:["Cal presentar DNI, NIE o passaport.","Es necesario presentar DNI, NIE o pasaporte."],
   lg_spec_k:["Cursa Specials","Carrera Specials"],
   lg_spec_v:["<b>Sortida a les 12:30h</b><br>Recollida de dorsals d'11:00 a 12:00h","<b>Salida a las 12:30h</b><br>Recogida de dorsales de 11:00 a 12:00h"],
@@ -1694,6 +1710,7 @@ const I18N = {
   rg_dl:["Descarregar PDF","Descargar PDF"],
   rg_meta:["PDF · 8 pàgines","PDF · 8 páginas"],
   spec_dorsal:["Recollida de dorsals d'11:00 a 12:00h","Recogida de dorsales de 11:00 a 12:00h"],
+  spec_insc:["Inscripcions tancades","Inscripciones cerradas"],
 
   a_eyebrow:["Tot l'any en moviment","Todo el año en movimiento"], a_h:["Activitats del club","Actividades del club"],
   a_lead:["No tot són curses. El club viu durant tot l'any amb esport, solidaritat i molta gent.","No todo son carreras. El club vive todo el año con deporte, solidaridad y mucha gente."],
@@ -1767,7 +1784,7 @@ const I18N = {
   f_tag:["Passió pel running des de Vila-Seca. Una família, un estil de vida.","Pasión por el running desde Vila-Seca. Una familia, un estilo de vida."],
   f_nav:["Navega","Navega"], f_mitja:["La Mitja","La Media"],
   f_m1:["18 d'octubre 2026 · 09:30h","18 de octubre 2026 · 09:30h"], f_m2:["Vila-Seca, Tarragona","Vila-Seca, Tarragona"],
-  f_m3:["Reglament oficial (PDF) →","Reglamento oficial (PDF) →"],
+  f_m3:["Reglament oficial →","Reglamento oficial →"],
   f_contacte:["Contacte","Contacto"], f_loc:["Vila-Seca · Tarragona","Vila-Seca · Tarragona"],
   f_legal:["Tots els drets reservats","Todos los derechos reservados"],
 
@@ -2069,14 +2086,14 @@ $$('.rec-tab').forEach(b=> b.addEventListener('click', ()=> setMod(b.dataset.mod
     ca:{ greet:"Hola! 👋 Sóc l'assistent del CERV. En què et puc ajudar?",
       faqs:[
         {q:"Quan és la Mitja?", a:"La <b>V Escardó Mitja Marató</b> és el <b>diumenge 18 d'octubre de 2026 a les 09:30h</b>, amb sortida i meta a la Zona 0 del Complex Esportiu de Vila-Seca."},
-        {q:"On recullo el dorsal?", a:"Pots recollir-lo el <b>dissabte 17 d'octubre de 17:00 a 20:30h</b> a la pista exterior del Pavelló Municipal, o el <b>diumenge 18 de 8:00 a 9:00h</b> a la Zona 0. Cal presentar <b>DNI, NIE o passaport</b>. Cursa Specials: d'11:00 a 12:00h."},
+        {q:"On recullo el dorsal?", a:"El <b>dissabte 17 d'octubre de 17:00 a 20:30h</b> al hall del Pavelló Municipal, i el <b>diumenge 18 de 7:45 a 9:00h</b> a la Zona 0. Cal portar <b>DNI, NIE o passaport</b>. Cursa Specials: d'11:00 a 12:00h."},
         {q:"Puc inscriure'm encara?", a:"Ho sentim: les inscripcions es van <b>tancar el 8 d'octubre</b> i <b>no se n'accepten el dia de la cursa</b>. Però pots venir a animar: t'esperem el diumenge 18!"},
         {q:"Com em faig soci?", a:"El <b>primer entrenament és gratis</b>. Vine un <b>dilluns, dimecres o divendres</b>, o escriu-nos a <a href=\""+MAILTO_SOCI.ca+"\"><b>somoscerv@gmail.com</b></a>. \ud83c\udfc3"}
       ]},
     es:{ greet:"¡Hola! 👋 Soy el asistente del CERV. ¿En qué te puedo ayudar?",
       faqs:[
         {q:"¿Cuándo es la Media?", a:"La <b>V Escardó Media Maratón</b> es el <b>domingo 18 de octubre de 2026 a las 09:30h</b>, con salida y meta en la Zona 0 del Complejo Deportivo de Vila-Seca."},
-        {q:"¿Dónde recojo el dorsal?", a:"Puedes recogerlo el <b>sábado 17 de octubre de 17:00 a 20:30h</b> en la pista exterior del Pabellón Municipal, o el <b>domingo 18 de 8:00 a 9:00h</b> en la Zona 0. Es necesario presentar <b>DNI, NIE o pasaporte</b>. Carrera Specials: de 11:00 a 12:00h."},
+        {q:"¿Dónde recojo el dorsal?", a:"El <b>sábado 17 de octubre de 17:00 a 20:30h</b> en el hall del Pabellón Municipal, y el <b>domingo 18 de 7:45 a 9:00h</b> en la Zona 0. Es necesario traer <b>DNI, NIE o pasaporte</b>. Carrera Specials: de 11:00 a 12:00h."},
         {q:"¿Puedo inscribirme todavía?", a:"Lo sentimos: las inscripciones se <b>cerraron el 8 de octubre</b> y <b>no se aceptan el día de la carrera</b>. Pero puedes venir a animar: ¡te esperamos el domingo 18!"},
         {q:"¿Cómo me hago socio?", a:"El <b>primer entrenamiento es gratis</b>. Ven un <b>lunes, miércoles o viernes</b>, o escríbenos a <a href=\""+MAILTO_SOCI.es+"\"><b>somoscerv@gmail.com</b></a>. \ud83c\udfc3"}
       ]}
