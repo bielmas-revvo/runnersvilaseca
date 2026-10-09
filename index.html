@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Club de running de Vila-Seca (Tarragona). V Escardó Mitja Marató · diumenge 18 d'octubre de 2026 · 21K, 10K i 5K. Inscriu-te o fes-te soci del club." id="metaDesc">
+<meta name="description" content="Club de running de Vila-Seca (Tarragona). V Escardó Mitja Marató · diumenge 18 d'octubre de 2026 · 21K, 10K i 5K. Consulta el reglament, els horaris i la recollida de dorsals." id="metaDesc">
 <title>Club Esportiu Runners Vila-Seca · V Mitja Marató 2026</title>
 
 <!-- ===== FAVICON · THEME ===== -->
@@ -333,6 +333,7 @@ ul{margin:0;padding:0;list-style:none}
 .mitja-logo-row{display:flex;align-items:center;gap:18px;margin-bottom:26px}
 .mitja-logo-row img{height:clamp(76px,11vw,112px);width:auto;background:#fff;padding:clamp(14px,2vw,20px) clamp(20px,3vw,30px);border-radius:14px;box-shadow:0 10px 26px rgba(0,0,0,.28)}
 .mitja{overflow:hidden}
+.regl + .mitja-meta{margin-top:48px}
 .mitja-meta{display:grid;grid-template-columns:1fr;gap:16px;margin:0 0 8px}
 .mm{display:flex;align-items:flex-start;gap:12px;font-size:15.5px;color:#3c4654}
 .mm svg{width:22px;height:22px;flex:none;color:var(--navy);margin-top:2px}
@@ -352,9 +353,31 @@ ul{margin:0;padding:0;list-style:none}
 .mod-km{font-family:"Archivo";font-weight:900;font-size:50px;color:var(--navy);line-height:1;letter-spacing:-.04em}
 .mod-card h3{font-size:18px;font-weight:800;margin:12px 0 4px;text-transform:uppercase;color:var(--navy)}
 .mod-card .meters{font-size:13.5px;color:#6b7682}
-.mod-card .price-row{margin-top:18px;padding-top:16px;border-top:1px solid #eef1f5}
-.mod-card .price{font-family:"Archivo";font-weight:900;font-size:26px;color:var(--charcoal)}
-.mod-card .price small{display:block;font-family:"Inter";font-weight:500;font-size:12.5px;color:#6b7682;margin-top:3px}
+.race-info{margin:48px 0 0}
+.race-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.race-card{background:var(--off);border:1px solid #e6eaf0;border-radius:var(--r);padding:24px 22px}
+.race-card h3{display:flex;align-items:center;gap:10px;font-family:"Archivo";font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);margin-bottom:14px}
+.race-card h3 svg{width:20px;height:20px;flex:none;color:var(--navy)}
+.race-card p,.race-card li{font-size:15px;color:#3c4654;line-height:1.55}
+.race-card b{color:var(--charcoal)}
+.race-card ul{display:flex;flex-direction:column;gap:10px}
+.race-card .note{margin-top:12px;font-size:13.5px;color:#54616f}
+.race-cut{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.race-cut div{background:#fff;border:1px solid #e6eaf0;border-radius:10px;padding:12px 8px;text-align:center}
+.race-cut span{display:block;font-family:"Archivo";font-weight:800;font-size:12px;letter-spacing:.06em;color:#54616f}
+.race-cut b{display:block;font-family:"Archivo";font-weight:900;font-size:20px;color:var(--navy);margin-top:4px}
+.regl{margin:56px 0 0;display:grid;grid-template-columns:1fr;gap:30px;align-items:center;background:var(--navy-deep);color:#fff;border-radius:18px;padding:clamp(24px,4vw,44px)}
+.regl-cover{display:block;justify-self:center;width:min(300px,78%);border-radius:6px;overflow:hidden;background:#fff;border:1px solid rgba(255,255,255,.25);box-shadow:0 22px 50px rgba(0,0,0,.45);transform:rotate(-1.5deg);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.regl-cover img{display:block;width:100%;height:auto}
+.regl-cover:hover{transform:rotate(0) translateY(-6px);box-shadow:0 30px 64px rgba(0,0,0,.5)}
+.regl-body .eyebrow{color:var(--gold)}
+.regl-body h2{font-weight:900;font-size:clamp(30px,4.6vw,48px);text-transform:uppercase;margin:12px 0 14px;color:#fff;text-wrap:balance}
+.regl-body p{font-size:16.5px;color:rgba(255,255,255,.86);max-width:46ch;margin-bottom:26px}
+.regl-btns{display:flex;flex-wrap:wrap;gap:12px}
+.regl-meta{margin-top:14px;font-size:13px;color:rgba(255,255,255,.7)}
+@media(min-width:640px){.race-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.regl{grid-template-columns:.8fr 1.2fr;gap:48px}.regl-cover{width:100%;max-width:320px}}
+@media (prefers-reduced-motion:reduce){.regl-cover{transform:none}}
 .mod-card .start{margin-top:12px;font-size:13px;color:#54616f;display:flex;align-items:center;gap:7px}
 .mod-card .start svg{width:15px;height:15px;color:var(--navy)}
 
@@ -689,13 +712,6 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
 @media(min-width:1000px){.act-gallery{grid-template-columns:repeat(3,1fr)}}
 
 /* =========================================================
-   VOLUNTARIS
-   ========================================================= */
-.vol-cta-btn{padding:clamp(18px,2.2vw,22px) clamp(30px,4.6vw,48px);font-size:clamp(16.5px,2vw,19px);border-radius:14px}
-.vol-crosslink{font-size:14px;color:var(--navy);font-weight:600;border-bottom:1.5px solid rgba(12,42,77,.3);padding-bottom:2px;transition:color .25s,border-color .25s}
-.vol-crosslink:hover{color:var(--navy-deep);border-color:var(--gold)}
-
-/* =========================================================
    PREFERS-REDUCED-MOTION
    ========================================================= */
 @media (prefers-reduced-motion:reduce){
@@ -760,7 +776,6 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
       <a href="#/club" data-route="club" data-i18n="nav_club">El Club</a>
       <a href="#/la-mitja" data-route="la-mitja" data-i18n="nav_mitja">La Mitja</a>
       <a href="#/activitats" data-route="activitats" data-i18n="nav_act">Activitats</a>
-      <a href="#/voluntaris" data-route="voluntaris" data-i18n="nav_voluntaris">Voluntaris</a>
       <a href="#/galeria" data-route="galeria" data-i18n="nav_galeria">Galeria</a>
       <a href="#/soci" data-route="soci" data-i18n="nav_soci">Fes-te soci</a>
       <a href="#/patrocinadors" data-route="patrocinadors" data-i18n="nav_patro">Patrocinadors</a>
@@ -772,7 +787,7 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
         <button data-lang="ca" class="active" aria-pressed="true">CA</button>
         <button data-lang="es" aria-pressed="false">ES</button>
       </div>
-      <a class="btn btn-red" href="https://www.runatica.com/event/mitja-marato-vila-seca-2026" target="_blank" rel="noopener" data-i18n="cta_inscriu">Inscriu-te</a>
+      <a class="btn btn-red" href="/docs/reglament-2026.pdf" target="_blank" rel="noopener" data-i18n="cta_inscriu">Reglament</a>
       <button class="burger" id="burger" aria-label="Obrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -785,12 +800,11 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
   <a href="#/club" data-route="club" data-i18n="nav_club">El Club</a>
   <a href="#/la-mitja" data-route="la-mitja" data-i18n="nav_mitja">La Mitja</a>
   <a href="#/activitats" data-route="activitats" data-i18n="nav_act">Activitats</a>
-  <a href="#/voluntaris" data-route="voluntaris" data-i18n="nav_voluntaris">Voluntaris</a>
   <a href="#/galeria" data-route="galeria" data-i18n="nav_galeria">Galeria</a>
   <a href="#/soci" data-route="soci" data-i18n="nav_soci">Fes-te soci</a>
   <a href="#/patrocinadors" data-route="patrocinadors" data-i18n="nav_patro">Patrocinadors</a>
   <a href="#/contacte" data-route="contacte" data-i18n="nav_contacte">Contacte</a>
-  <a class="btn btn-red" style="margin-top:18px" href="https://www.runatica.com/event/mitja-marato-vila-seca-2026" target="_blank" rel="noopener" data-i18n="cta_inscriu_mitja">Inscriu-te a la V Mitja</a>
+  <a class="btn btn-red" style="margin-top:18px" href="/docs/reglament-2026.pdf" target="_blank" rel="noopener" data-i18n="cta_inscriu_mitja">Llegeix el reglament</a>
 </nav>
 
 <main id="app">
@@ -821,11 +835,11 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
       </div>
 
       <div class="hero-ctas">
-        <a class="btn btn-red btn-hero" href="https://www.runatica.com/event/mitja-marato-vila-seca-2026" target="_blank" rel="noopener" data-i18n="cta_inscriu_mitja">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          Inscriu-te a la V Mitja
+        <a class="btn btn-red btn-hero" href="/docs/reglament-2026.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+          <span data-i18n="cta_inscriu_mitja">Llegeix el reglament</span>
         </a>
-        <p class="hero-reminder" data-i18n="hero_reminder">Places limitades a 2.500 participants · Tarifa 1 fins al 31 d'agost · des de 11,60€</p>
+        <p class="hero-reminder" data-i18n="hero_reminder">Inscripcions tancades · Ens veiem el 18 d'octubre</p>
         <a class="hero-soci-link cta-soci" href="mailto:somoscerv@gmail.com" data-i18n="hero_soci_link">Prova un entrenament →</a>
       </div>
     </div>
@@ -841,7 +855,7 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
         <a class="access-card access-mitja reveal" href="#/la-mitja">
           <p class="eyebrow" data-i18n="acc_mitja_k">L'esdeveniment de l'any</p>
           <h3 data-i18n="acc_mitja_t">V Escardó Mitja Marató</h3>
-          <p data-i18n="acc_mitja_p">18 d'octubre 2026. 21K, 10K i 5K pels carrers de Vila-Seca. Tota la informació i inscripcions.</p>
+          <p data-i18n="acc_mitja_p">18 d'octubre 2026. 21K, 10K i 5K pels carrers de Vila-Seca. Tota la informació, horaris i reglament.</p>
           <span class="access-link" data-i18n="acc_mitja_cta">Veure la cursa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
         <a class="access-card access-soci reveal d1" href="#/soci">
@@ -1005,6 +1019,24 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
   <section class="sec mitja">
     <div class="container">
 
+      <!-- reglament oficial -->
+      <div class="regl reveal" style="margin-top:0">
+        <a class="regl-cover" href="/docs/reglament-2026.pdf" target="_blank" rel="noopener" aria-label="Obrir el reglament oficial (PDF)">
+          <img src="/img/reglament-portada.jpg" width="900" height="1271" loading="lazy" decoding="async" alt="Primera pàgina del reglament oficial de la V Escardó Mitja Marató">
+        </a>
+        <div class="regl-body">
+          <p class="eyebrow" data-i18n="rg_k">Document oficial</p>
+          <h2 data-i18n="rg_h">Reglament oficial</h2>
+          <p data-i18n="rg_p">Modalitats, recorreguts, horaris, recollida de dorsals, temps de tall i premis: tot el que has de saber, en un sol document.</p>
+          <div class="regl-btns">
+            <a class="btn btn-red" href="/docs/reglament-2026.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg><span data-i18n="rg_view">Veure el reglament</span></a>
+            <a class="btn btn-ghost" href="/docs/reglament-2026.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span data-i18n="rg_dl">Descarregar PDF</span></a>
+          </div>
+          <p class="regl-meta" data-i18n="rg_meta">PDF · 8 pàgines</p>
+        </div>
+      </div>
+
+
       <!-- info clau -->
       <div class="mitja-meta reveal">
         <div class="mm">
@@ -1017,6 +1049,42 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
           <div><b data-i18n="m_lloc_k">Sortida i meta · Zona 0</b><span data-i18n="m_lloc_v">Complex Esportiu de Vila-Seca · Av. de l'Alcalde Pere Molas</span></div>
         </div>
       </div>
+
+      <!-- informació pràctica · setmana de cursa -->
+      <div class="race-info">
+        <div class="sec-head reveal" style="margin:0 0 24px">
+          <p class="eyebrow" data-i18n="lg_k">Informació pràctica</p>
+          <h2 data-i18n="lg_h">Tot el que necessites per al dia 18</h2>
+        </div>
+        <div class="race-grid">
+          <div class="race-card reveal">
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 22V4M4 4h13l-2 4 2 4H4"/></svg><span data-i18n="lg_start_k">Sortida</span></h3>
+            <p data-i18n="lg_start_v"><b>Diumenge 18 d'octubre · 09:30h</b><br>Parking del Complex Esportiu de Vila-Seca (Zona 0)</p>
+            <p class="note" data-i18n="lg_start_n">Sortida per calaixos segons ritme.</p>
+          </div>
+          <div class="race-card reveal d1">
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h6M7 14h10"/></svg><span data-i18n="lg_dors_k">Recollida de dorsals</span></h3>
+            <ul>
+              <li data-i18n="lg_dors_1"><b>Dissabte 17 d'octubre</b> · de 17:00 a 20:30h<br>Hall del Pavelló Municipal</li>
+              <li data-i18n="lg_dors_2"><b>Diumenge 18 d'octubre</b> · de 7:45 a 9:00h<br>Zona 0</li>
+            </ul>
+            <p class="note" data-i18n="lg_dors_n">Cal presentar DNI, NIE o passaport.</p>
+          </div>
+          <div class="race-card reveal">
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg><span data-i18n="lg_spec_k">Cursa Specials</span></h3>
+            <p data-i18n="lg_spec_v"><b>Sortida a les 12:30h</b><br>Recollida de dorsals d'11:00 a 12:00h</p>
+          </div>
+          <div class="race-card reveal d1">
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg><span data-i18n="lg_cut_k">Temps de tall</span></h3>
+            <div class="race-cut">
+              <div><span>21K</span><b>2:30h</b></div>
+              <div><span>10K</span><b>1h 11'</b></div>
+              <div><span>5K</span><b>40'</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <!-- fotos d'edicions anteriors -->
       <div class="mitja-gallery reveal">
@@ -1039,37 +1107,25 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
       <!-- modalitats -->
       <div class="sec-head reveal" style="margin:60px 0 28px">
         <p class="eyebrow" data-i18n="m_mod_k">Tria la teva distància</p>
-        <h2 data-i18n="m_mod_h">Modalitats i preus</h2>
+        <h2 data-i18n="m_mod_h">Modalitats</h2>
       </div>
       <div class="mod-grid">
         <div class="mod-card reveal">
           <div class="mod-km">21K</div>
           <h3 data-i18n="d_21_t">Mitja Marató</h3>
           <p class="meters">21,097 km · <span data-i18n="d_certif">recorregut certificat</span></p>
-          <div class="price-row">
-            <div class="price">21,60€</div>
-            <small data-i18n="d_21_note">21€ + 0,60€ de gestió · Tarifa 1 fins 31/08/2026</small>
-          </div>
           <div class="start"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="d_start_0930">Sortida 09:30h</span></div>
         </div>
         <div class="mod-card reveal d1">
           <div class="mod-km">10K</div>
           <h3 data-i18n="d_10_t">Cursa 10K</h3>
           <p class="meters">10 km</p>
-          <div class="price-row">
-            <div class="price">15,60€</div>
-            <small data-i18n="d_10_note">15€ + 0,60€ de gestió · Tarifa 1 fins 31/08/2026</small>
-          </div>
           <div class="start"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="d_start_0930">Sortida 09:30h</span></div>
         </div>
         <div class="mod-card reveal d2">
           <div class="mod-km">5K</div>
           <h3 data-i18n="d_5_t">Cursa 5K</h3>
           <p class="meters">5 km</p>
-          <div class="price-row">
-            <div class="price">11,60€</div>
-            <small data-i18n="d_5_note">11€ + 0,60€ de gestió · Tarifa 1 fins 31/08/2026</small>
-          </div>
           <div class="start"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="d_start_0930">Sortida 09:30h</span></div>
         </div>
       </div>
@@ -1082,9 +1138,9 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
         </div>
         <p data-i18n="spec_p">Cursa inclusiva i adaptada per a persones amb diversitat funcional, discapacitat intel·lectual, visual o mobilitat reduïda. Perquè córrer és de tots.</p>
         <div class="s-facts">
-          <span><b>2,60€</b> · <span data-i18n="spec_price_note">2€ + 0,60€ gestió</span></span>
-          <span><b data-i18n="spec_start">Sortida 12:00h</b></span>
-          <span data-i18n="spec_insc">Inscripció fins al 8 d'octubre</span>
+          <span><b data-i18n="spec_start">Sortida 12:30h</b></span>
+          <span data-i18n="spec_dorsal">Recollida de dorsals d'11:00 a 12:00h</span>
+          <span data-i18n="spec_insc">Inscripcions tancades</span>
         </div>
       </div>
 
@@ -1138,12 +1194,11 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
 
       <!-- CTA final -->
       <div class="mitja-foot reveal" style="margin-top:50px">
-        <a class="btn btn-red btn-hero" href="https://www.runatica.com/event/mitja-marato-vila-seca-2026" target="_blank" rel="noopener" data-i18n="m_cta">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          Inscriu-te ara
+        <a class="btn btn-red btn-hero" href="/docs/reglament-2026.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+          <span data-i18n="m_cta">Veure el reglament</span>
         </a>
-        <p class="mitja-note" data-i18n="m_note"><b>Inscripcions fins al 8 d'octubre</b> · límit 2.500 participants.</p>
-        <p><a class="vol-crosslink" href="#/voluntaris" data-i18n="m_vol_link">No corres però vols ajudar? Fes-te voluntari →</a></p>
+        <p class="mitja-note" data-i18n="m_note"><b>Inscripcions tancades el 8 d'octubre</b> · 2.500 participants</p>
       </div>
     </div>
   </section>
@@ -1307,70 +1362,6 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
   </section>
 </section>
 
-<!-- ============================== VISTA · VOLUNTARIS ============================== -->
-<section class="view" id="view-voluntaris" data-screen-label="Voluntaris">
-  <div class="page-intro with-photo">
-    <!-- FOTO REAL: voluntaris del club amb els senyals dels circuits al túnel -->
-    <div class="intro-photo" aria-hidden="true"><img decoding="async" loading="lazy" width="1280" height="1023" src="img/nit-voluntaris-tunel-800.webp" srcset="img/nit-voluntaris-tunel-800.webp 800w, img/nit-voluntaris-tunel-1280.webp 1280w" sizes="100vw" alt=""></div>
-    <div class="container">
-      <p class="eyebrow" data-i18n="vol_eyebrow">Suma't a l'equip</p>
-      <h1 data-i18n="vol_h">Sense voluntaris no hi ha cursa</h1>
-      <p data-i18n="vol_lead">La Mitja reuneix fins a 2.500 corredors, i cap d'ells arribaria a meta sense la gent del poble que s'hi implica. Vine a viure la cursa des de dins: t'ho passaràs bé, ho farem junts i tornaràs a casa amb la sensació d'haver-la fet possible.</p>
-    </div>
-  </div>
-
-  <section class="sec">
-    <div class="container">
-      <div class="sec-head reveal">
-        <p class="eyebrow" style="color:var(--navy)" data-i18n="vol_que_k">El dia de la cursa</p>
-        <h2 data-i18n="vol_que_h">Què fem?</h2>
-      </div>
-      <div class="info-grid" style="margin:0 0 26px">
-        <div class="info-card reveal">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2s6 6.5 6 12a6 6 0 0 1-12 0c0-5.5 6-12 6-12Z"/></svg><span data-i18n="vol_c1_t">Avituallaments</span></h3>
-          <p data-i18n="vol_c1_p">Punts d'aigua cada 5 km aproximadament.</p>
-        </div>
-        <div class="info-card reveal d1">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg><span data-i18n="vol_c2_t">Lliurament de dorsals</span></h3>
-          <p data-i18n="vol_c2_p">Dissabte a la tarda i diumenge al matí.</p>
-        </div>
-        <div class="info-card reveal d2">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l18-8-8 18-2.5-7.5L3 11Z"/></svg><span data-i18n="vol_c3_t">Controls de recorregut</span></h3>
-          <p data-i18n="vol_c3_p">Senyalització i orientació als corredors.</p>
-        </div>
-        <div class="info-card reveal d3">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="vol_c4_t">Zona 0</span></h3>
-          <p data-i18n="vol_c4_p">Sortida, meta i guarda-roba.</p>
-        </div>
-        <div class="info-card reveal d4">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5ZM15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span data-i18n="vol_c5_t">Ambient i ànims</span></h3>
-          <p data-i18n="vol_c5_p">Animar els corredors al llarg del recorregut.</p>
-        </div>
-      </div>
-
-      <!-- què pots esperar -->
-      <div class="train-box reveal" style="max-width:760px">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        <div>
-          <b data-i18n="vol_expect_t">Què pots esperar?</b>
-          <span data-i18n="vol_expect_p">Diumenge 18 d'octubre al matí. T'assignem un torn i un punt concret, i t'expliquem tot amb antelació.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" style="background:var(--off)">
-    <div class="container">
-      <div class="patro-cta reveal">
-        <h3 data-i18n="vol_cta_h">Suma't a l'equip de <em>voluntaris</em></h3>
-        <p data-i18n="vol_cta_p">Omple el formulari en dos minuts i ens posarem en contacte amb tu abans de la cursa amb el teu torn i punt assignat.</p>
-        <a class="btn btn-gold vol-cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfsyG_sMYF9Z-d5QRQXAg-IoznscVc10V4T06qswOeBGfYDtA/viewform?usp=send_form" target="_blank" rel="noopener" data-i18n="vol_cta_btn">Vull ser voluntari/ària</a>
-      </div>
-      <p class="mail-hint" style="margin-top:18px;text-align:center"><span data-i18n="vol_mail">També pots escriure'ns a</span> <a href="mailto:somoscerv@gmail.com">somoscerv@gmail.com</a></p>
-    </div>
-  </section>
-</section>
-
 <!-- ============================== VISTA · GALERIA ============================== -->
 <section class="view" id="view-galeria" data-screen-label="Galeria">
   <div class="page-intro">
@@ -1518,7 +1509,7 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
           <p class="k" data-i18n="ct_email_k">Correu</p>
           <a href="mailto:somoscerv@gmail.com">somoscerv@gmail.com</a>
-          <span class="sub" data-i18n="ct_email_sub">Inscripcions, socis i patrocinis</span>
+          <span class="sub" data-i18n="ct_email_sub">La Mitja, socis i patrocinis</span>
         </div>
         <div class="contact-card reveal d1">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
@@ -1560,14 +1551,13 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
         <a href="#/la-mitja" data-i18n="nav_mitja">La Mitja</a>
         <a href="#/club" data-i18n="nav_club">El Club</a>
         <a href="#/activitats" data-i18n="nav_act">Activitats</a>
-        <a href="#/voluntaris" data-i18n="nav_voluntaris">Voluntaris</a>
         <a href="#/soci" data-i18n="nav_soci">Fes-te soci</a>
       </div>
       <div class="footer-col">
         <h4 data-i18n="f_mitja">La Mitja</h4>
         <p data-i18n="f_m1">18 d'octubre 2026 · 09:30h</p>
         <p data-i18n="f_m2">Vila-Seca, Tarragona</p>
-        <a href="https://www.runatica.com/event/mitja-marato-vila-seca-2026" target="_blank" rel="noopener" data-i18n="f_m3">Inscripcions a Runatica →</a>
+        <a href="/docs/reglament-2026.pdf" target="_blank" rel="noopener" data-i18n="f_m3">Reglament oficial →</a>
       </div>
       <div class="footer-col">
         <h4 data-i18n="f_contacte">Contacte</h4>
@@ -1627,7 +1617,7 @@ const I18N = {
   nav_inici:["Inici","Inicio"], nav_club:["El Club","El Club"], nav_mitja:["La Mitja","La Media"],
   nav_act:["Activitats","Actividades"], nav_soci:["Fes-te soci","Hazte socio"],
   nav_patro:["Patrocinadors","Patrocinadores"], nav_contacte:["Contacte","Contacto"],
-  cta_inscriu:["Inscriu-te","Inscríbete"], cta_inscriu_mitja:["Inscriu-te a la V Mitja","Inscríbete a la V Media"],
+  cta_inscriu:["Reglament","Reglamento"], cta_inscriu_mitja:["Llegeix el reglament","Lee el reglamento"],
   cta_soci:["Fes-te soci","Hazte socio"],
 
   hero_eyebrow:["Vila-Seca · Tarragona · des de 2020","Vila-Seca · Tarragona · desde 2020"],
@@ -1637,7 +1627,7 @@ const I18N = {
 
   acc_mitja_k:["L'esdeveniment de l'any","El evento del año"],
   acc_mitja_t:["V Escardó Mitja Marató","V Escardó Media Maratón"],
-  acc_mitja_p:["18 d'octubre 2026. 21K, 10K i 5K pels carrers de Vila-Seca. Tota la informació i inscripcions.","18 de octubre 2026. 21K, 10K y 5K por las calles de Vila-Seca. Toda la información e inscripciones."],
+  acc_mitja_p:["18 d'octubre 2026. 21K, 10K i 5K pels carrers de Vila-Seca. Tota la informació, horaris i reglament.","18 de octubre 2026. 21K, 10K y 5K por las calles de Vila-Seca. Toda la información, horarios y reglamento."],
   acc_mitja_cta:['Veure la cursa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>','Ver la carrera <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'],
   acc_soci_k:["Uneix-te al club","Únete al club"],
   acc_soci_t:["Fes-te soci","Hazte socio"],
@@ -1667,19 +1657,14 @@ const I18N = {
   m_lloc_k:["Sortida i meta · Zona 0","Salida y meta · Zona 0"],
   m_lloc_v:["Complex Esportiu de Vila-Seca · Av. de l'Alcalde Pere Molas","Complejo Deportivo de Vila-Seca · Av. de l'Alcalde Pere Molas"],
   m_cd_label:["Falta cada cop menys","Falta cada vez menos"],
-  m_mod_k:["Tria la teva distància","Elige tu distancia"], m_mod_h:["Modalitats i preus","Modalidades y precios"],
+  m_mod_k:["Les distàncies","Las distancias"], m_mod_h:["Modalitats","Modalidades"],
   d_21_t:["Mitja Marató","Media Maratón"], d_10_t:["Cursa 10K","Carrera 10K"], d_5_t:["Cursa 5K","Carrera 5K"],
   d_certif:["recorregut certificat","recorrido certificado"],
-  d_21_note:["21€ + 0,60€ de gestió · Tarifa 1 fins 31/08/2026","21€ + 0,60€ de gestión · Tarifa 1 hasta 31/08/2026"],
-  d_10_note:["15€ + 0,60€ de gestió · Tarifa 1 fins 31/08/2026","15€ + 0,60€ de gestión · Tarifa 1 hasta 31/08/2026"],
-  d_5_note:["11€ + 0,60€ de gestió · Tarifa 1 fins 31/08/2026","11€ + 0,60€ de gestión · Tarifa 1 hasta 31/08/2026"],
   d_start_0930:["Sortida 09:30h","Salida 09:30h"],
   spec_t:['Cursa Specials 600 m<small data-i18n="spec_sub">Una cursa per a tothom</small>','Carrera Specials 600 m<small data-i18n="spec_sub">Una carrera para todos</small>'],
   spec_sub:["Una cursa per a tothom","Una carrera para todos"],
   spec_p:["Cursa inclusiva i adaptada per a persones amb diversitat funcional, discapacitat intel·lectual, visual o mobilitat reduïda. Perquè córrer és de tots.","Carrera inclusiva y adaptada para personas con diversidad funcional, discapacidad intelectual, visual o movilidad reducida. Porque correr es de todos."],
-  spec_price_note:["2€ + 0,60€ gestió","2€ + 0,60€ gestión"],
-  spec_start:["Sortida 12:00h","Salida 12:00h"],
-  spec_insc:["Inscripció fins al 8 d'octubre","Inscripción hasta el 8 de octubre"],
+  spec_start:["Sortida 12:30h","Salida 12:30h"],
   m_serv_k:["Tot inclòs amb el teu dorsal","Todo incluido con tu dorsal"], m_serv_h:["Serveis al corredor","Servicios al corredor"],
   srv_1:["Avituallament","Avituallamiento"], srv_2:["Cronometratge per xip","Cronometraje por chip"],
   srv_3:["Dutxes i vestidors","Duchas y vestuarios"], srv_4:["Guarda-roba","Guardarropa"],
@@ -1692,8 +1677,28 @@ const I18N = {
   rec_title_5k:["Cursa · 5K","Carrera · 5K"],
   rec_note_1:["Sortida i meta a la Zona 0, Complex Esportiu de Vila-Seca.","Salida y meta en la Zona 0, Complejo Deportivo de Vila-Seca."],
   rec_note_2:["Avituallaments cada 5 km aproximadament.","Avituallamientos cada 5 km aproximadamente."],
-  m_cta:["Inscriu-te ara","Inscríbete ahora"],
-  m_note:["<b>Inscripcions fins al 8 d'octubre</b> · límit 2.500 participants.","<b>Inscripciones hasta el 8 de octubre</b> · límite 2.500 participantes."],
+  m_cta:["Veure el reglament","Ver el reglamento"],
+  m_note:["<b>Inscripcions tancades el 8 d'octubre</b> · 2.500 participants","<b>Inscripciones cerradas el 8 de octubre</b> · 2.500 participantes"],
+  lg_k:["Informació pràctica","Información práctica"],
+  lg_h:["Tot el que necessites per al dia 18","Todo lo que necesitas para el día 18"],
+  lg_start_k:["Sortida","Salida"],
+  lg_start_v:["<b>Diumenge 18 d'octubre · 09:30h</b><br>Parking del Complex Esportiu de Vila-Seca (Zona 0)","<b>Domingo 18 de octubre · 09:30h</b><br>Parking del Complejo Deportivo de Vila-Seca (Zona 0)"],
+  lg_start_n:["Sortida per calaixos segons ritme.","Salida por cajones según ritmo."],
+  lg_dors_k:["Recollida de dorsals","Recogida de dorsales"],
+  lg_dors_1:["<b>Dissabte 17 d'octubre</b> · de 17:00 a 20:30h<br>Hall del Pavelló Municipal","<b>Sábado 17 de octubre</b> · de 17:00 a 20:30h<br>Hall del Pabellón Municipal"],
+  lg_dors_2:["<b>Diumenge 18 d'octubre</b> · de 7:45 a 9:00h<br>Zona 0","<b>Domingo 18 de octubre</b> · de 7:45 a 9:00h<br>Zona 0"],
+  lg_dors_n:["Cal presentar DNI, NIE o passaport.","Es necesario presentar DNI, NIE o pasaporte."],
+  lg_spec_k:["Cursa Specials","Carrera Specials"],
+  lg_spec_v:["<b>Sortida a les 12:30h</b><br>Recollida de dorsals d'11:00 a 12:00h","<b>Salida a las 12:30h</b><br>Recogida de dorsales de 11:00 a 12:00h"],
+  lg_cut_k:["Temps de tall","Tiempos de corte"],
+  rg_k:["Document oficial","Documento oficial"],
+  rg_h:["Reglament oficial","Reglamento oficial"],
+  rg_p:["Modalitats, recorreguts, horaris, recollida de dorsals, temps de tall i premis: tot el que has de saber, en un sol document.","Modalidades, recorridos, horarios, recogida de dorsales, tiempos de corte y premios: todo lo que debes saber, en un solo documento."],
+  rg_view:["Veure el reglament","Ver el reglamento"],
+  rg_dl:["Descarregar PDF","Descargar PDF"],
+  rg_meta:["PDF · 8 pàgines","PDF · 8 páginas"],
+  spec_dorsal:["Recollida de dorsals d'11:00 a 12:00h","Recogida de dorsales de 11:00 a 12:00h"],
+  spec_insc:["Inscripcions tancades","Inscripciones cerradas"],
 
   a_eyebrow:["Tot l'any en moviment","Todo el año en movimiento"], a_h:["Activitats del club","Actividades del club"],
   a_lead:["No tot són curses. El club viu durant tot l'any amb esport, solidaritat i molta gent.","No todo son carreras. El club vive todo el año con deporte, solidaridad y mucha gente."],
@@ -1760,14 +1765,14 @@ const I18N = {
 
   ct_eyebrow:["Parlem","Hablemos"], ct_h:["Contacte","Contacto"],
   ct_lead:["Tens dubtes sobre la Mitja o vols fer-te soci? Escriu-nos, som a prop.","¿Tienes dudas sobre la Media o quieres hacerte socio? Escríbenos, estamos cerca."],
-  ct_email_k:["Correu","Correo"], ct_email_sub:["Inscripcions, socis i patrocinis","Inscripciones, socios y patrocinios"],
+  ct_email_k:["Correu","Correo"], ct_email_sub:["La Mitja, socis i patrocinis","La Media, socios y patrocinios"],
   ct_social_k:["Xarxes socials","Redes sociales"],
   ct_loc_k:["On som","Dónde estamos"], ct_loc_v:["Vila-Seca","Vila-Seca"], ct_loc_sub:["Tarragona · Costa Daurada","Tarragona · Costa Dorada"],
 
   f_tag:["Passió pel running des de Vila-Seca. Una família, un estil de vida.","Pasión por el running desde Vila-Seca. Una familia, un estilo de vida."],
   f_nav:["Navega","Navega"], f_mitja:["La Mitja","La Media"],
   f_m1:["18 d'octubre 2026 · 09:30h","18 de octubre 2026 · 09:30h"], f_m2:["Vila-Seca, Tarragona","Vila-Seca, Tarragona"],
-  f_m3:["Inscripcions a Runatica →","Inscripciones en Runatica →"],
+  f_m3:["Reglament oficial →","Reglamento oficial →"],
   f_contacte:["Contacte","Contacto"], f_loc:["Vila-Seca · Tarragona","Vila-Seca · Tarragona"],
   f_legal:["Tots els drets reservats","Todos los derechos reservados"],
 
@@ -1778,7 +1783,7 @@ const I18N = {
   hero_club:["Club Esportiu Runners Vila-Seca","Club Esportiu Runners Vila-Seca"],
   hero_t1:["V Escardó Mitja Marató","V Escardó Media Maratón"],
   hero_t2:["18 d'octubre de 2026","18 de octubre de 2026"],
-  hero_reminder:["Places limitades a 2.500 participants · Tarifa 1 fins al 31 d'agost · des de 11,60€","Plazas limitadas a 2.500 participantes · Tarifa 1 hasta el 31 de agosto · desde 11,60€"],
+  hero_reminder:["Inscripcions tancades · Ens veiem el 18 d'octubre","Inscripciones cerradas · Nos vemos el 18 de octubre"],
   hero_soci_link:["Prova un entrenament →","Prueba un entrenamiento →"],
   g_eyebrow:["El club, en imatges","El club, en imágenes"],
   g_h:["Galeria","Galería"],
@@ -1809,31 +1814,7 @@ const I18N = {
   v_ig:["Veure a Instagram","Ver en Instagram"],
   p_tier_main:["Patrocinador principal","Patrocinador principal"],
   p_tier_collab:["Col·laboradors institucionals","Colaboradores institucionales"],
-  p_tier_sponsors:["Patrocinadors i proveïdors","Patrocinadores y proveedores"],
-
-  nav_voluntaris:["Voluntaris","Voluntarios"],
-  vol_eyebrow:["Suma't a l'equip","Únete al equipo"],
-  vol_h:["Sense voluntaris no hi ha cursa","Sin voluntarios no hay carrera"],
-  vol_lead:["La Mitja reuneix fins a 2.500 corredors, i cap d'ells arribaria a meta sense la gent del poble que s'hi implica. Vine a viure la cursa des de dins: t'ho passaràs bé, ho farem junts i tornaràs a casa amb la sensació d'haver-la fet possible.","La Mitja reúne hasta 2.500 corredores, y ninguno de ellos llegaría a meta sin la gente del pueblo que se implica. Ven a vivir la carrera desde dentro: te lo pasarás bien, lo haremos juntos y volverás a casa con la sensación de haberla hecho posible."],
-  vol_que_k:["El dia de la cursa","El día de la carrera"],
-  vol_que_h:["Què fem?","¿Qué hacemos?"],
-  vol_c1_t:["Avituallaments","Avituallamientos"],
-  vol_c1_p:["Punts d'aigua cada 5 km aproximadament.","Puntos de agua cada 5 km aproximadamente."],
-  vol_c2_t:["Lliurament de dorsals","Entrega de dorsales"],
-  vol_c2_p:["Dissabte a la tarda i diumenge al matí.","Sábado por la tarde y domingo por la mañana."],
-  vol_c3_t:["Controls de recorregut","Controles de recorrido"],
-  vol_c3_p:["Senyalització i orientació als corredors.","Señalización y orientación a los corredores."],
-  vol_c4_t:["Zona 0","Zona 0"],
-  vol_c4_p:["Sortida, meta i guarda-roba.","Salida, meta y guardarropa."],
-  vol_c5_t:["Ambient i ànims","Ambiente y ánimos"],
-  vol_c5_p:["Animar els corredors al llarg del recorregut.","Animar a los corredores a lo largo del recorrido."],
-  vol_expect_t:["Què pots esperar?","¿Qué puedes esperar?"],
-  vol_expect_p:["Diumenge 18 d'octubre al matí. T'assignem un torn i un punt concret, i t'expliquem tot amb antelació.","Domingo 18 de octubre por la mañana. Te asignamos un turno y un punto concreto, y te lo explicamos todo con antelación."],
-  vol_cta_h:['Suma\'t a l\'equip de <em>voluntaris</em>','Únete al equipo de <em>voluntarios</em>'],
-  vol_cta_p:["Omple el formulari en dos minuts i ens posarem en contacte amb tu abans de la cursa amb el teu torn i punt assignat.","Rellena el formulario en dos minutos y nos pondremos en contacto contigo antes de la carrera con tu turno y punto asignado."],
-  vol_cta_btn:["Vull ser voluntari/ària","Quiero ser voluntario/a"],
-  vol_mail:["També pots escriure'ns a","También puedes escribirnos a"],
-  m_vol_link:["No corres però vols ajudar? Fes-te voluntari →","¿No corres pero quieres ayudar? Hazte voluntario →"]
+  p_tier_sponsors:["Patrocinadors i proveïdors","Patrocinadores y proveedores"]
 };
 
 const MAILTO_SOCI = {
@@ -1863,8 +1844,8 @@ function applyLang(lang){
   // meta description segons idioma
   const md=document.querySelector('#metaDesc');
   if(md) md.content = lang==='es'
-    ? 'Club de running de Vila-Seca (Tarragona). V Escardó Mitja Marató · domingo 18 de octubre de 2026 · 21K, 10K y 5K. Inscríbete o hazte socio del club.'
-    : "Club de running de Vila-Seca (Tarragona). V Escardó Mitja Marató · diumenge 18 d'octubre de 2026 · 21K, 10K i 5K. Inscriu-te o fes-te soci del club.";
+    ? 'Club de running de Vila-Seca (Tarragona). V Escardó Mitja Marató · domingo 18 de octubre de 2026 · 21K, 10K y 5K. Consulta el reglamento, los horarios y la recogida de dorsales.'
+    : "Club de running de Vila-Seca (Tarragona). V Escardó Mitja Marató · diumenge 18 d'octubre de 2026 · 21K, 10K i 5K. Consulta el reglament, els horaris i la recollida de dorsals.";
   buildTicker();
   updateRecTitle();
   if(window.__chatRefresh) window.__chatRefresh();
@@ -1927,7 +1908,6 @@ function playHero(){
 const ROUTES = {
   'inici':'view-inici','club':'view-club','la-mitja':'view-mitja',
   'activitats':'view-activitats','nit-a-la-vila':'view-nit','social-run':'view-social',
-  'voluntaris':'view-voluntaris',
   'galeria':'view-galeria','soci':'view-soci','patrocinadors':'view-patro','contacte':'view-contacte'
 };
 /* les fitxes d'activitat mantenen "Activitats" com a menú actiu */
@@ -2094,18 +2074,16 @@ $$('.rec-tab').forEach(b=> b.addEventListener('click', ()=> setMod(b.dataset.mod
     ca:{ greet:"Hola! 👋 Sóc l'assistent del CERV. En què et puc ajudar?",
       faqs:[
         {q:"Quan és la Mitja?", a:"La <b>V Escardó Mitja Marató</b> és el <b>diumenge 18 d'octubre de 2026 a les 09:30h</b>, amb sortida i meta a la Zona 0 del Complex Esportiu de Vila-Seca."},
-        {q:"Quant costa?", a:"Tarifa 1 (fins 31/08/2026): <b>21K · 21,60€</b>, <b>10K · 15,60€</b>, <b>5K · 11,60€</b> i <b>Specials 600m · 2,60€</b>. Inscripcions a Runatica."},
-        {q:"On recullo el dorsal?", a:"La recollida es fa al <b>Complex Esportiu de Vila-Seca (Zona 0)</b>. Et confirmarem dies i horaris properament — segueix-nos a Instagram! 📸"},
-        {q:"Com em faig soci?", a:"El <b>primer entrenament és gratis</b>. Vine un <b>dilluns, dimecres o divendres</b>, o escriu-nos a <a href=\""+MAILTO_SOCI.ca+"\"><b>somoscerv@gmail.com</b></a>. \ud83c\udfc3"},
-        {q:"Com puc ser voluntari?", a:"La Mitja funciona gr\u00e0cies als voluntaris! Tens tota la informaci\u00f3 i el formulari per apuntar-t'hi a la p\u00e0gina de <a href=\"#/voluntaris\"><b>Voluntaris</b></a>."}
+        {q:"On recullo el dorsal?", a:"El <b>dissabte 17 d'octubre de 17:00 a 20:30h</b> al hall del Pavelló Municipal, i el <b>diumenge 18 de 7:45 a 9:00h</b> a la Zona 0. Cal portar <b>DNI, NIE o passaport</b>. Cursa Specials: d'11:00 a 12:00h."},
+        {q:"Puc inscriure'm encara?", a:"Ho sentim: les inscripcions es van <b>tancar el 8 d'octubre</b> i <b>no se n'accepten el dia de la cursa</b>. Però pots venir a animar: t'esperem el diumenge 18!"},
+        {q:"Com em faig soci?", a:"El <b>primer entrenament és gratis</b>. Vine un <b>dilluns, dimecres o divendres</b>, o escriu-nos a <a href=\""+MAILTO_SOCI.ca+"\"><b>somoscerv@gmail.com</b></a>. \ud83c\udfc3"}
       ]},
     es:{ greet:"¡Hola! 👋 Soy el asistente del CERV. ¿En qué te puedo ayudar?",
       faqs:[
         {q:"¿Cuándo es la Media?", a:"La <b>V Escardó Media Maratón</b> es el <b>domingo 18 de octubre de 2026 a las 09:30h</b>, con salida y meta en la Zona 0 del Complejo Deportivo de Vila-Seca."},
-        {q:"¿Cuánto cuesta?", a:"Tarifa 1 (hasta 31/08/2026): <b>21K · 21,60€</b>, <b>10K · 15,60€</b>, <b>5K · 11,60€</b> y <b>Specials 600m · 2,60€</b>. Inscripciones en Runatica."},
-        {q:"¿Dónde recojo el dorsal?", a:"La recogida se hace en el <b>Complejo Deportivo de Vila-Seca (Zona 0)</b>. Confirmaremos días y horarios pronto — ¡síguenos en Instagram! 📸"},
-        {q:"¿Cómo me hago socio?", a:"El <b>primer entrenamiento es gratis</b>. Ven un <b>lunes, miércoles o viernes</b>, o escríbenos a <a href=\""+MAILTO_SOCI.es+"\"><b>somoscerv@gmail.com</b></a>. \ud83c\udfc3"},
-        {q:"\u00bfC\u00f3mo puedo ser voluntario?", a:"\u00a1La Mitja funciona gracias a los voluntarios! Tienes toda la informaci\u00f3n y el formulario para apuntarte en la p\u00e1gina de <a href=\"#/voluntaris\"><b>Voluntarios</b></a>."}
+        {q:"¿Dónde recojo el dorsal?", a:"El <b>sábado 17 de octubre de 17:00 a 20:30h</b> en el hall del Pabellón Municipal, y el <b>domingo 18 de 7:45 a 9:00h</b> en la Zona 0. Es necesario traer <b>DNI, NIE o pasaporte</b>. Carrera Specials: de 11:00 a 12:00h."},
+        {q:"¿Puedo inscribirme todavía?", a:"Lo sentimos: las inscripciones se <b>cerraron el 8 de octubre</b> y <b>no se aceptan el día de la carrera</b>. Pero puedes venir a animar: ¡te esperamos el domingo 18!"},
+        {q:"¿Cómo me hago socio?", a:"El <b>primer entrenamiento es gratis</b>. Ven un <b>lunes, miércoles o viernes</b>, o escríbenos a <a href=\""+MAILTO_SOCI.es+"\"><b>somoscerv@gmail.com</b></a>. \ud83c\udfc3"}
       ]}
   };
   const L = ()=> QA[LANG==='es'?'es':'ca'];
