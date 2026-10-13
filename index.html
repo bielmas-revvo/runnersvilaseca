@@ -1074,14 +1074,15 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
           <div class="race-card reveal d1">
             <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h6M7 14h10"/></svg><span data-i18n="lg_dors_k">Recollida de dorsals</span></h3>
             <ul>
-              <li data-i18n="lg_dors_1"><b>Dissabte 17 d'octubre</b> · de 17:00 a 20:30h<br>Hall del Pavelló Municipal</li>
-              <li data-i18n="lg_dors_2"><b>Diumenge 18 d'octubre</b> · de 7:45 a 9:00h<br>Zona 0</li>
+              <li data-i18n="lg_dors_1"><b>Dissabte 17 d'octubre</b> · de 17:00 a 20:00h<br>Pista exterior del Pavelló Municipal</li>
+              <li data-i18n="lg_dors_2"><b>Diumenge 18 d'octubre</b> · de 8:00 a 9:15h<br>Zona 0</li>
             </ul>
             <p class="note" data-i18n="lg_dors_n">Cal presentar DNI, NIE o passaport.</p>
           </div>
           <div class="race-card reveal">
             <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg><span data-i18n="lg_spec_k">Cursa Specials</span></h3>
-            <p data-i18n="lg_spec_v"><b>Sortida a les 12:30h</b><br>Recollida de dorsals d'11:00 a 12:00h</p>
+            <!-- PENDIENTE confirmar: reglamento dice 12:00h -->
+            <p data-i18n="lg_spec_v"><b>Sortida a les 12:30h</b><br>Recollida de dorsals d'11:00 a 12:15h</p>
           </div>
           <div class="race-card reveal d1">
             <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg><span data-i18n="lg_cut_k">Temps de tall</span></h3>
@@ -1148,7 +1149,8 @@ a.act-card:hover .act-more{gap:14px;color:var(--red)}
         <p data-i18n="spec_p">Cursa inclusiva i adaptada per a persones amb diversitat funcional, discapacitat intel·lectual, visual o mobilitat reduïda. Perquè córrer és de tots.</p>
         <div class="s-facts">
           <span><b data-i18n="spec_start">Sortida 12:30h</b></span>
-          <span data-i18n="spec_dorsal">Recollida de dorsals d'11:00 a 12:00h</span>
+          <!-- PENDIENTE confirmar: reglamento dice 12:00h -->
+          <span data-i18n="spec_dorsal">Recollida de dorsals d'11:00 a 12:15h</span>
           <span data-i18n="spec_insc">Inscripcions tancades</span>
         </div>
       </div>
@@ -1760,11 +1762,12 @@ const I18N = {
   lg_start_v:["<b>Diumenge 18 d'octubre · 09:30h</b><br>Parking del Complex Esportiu de Vila-Seca (Zona 0)","<b>Domingo 18 de octubre · 09:30h</b><br>Parking del Complejo Deportivo de Vila-Seca (Zona 0)"],
   lg_start_n:["Sortida per calaixos segons ritme.","Salida por cajones según ritmo."],
   lg_dors_k:["Recollida de dorsals","Recogida de dorsales"],
-  lg_dors_1:["<b>Dissabte 17 d'octubre</b> · de 17:00 a 20:30h<br>Hall del Pavelló Municipal","<b>Sábado 17 de octubre</b> · de 17:00 a 20:30h<br>Hall del Pabellón Municipal"],
-  lg_dors_2:["<b>Diumenge 18 d'octubre</b> · de 7:45 a 9:00h<br>Zona 0","<b>Domingo 18 de octubre</b> · de 7:45 a 9:00h<br>Zona 0"],
+  lg_dors_1:["<b>Dissabte 17 d'octubre</b> · de 17:00 a 20:00h<br>Pista exterior del Pavelló Municipal","<b>Sábado 17 de octubre</b> · de 17:00 a 20:00h<br>Pista exterior del Pabellón Municipal"],
+  lg_dors_2:["<b>Diumenge 18 d'octubre</b> · de 8:00 a 9:15h<br>Zona 0","<b>Domingo 18 de octubre</b> · de 8:00 a 9:15h<br>Zona 0"],
   lg_dors_n:["Cal presentar DNI, NIE o passaport.","Es necesario presentar DNI, NIE o pasaporte."],
   lg_spec_k:["Cursa Specials","Carrera Specials"],
-  lg_spec_v:["<b>Sortida a les 12:30h</b><br>Recollida de dorsals d'11:00 a 12:00h","<b>Salida a las 12:30h</b><br>Recogida de dorsales de 11:00 a 12:00h"],
+  /* PENDIENTE confirmar: reglamento dice 12:00h */
+  lg_spec_v:["<b>Sortida a les 12:30h</b><br>Recollida de dorsals d'11:00 a 12:15h","<b>Salida a las 12:30h</b><br>Recogida de dorsales de 11:00 a 12:15h"],
   lg_cut_k:["Temps de tall","Tiempos de corte"],
   rg_k:["Document oficial","Documento oficial"],
   rg_h:["Reglament oficial","Reglamento oficial"],
@@ -1772,7 +1775,8 @@ const I18N = {
   rg_view:["Veure el reglament","Ver el reglamento"],
   rg_dl:["Descarregar PDF","Descargar PDF"],
   rg_meta:["PDF · 8 pàgines","PDF · 8 páginas"],
-  spec_dorsal:["Recollida de dorsals d'11:00 a 12:00h","Recogida de dorsales de 11:00 a 12:00h"],
+  /* PENDIENTE confirmar: reglamento dice 12:00h */
+  spec_dorsal:["Recollida de dorsals d'11:00 a 12:15h","Recogida de dorsales de 11:00 a 12:15h"],
   spec_insc:["Inscripcions tancades","Inscripciones cerradas"],
 
   a_eyebrow:["Tot l'any en moviment","Todo el año en movimiento"], a_h:["Activitats del club","Actividades del club"],
@@ -2174,7 +2178,8 @@ $$('.rec-tab').forEach(b=> b.addEventListener('click', ()=> setMod(b.dataset.mod
     ca:{ greet:"Hola! 👋 Sóc l'assistent del CERV. En què et puc ajudar?",
       faqs:[
         {q:"Quan és la Mitja?", a:"La <b>V Escardó Mitja Marató</b> és el <b>diumenge 18 d'octubre de 2026 a les 09:30h</b>, amb sortida i meta a la Zona 0 del Complex Esportiu de Vila-Seca."},
-        {q:"On recullo el dorsal?", a:"El <b>dissabte 17 d'octubre de 17:00 a 20:30h</b> al hall del Pavelló Municipal, i el <b>diumenge 18 de 7:45 a 9:00h</b> a la Zona 0. Cal portar <b>DNI, NIE o passaport</b>. Cursa Specials: d'11:00 a 12:00h."},
+        /* PENDIENTE confirmar Specials: reglamento dice 12:00h */
+        {q:"On recullo el dorsal?", a:"El <b>dissabte 17 d'octubre de 17:00 a 20:00h</b> a la pista exterior del Pavelló Municipal, i el <b>diumenge 18 de 8:00 a 9:15h</b> a la Zona 0. Cal portar <b>DNI, NIE o passaport</b>. Cursa Specials: d'11:00 a 12:15h."},
         {q:"Puc inscriure'm encara?", a:"Ho sentim: les inscripcions es van <b>tancar el 8 d'octubre</b> i <b>no se n'accepten el dia de la cursa</b>. Però pots venir a animar: t'esperem el diumenge 18!"},
         {q:"Com em faig soci?", a:"El <b>primer entrenament és gratis</b>. Vine un <b>dilluns, dimecres o divendres</b>, o escriu-nos a <a href=\""+MAILTO_SOCI.ca+"\"><b>somoscerv@gmail.com</b></a>. \ud83c\udfc3"},
         {q:"Com puc ser voluntari?", a:"La Mitja funciona gr\u00e0cies als voluntaris! Tens tota la informaci\u00f3 i el formulari per apuntar-t'hi a la p\u00e0gina de <a href=\"#/voluntaris\"><b>Voluntaris</b></a>."}
@@ -2182,7 +2187,8 @@ $$('.rec-tab').forEach(b=> b.addEventListener('click', ()=> setMod(b.dataset.mod
     es:{ greet:"¡Hola! 👋 Soy el asistente del CERV. ¿En qué te puedo ayudar?",
       faqs:[
         {q:"¿Cuándo es la Media?", a:"La <b>V Escardó Media Maratón</b> es el <b>domingo 18 de octubre de 2026 a las 09:30h</b>, con salida y meta en la Zona 0 del Complejo Deportivo de Vila-Seca."},
-        {q:"¿Dónde recojo el dorsal?", a:"El <b>sábado 17 de octubre de 17:00 a 20:30h</b> en el hall del Pabellón Municipal, y el <b>domingo 18 de 7:45 a 9:00h</b> en la Zona 0. Es necesario traer <b>DNI, NIE o pasaporte</b>. Carrera Specials: de 11:00 a 12:00h."},
+        /* PENDIENTE confirmar Specials: reglamento dice 12:00h */
+        {q:"¿Dónde recojo el dorsal?", a:"El <b>sábado 17 de octubre de 17:00 a 20:00h</b> en la pista exterior del Pabellón Municipal, y el <b>domingo 18 de 8:00 a 9:15h</b> en la Zona 0. Es necesario traer <b>DNI, NIE o pasaporte</b>. Carrera Specials: de 11:00 a 12:15h."},
         {q:"¿Puedo inscribirme todavía?", a:"Lo sentimos: las inscripciones se <b>cerraron el 8 de octubre</b> y <b>no se aceptan el día de la carrera</b>. Pero puedes venir a animar: ¡te esperamos el domingo 18!"},
         {q:"¿Cómo me hago socio?", a:"El <b>primer entrenamiento es gratis</b>. Ven un <b>lunes, miércoles o viernes</b>, o escríbenos a <a href=\""+MAILTO_SOCI.es+"\"><b>somoscerv@gmail.com</b></a>. \ud83c\udfc3"},
         {q:"\u00bfC\u00f3mo puedo ser voluntario?", a:"\u00a1La Mitja funciona gracias a los voluntarios! Tienes toda la informaci\u00f3n y el formulario para apuntarte en la p\u00e1gina de <a href=\"#/voluntaris\"><b>Voluntarios</b></a>."}
